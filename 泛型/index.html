@@ -1,0 +1,1487 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="泛型, Mr-lee">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>泛型 | Mr-lee</title>
+    <link rel="icon" type="image/png" href="/Mr-lee-MQ.hithub.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/Mr-lee-MQ.hithub.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/Mr-lee-MQ.hithub.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/Mr-lee-MQ.hithub.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/Mr-lee-MQ.hithub.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/Mr-lee-MQ.hithub.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/Mr-lee-MQ.hithub.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/Mr-lee-MQ.hithub.io/css/my.css">
+
+    <script src="/Mr-lee-MQ.hithub.io/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/Mr-lee-MQ.hithub.io/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/Mr-lee-MQ.hithub.io/" class="waves-effect waves-light">
+                    
+                    <img src="/Mr-lee-MQ.hithub.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Mr-lee</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Mr-lee-MQ.hithub.io/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>主页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Mr-lee-MQ.hithub.io/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Mr-lee-MQ.hithub.io/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Mr-lee-MQ.hithub.io/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>时光轴</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Mr-lee-MQ.hithub.io/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Mr-lee-MQ.hithub.io/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Mr-lee-MQ.hithub.io/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/Mr-lee-MQ.hithub.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Mr-lee</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Mr-lee-MQ.hithub.io/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			主页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Mr-lee-MQ.hithub.io/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Mr-lee-MQ.hithub.io/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Mr-lee-MQ.hithub.io/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			时光轴
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Mr-lee-MQ.hithub.io/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于我
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Mr-lee-MQ.hithub.io/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Mr-lee-MQ.hithub.io/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Mr-lee-MQ/Mr-lee-MQ.hithub.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #F062A7;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Mr-lee-MQ/Mr-lee-MQ.hithub.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/Mr-lee-MQ.hithub.io/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">泛型</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/Mr-lee-MQ.hithub.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/Mr-lee-MQ.hithub.io/tags/Java%E8%BF%9B%E9%98%B6/">
+                                <span class="chip bg-color">Java进阶</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/Mr-lee-MQ.hithub.io/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-05-10
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-02-08
+                </div>
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型<a id="more"></a></h1><h2 id="一、什么是泛型？"><a href="#一、什么是泛型？" class="headerlink" title="一、什么是泛型？"></a>一、什么是泛型？</h2><p><strong>Java泛型设计原则：只要在编译时期没有出现警告，那么运行时期就不会出现ClassCastException异常</strong>.</p>
+<p>泛型：<strong>把类型明确的工作推迟到创建对象或调用方法的时候才去明确的特殊的类型</strong></p>
+<p>参数化类型:</p>
+<ul>
+<li><strong>把类型当作是参数一样传递</strong></li>
+<li><strong><code>&lt;数据类型&gt;</code>只能是引用类型</strong></li>
+</ul>
+<p>相关术语：</p>
+<ul>
+<li><code>ArrayList&lt;E&gt;</code>中的<strong>E称为类型参数变量</strong></li>
+<li><code>ArrayList&lt;Integer&gt;</code>中的<strong>Integer称为实际类型参数</strong></li>
+<li><strong>整个称为<code>ArrayList&lt;E&gt;</code>泛型类型</strong></li>
+<li><strong>整个<code>ArrayList&lt;Integer&gt;</code>称为参数化的类型ParameterizedType</strong></li>
+</ul>
+<h2 id="二、为什么需要泛型"><a href="#二、为什么需要泛型" class="headerlink" title="二、为什么需要泛型"></a>二、为什么需要泛型</h2><p><strong>早期Java是使用Object来代表任意类型的，但是向下转型有强转的问题，这样程序就不太安全</strong></p>
+<p>首先，我们来试想一下：没有泛型，集合会怎么样</p>
+<ul>
+<li>Collection、Map集合对元素的类型是没有任何限制的。<strong>本来我的Collection集合装载的是全部的Dog对象，但是外边把Cat对象存储到集合中，是没有任何语法错误的。</strong></li>
+<li>把对象扔进集合中，集合是不知道元素的类型是什么的，仅仅知道是Object。因此在get()的时候，返回的是Object。<strong>外边获取该对象，还需要强制转换</strong></li>
+</ul>
+<p>有了泛型以后：</p>
+<ul>
+<li>代码更加简洁【不用强制转换】</li>
+<li>程序更加健壮【只要编译时期没有警告，那么运行时期就不会出现ClassCastException异常】</li>
+<li>可读性和稳定性【在编写集合的时候，就限定了类型】</li>
+</ul>
+<h3 id="2-1、有了泛型后使用增强for遍历集合"><a href="#2-1、有了泛型后使用增强for遍历集合" class="headerlink" title="2.1、有了泛型后使用增强for遍历集合"></a>2.1、有了泛型后使用增强for遍历集合</h3><p>在创建集合的时候，<strong>我们明确了集合的类型了</strong>，所以我们可以使用增强for来遍历集合！</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//创建集合对象</span>
+ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"java"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//遍历,由于明确了类型.我们可以增强for</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>String s <span class="token operator">:</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="三、泛型基础"><a href="#三、泛型基础" class="headerlink" title="三、泛型基础"></a>三、泛型基础</h2><h3 id="3-1、泛型类"><a href="#3-1、泛型类" class="headerlink" title="3.1、泛型类"></a>3.1、泛型类</h3><p><strong>泛型类就是把泛型定义在类上，用户使用该类的时候，才把类型明确下来</strong>….这样的话，用户明确了什么类型，该类就代表着什么类型…用户在使用的时候就不用担心强转的问题，运行时转换异常的问题了。</p>
+<ul>
+<li><strong>在类上定义的泛型，在类的方法中也可以使用！</strong></li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*
+    1:把泛型定义在类上
+    2:类型变量定义在类上,方法中也可以使用
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ObjectTool</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> T obj<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> T <span class="token function">getObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> obj<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setObj</span><span class="token punctuation">(</span>T obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>obj <span class="token operator">=</span> obj<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<ul>
+<li>测试代码：</li>
+</ul>
+<p><strong>用户想要使用哪种类型，就在创建的时候指定类型。使用的时候，该类就会自动转换成用户想要使用的类型了。</strong></p>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//创建对象并指定元素类型</span>
+        ObjectTool<span class="token operator">&lt;</span>String<span class="token operator">></span> tool <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectTool</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        tool<span class="token punctuation">.</span><span class="token function">setObj</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"钟福成"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String s <span class="token operator">=</span> tool<span class="token punctuation">.</span><span class="token function">getObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token comment" spellcheck="true">//创建对象并指定元素类型</span>
+        ObjectTool<span class="token operator">&lt;</span>Integer<span class="token operator">></span> objectTool <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectTool</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/**
+         * 如果我在这个对象里传入的是String类型的,它在编译时期就通过不了了.
+         */</span>
+        objectTool<span class="token punctuation">.</span><span class="token function">setObj</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> objectTool<span class="token punctuation">.</span><span class="token function">getObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<h3 id="3-2、泛型方法"><a href="#3-2、泛型方法" class="headerlink" title="3.2、泛型方法"></a>3.2、泛型方法</h3><p>前面已经介绍了泛型类了，在类上定义的泛型，在方法中也可以使用…..</p>
+<p>现在呢，我们可能就仅仅在<strong>某一个方法上需要使用泛型</strong>….<strong>外界仅仅是关心该方法，不关心类其他的属性</strong>…这样的话，我们在整个类上定义泛型，未免就有些大题小作了。</p>
+<ul>
+<li>定义泛型方法….<strong>泛型是先定义后使用的</strong></li>
+</ul>
+<pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">//定义泛型方法..</span>
+    <span class="token keyword">public</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span></code></pre>
+<ul>
+<li>测试代码：</li>
+</ul>
+<p><strong>用户传递进来的是什么类型，返回值就是什么类型了</strong></p>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//创建对象</span>
+        ObjectTool tool <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectTool</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//调用方法,传入的参数是什么类型,返回值就是什么类型</span>
+        tool<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        tool<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        tool<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token number">12.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span></code></pre>
+<h3 id="3-3、泛型类派生出的子类"><a href="#3-3、泛型类派生出的子类" class="headerlink" title="3.3、泛型类派生出的子类"></a>3.3、泛型类派生出的子类</h3><p>前面我们已经定义了泛型类，<strong>泛型类是拥有泛型这个特性的类，它本质上还是一个Java类，那么它就可以被继承</strong></p>
+<p>那它是怎么被继承的呢？？这里分两种情况</p>
+<ol>
+<li><strong>子类明确泛型类的类型参数变量</strong></li>
+<li><strong>子类不明确泛型类的类型参数变量</strong></li>
+</ol>
+<h3 id="3-3-1、子类明确泛型类的类型参数变量"><a href="#3-3-1、子类明确泛型类的类型参数变量" class="headerlink" title="3.3.1、子类明确泛型类的类型参数变量"></a>3.3.1、子类明确泛型类的类型参数变量</h3><ul>
+<li>泛型接口</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*
+    把泛型定义在接口上
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Inter</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span></code></pre>
+<ul>
+<li>实现泛型接口的类…..</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * 子类明确泛型类的类型参数变量:
+ */</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InterImpl</span> <span class="token keyword">implements</span> <span class="token class-name">Inter</span><span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span>String s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="3-3-2、子类不明确泛型类的类型参数变量"><a href="#3-3-2、子类不明确泛型类的类型参数变量" class="headerlink" title="3.3.2、子类不明确泛型类的类型参数变量"></a>3.3.2、子类不明确泛型类的类型参数变量</h3><ul>
+<li>当子类不明确泛型类的类型参数变量时，<strong>外界使用子类的时候，也需要传递类型参数变量进来，在实现类上需要定义出类型参数变量</strong></li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * 子类不明确泛型类的类型参数变量:
+ *      实现类也要定义出&lt;T>类型的
+ *
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InterImpl</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">Inter</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>测试代码:</strong></p>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//测试第一种情况</span>
+        <span class="token comment" spellcheck="true">//Inter&lt;String> i = new InterImpl();</span>
+        <span class="token comment" spellcheck="true">//i.show("hello");</span>
+
+        <span class="token comment" spellcheck="true">//第二种情况测试</span>
+        Inter<span class="token operator">&lt;</span>String<span class="token operator">></span> ii <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InterImpl</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ii<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token string">"100"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span></code></pre>
+<p>值得注意的是：</p>
+<ul>
+<li><strong>实现类的要是重写父类的方法，返回值的类型是要和父类一样的！</strong></li>
+<li><strong>类上声明的泛形只对非静态成员有效</strong></li>
+</ul>
+<hr>
+<h3 id="3-4类型通配符"><a href="#3-4类型通配符" class="headerlink" title="3.4类型通配符"></a>3.4类型通配符</h3><p>为什么需要类型通配符？？？？我们来看一个需求…….</p>
+<p>现在有个需求：<strong>方法接收一个集合参数，遍历集合并把集合元素打印出来，怎么办？</strong></p>
+<ul>
+<li>按照我们没有学习泛型之前，我们可能会这样做：</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span>List list<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>list<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>上面的代码是正确的，<strong>只不过在编译的时候会出现警告，说没有确定集合元素的类型</strong>….这样是不优雅的…</p>
+<ul>
+<li>那我们学习了泛型了，现在要怎么做呢？？有的人可能会这样做：</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>Object<span class="token operator">></span> list<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>list<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>这样做语法是没毛病的，但是这里十分值得注意的是：<strong>该test()方法只能遍历装载着Object的集合！！！</strong></p>
+<p>强调：<strong>泛型中的<code>&lt;Object&gt;</code>并不是像以前那样有继承关系的，也就是说<code>List&lt;Object&gt;</code>和<code>List&lt;String&gt;</code>是毫无关系的！！！！</strong></p>
+<p>那现在咋办？？？我们是不清楚List集合装载的元素是什么类型的，<code>List&lt;Objcet&gt;</code>这样是行不通的……..<strong>于是Java泛型提供了类型通配符 ?</strong></p>
+<p>所以代码应该改成这样：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">></span> list<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>list<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>?号通配符表示可以匹配任意类型，任意的Java类都可以匹配</strong>…..</p>
+<p>现在非常值得注意的是，当我们使用?号通配符的时候：<strong>就只能调对象与类型无关的方法，不能调用对象与类型有关的方法。</strong></p>
+<p>记住，<strong>只能调用与对象无关的方法，不能调用对象与类型有关的方法</strong>。因为直到外界使用才知道具体的类型是什么。也就是说，在上面的List集合，我是不能使用add()方法的。<strong>因为add()方法是把对象丢进集合中，而现在我是不知道对象的类型是什么。</strong></p>
+<hr>
+<h3 id="3-4-1、设定通配符上限"><a href="#3-4-1、设定通配符上限" class="headerlink" title="3.4.1、设定通配符上限"></a>3.4.1、设定通配符上限</h3><p>首先，我们来看一下设定通配符上限用在哪里….</p>
+<p>现在，我想接收一个List集合，它只能操作数字类型的元素【Float、Integer、Double、Byte等数字类型都行】，怎么做？？？</p>
+<p>我们学习了通配符，但是如果直接使用通配符的话，该集合就不是只能操作数字了。因此我们需要<strong>用到设定通配符上限</strong></p>
+<pre class=" language-java"><code class="language-java">List<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Number</span><span class="token operator">></span></code></pre>
+<p>上面的代码表示的是：<strong>List集合装载的元素只能是Number的子类或自身</strong></p>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+
+        <span class="token comment" spellcheck="true">//List集合装载的是Integer，可以调用该方法</span>
+        List<span class="token operator">&lt;</span>Integer<span class="token operator">></span> integer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">test</span><span class="token punctuation">(</span>integer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//List集合装载的是String，在编译时期就报错了</span>
+        List<span class="token operator">&lt;</span>String<span class="token operator">></span> strings <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">test</span><span class="token punctuation">(</span>strings<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Number</span><span class="token operator">></span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span></code></pre>
+<h3 id="3-4-2、设定通配符下限"><a href="#3-4-2、设定通配符下限" class="headerlink" title="3.4.2、设定通配符下限"></a>3.4.2、设定通配符下限</h3><p>既然上面我们已经说了如何设定通配符的上限，那么设定通配符的下限也不是陌生的事了。直接来看语法吧</p>
+<pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">//传递进来的只能是Type或Type的父类</span>
+    <span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> Type<span class="token operator">></span></code></pre>
+<p>设定通配符的下限这并不少见，在TreeSet集合中就有….我们来看一下</p>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token function">TreeSet</span><span class="token punctuation">(</span>Comparator<span class="token operator">&lt;</span><span class="token operator">?</span> <span class="token keyword">super</span> E<span class="token operator">></span> comparator<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span>comparator<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>那它有什么用呢？？我们来想一下，当我们想要创建一个<code>TreeSet&lt;String&gt;</code>类型的变量的时候，并传入一个可以比较String大小的Comparator。</p>
+<p>那么这个Comparator的选择就有很多了，<strong>它可以是<code>Comparator&lt;String&gt;</code>，还可以是类型参数是String的父类，比如说<code>Comparator&lt;Objcet&gt;</code></strong>….</p>
+<p>这样做，就非常<strong>灵活</strong>了。也就是说，<strong>只要它能够比较字符串大小，就行了</strong></p>
+<p>经评论去补充：<strong>在泛型的上限和下限中有一个原则：PECS(Producer Extends Consumer Super)</strong></p>
+<p>书上是这样写的：</p>
+<p>带有子类限定的可以从泛型读取【也就是—&gt;(? extend T)】——–&gt;Producer Extends<br>带有超类限定的可以从泛型写入【也就是—&gt;(? super T)】——–&gt;Consumer Super<br>也有相关博文写得很好：</p>
+<p><a href="http://blog.51cto.com/flyingcat2013/1616068" target="_blank" rel="noopener">http://blog.51cto.com/flyingc…</a><br><a href="https://blog.csdn.net/xx326664162/article/details/52175283" target="_blank" rel="noopener">https://blog.csdn.net/xx32666…</a></p>
+<h3 id="3-5、通配符和泛型方法"><a href="#3-5、通配符和泛型方法" class="headerlink" title="3.5、通配符和泛型方法"></a>3.5、通配符和泛型方法</h3><p><strong>大多时候，我们都可以使用泛型方法来代替通配符的</strong>…..</p>
+<pre class=" language-javascript"><code class="language-javascript">    <span class="token comment" spellcheck="true">//使用通配符</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">></span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//使用泛型方法</span>
+    <span class="token keyword">public</span> <span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token keyword">void</span>  <span class="token function">test2</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>T<span class="token operator">></span> t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span></code></pre>
+<p>上面这两个方法都是可以的…..那么现在问题来了，我们使用通配符还是使用泛型方法呢？？</p>
+<p>原则：</p>
+<ul>
+<li>如果<strong>参数之间的类型有依赖关系</strong>，或者返<strong>回值是与参数之间有依赖关系</strong>的。那么就使用<strong>泛型方法</strong></li>
+<li>如果<strong>没有依赖关系</strong>的，就使用<strong>通配符</strong>，通配符会<strong>灵活一些.</strong></li>
+</ul>
+<hr>
+<h3 id="3-6泛型擦除"><a href="#3-6泛型擦除" class="headerlink" title="3.6泛型擦除"></a>3.6泛型擦除</h3><p>泛型是<strong>提供给javac编译器使用的</strong>，它用于限定集合的输入类型，让编译器在源代码级别上，即挡住向集合中插入非法数据。但编译器编译完带有泛形的java程序后，<strong>生成的class文件中将不再带有泛形信息</strong>，以此使程序运行效率不受到影响，这个过程称之为“擦除”。</p>
+<h4 id="3-6-1兼容性"><a href="#3-6-1兼容性" class="headerlink" title="3.6.1兼容性"></a>3.6.1兼容性</h4><p>JDK5提出了泛型这个概念，但是JDK5以前是没有泛型的。也就是泛型是需要兼容JDK5以下的集合的。</p>
+<p><strong>当把带有泛型特性的集合赋值给老版本的集合时候，会把泛型给擦除了。</strong></p>
+<p>值得注意的是：<strong>它保留的就类型参数的上限。</strong></p>
+<pre class=" language-java"><code class="language-java">        List<span class="token operator">&lt;</span>String<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//类型被擦除了，保留的是类型的上限，String的上限就是Object</span>
+        List list1 <span class="token operator">=</span> list<span class="token punctuation">;</span></code></pre>
+<p>如果我<strong>把没有类型参数的集合赋值给带有类型参数的集合赋值</strong>，这又会怎么样？？</p>
+<pre class=" language-java"><code class="language-java">        List list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        List<span class="token operator">&lt;</span>String<span class="token operator">></span> list2 <span class="token operator">=</span> list<span class="token punctuation">;</span></code></pre>
+<p>它也不会报错，仅仅是提示“未经检查的转换”</p>
+<hr>
+<h2 id="四、泛型的应用"><a href="#四、泛型的应用" class="headerlink" title="四、泛型的应用"></a>四、泛型的应用</h2><p>当我们写网页的时候，常常会有多个DAO，我们要写每次都要写好几个DAO，这样会有点麻烦。</p>
+<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%B3%9B%E5%9E%8B/162810c81b07499d" alt="这里写图片描述"></p>
+<p>那么我们想要的效果是什么呢？？<strong>只写一个抽象DAO，别的DAO只要继承该抽象DAO，就有对应的方法了。</strong></p>
+<p>要实现这样的效果，肯定是要用到泛型的。<strong>因为在抽象DAO中，是不可能知道哪一个DAO会继承它自己，所以是不知道其具体的类型的。而泛型就是在创建的时候才指定其具体的类型。</strong></p>
+<ul>
+<li>抽象DAO</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">BaseDao</span><span class="token operator">&lt;</span>T<span class="token operator">></span> <span class="token punctuation">{</span>
+
+    <span class="token comment" spellcheck="true">//模拟hibernate....</span>
+    <span class="token keyword">private</span> Session session<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> Class <span class="token class-name">clazz</span><span class="token punctuation">;</span>
+
+
+    <span class="token comment" spellcheck="true">//哪个子类调的这个方法，得到的class就是子类处理的类型（非常重要）</span>
+    <span class="token keyword">public</span> <span class="token function">BaseDao</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        Class <span class="token class-name">clazz</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//拿到的是子类</span>
+        ParameterizedType  pt <span class="token operator">=</span> <span class="token punctuation">(</span>ParameterizedType<span class="token punctuation">)</span> clazz<span class="token punctuation">.</span><span class="token function">getGenericSuperclass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//BaseDao&lt;Category></span>
+        clazz <span class="token operator">=</span> <span class="token punctuation">(</span>Class<span class="token punctuation">)</span> pt<span class="token punctuation">.</span><span class="token function">getActualTypeArguments</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>clazz<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        session<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> T <span class="token function">find</span><span class="token punctuation">(</span>String id<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>T<span class="token punctuation">)</span> session<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>clazz<span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span>T t<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        session<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">delete</span><span class="token punctuation">(</span>String id<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        T t <span class="token operator">=</span> <span class="token punctuation">(</span>T<span class="token punctuation">)</span> session<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>clazz<span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        session<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
+<ul>
+<li>继承抽象DAO，该实现类就有对应的增删改查的方法了。</li>
+</ul>
+<p>CategoryDao</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CategoryDao</span> <span class="token keyword">extends</span> <span class="token class-name">BaseDao</span><span class="token operator">&lt;</span>Category<span class="token operator">></span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span></code></pre>
+<p>BookDao</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BookDao</span> <span class="token keyword">extends</span> <span class="token class-name">BaseDao</span><span class="token operator">&lt;</span>Book<span class="token operator">></span> <span class="token punctuation">{</span>
+
+
+<span class="token punctuation">}</span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/Mr-lee-MQ.hithub.io/about" rel="external nofollow noreferrer">Mr-lee</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://mr-lee-mq.github.io/Mr-lee-MQ.github.io/Mr-lee-MQ.hithub.io/%E6%B3%9B%E5%9E%8B/">https://mr-lee-mq.github.io/Mr-lee-MQ.github.io/Mr-lee-MQ.hithub.io/%E6%B3%9B%E5%9E%8B/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/Mr-lee-MQ.hithub.io/about" target="_blank">Mr-lee</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/Mr-lee-MQ.hithub.io/tags/Java%E8%BF%9B%E9%98%B6/">
+                                    <span class="chip bg-color">Java进阶</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/Mr-lee-MQ.hithub.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/Mr-lee-MQ.hithub.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/Mr-lee-MQ.hithub.io/Thymeleaf/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/Mr-lee-MQ.hithub.io/medias/featureimages/21.jpg" class="responsive-img" alt="Thymeleaf">
+                        
+                        <span class="card-title">Thymeleaf</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Thymeleaf
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-11
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/Mr-lee-MQ.hithub.io/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/Mr-lee-MQ.hithub.io/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">前端基础</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/Mr-lee-MQ.hithub.io/Spring%E6%B3%A8%E8%A7%A3%E8%AF%A6%E8%A7%A3/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/Mr-lee-MQ.hithub.io/medias/featureimages/19.jpg" class="responsive-img" alt="Spring注解详解">
+                        
+                        <span class="card-title">Spring注解详解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Spring注解详解
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/Mr-lee-MQ.hithub.io/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/Mr-lee-MQ.hithub.io/tags/%E6%A1%86%E6%9E%B6%E8%BF%9B%E9%98%B6/">
+                        <span class="chip bg-color">框架进阶</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/Mr-lee-MQ.hithub.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/Mr-lee-MQ.hithub.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/Mr-lee-MQ.hithub.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/Mr-lee-MQ.hithub.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/Mr-lee-MQ.hithub.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/Mr-lee-MQ.hithub.io/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="2083953023"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/Mr-lee-MQ.hithub.io/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2022</span>
+            
+            <span id="year">2020</span>
+            <a href="/Mr-lee-MQ.hithub.io/about" target="_blank">Mr-lee</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "4";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Mr-lee-MQ/Mr-lee-MQ.hithub.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2285051311@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2285051311" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2285051311" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/Mr-lee-MQ.hithub.io/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/Mr-lee-MQ.hithub.io/libs/materialize/materialize.min.js"></script>
+    <script src="/Mr-lee-MQ.hithub.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/Mr-lee-MQ.hithub.io/libs/aos/aos.js"></script>
+    <script src="/Mr-lee-MQ.hithub.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/Mr-lee-MQ.hithub.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/Mr-lee-MQ.hithub.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/Mr-lee-MQ.hithub.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/Mr-lee-MQ.hithub.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/Mr-lee-MQ.hithub.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+	
+	
+	
+
+</body>
+
+</html>
