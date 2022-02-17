@@ -496,7 +496,7 @@
 <p>源码地址(gitee)：<a href="https://links.jianshu.com/go?to=http%3A%2F%2Fgitee.com%2Fxuxueli0323%2Fxxl-job" target="_blank" rel="noopener">http://gitee.com/xuxueli0323/xxl-job</a></p>
 <h2 id="一、调度中心部署"><a href="#一、调度中心部署" class="headerlink" title="一、调度中心部署"></a>一、调度中心部署</h2><h3 id="1-1-初始化“调度数据库”"><a href="#1-1-初始化“调度数据库”" class="headerlink" title="1.1 初始化“调度数据库”"></a>1.1 初始化“调度数据库”</h3><p>数据库中根据“调度数据库初始化SQL脚本”创建调度数据库</p>
 <p>“调度数据库初始化SQL脚本” 位置为：</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-2a3567392927d5d0.png" alt="img"></p>
+<p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-2a3567392927d5d0.png" alt="img"></p>
 <p>调度中心支持集群部署，集群情况下各节点务必连接同一个mysql实例</p>
 <p>如果mysql做主从,调度中心集群节点务必强制走主库</p>
 <h3 id="1-2-部署-xxl-job-admin（调度中心）"><a href="#1-2-部署-xxl-job-admin（调度中心）" class="headerlink" title="1.2 部署 xxl-job-admin（调度中心）"></a>1.2 部署 xxl-job-admin（调度中心）</h3><p>统一管理任务调度平台上调度任务，负责触发调度执行，并且提供任务管理平台</p>
@@ -524,10 +524,10 @@
 <span class="token comment" spellcheck="true">### 调度中心日志表数据保存天数：过期日志自动清理；限制大于等于7时生效，否则, 如-1，关闭自动清理功能；</span>
 <span class="token attr-name">xxl.job.logretentiondays</span><span class="token punctuation">=</span><span class="token attr-value">30</span></code></pre>
 <h4 id="1-2-2-调度中心部署"><a href="#1-2-2-调度中心部署" class="headerlink" title="1.2.2 调度中心部署"></a>1.2.2 调度中心部署</h4><p>如果已经正确进行上述配置，可将项目编译打包部署，<strong>本例使用的测试服务器 ip 为：10.91.198.13，端口为 18080</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-f396417f0c585ae6.png" alt="img"></p>
+<p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-f396417f0c585ae6.png" alt="img"></p>
 <p>调度中心访问地址：<strong><a href="https://links.jianshu.com/go?to=http%3A%2F%2F10.91.198.13%3A18080%2Fxxl-job-admin" target="_blank" rel="noopener">http://10.91.198.13:18080/xxl-job-admin</a></strong> (该地址执行器将会使用到，作为回调地址)</p>
 <p>默认登录账号 “<strong>admin/123456</strong>”, 登录后运行界面如下图所示</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-d494d96eb9c10fc0.png" alt="img"></p>
+<p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-d494d96eb9c10fc0.png" alt="img"></p>
 <h3 id="1-3-调度中心集群"><a href="#1-3-调度中心集群" class="headerlink" title="1.3 调度中心集群"></a>1.3 调度中心集群</h3><p>调度中心集群部署时，有以下注意点：</p>
 <ul>
 <li>DB配置保持一致</li>
@@ -637,13 +637,13 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <h3 id="2-5-配置执行器"><a href="#2-5-配置执行器" class="headerlink" title="2.5 配置执行器"></a>2.5 配置执行器</h3><p>进入调度中心：<strong><a href="https://links.jianshu.com/go?to=http%3A%2F%2F10.91.198.13%3A18080%2Fxxl-job-admin" target="_blank" rel="noopener">http://10.91.198.13:18080/xxl-job-admin</a></strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-6fb3bd36cde76de5.png" alt="img"></p>
+<p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-6fb3bd36cde76de5.png" alt="img"></p>
 <p>进入执行器管理，点击操作 -&gt; 编辑，进入执行器编辑页面</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-487b6fa8607514f7.png" alt="img"></p>
+<p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-487b6fa8607514f7.png" alt="img"></p>
 <h3 id="2-6-配置及执行任务"><a href="#2-6-配置及执行任务" class="headerlink" title="2.6 配置及执行任务"></a>2.6 配置及执行任务</h3><p>进入调度中心：<strong><a href="https://links.jianshu.com/go?to=http%3A%2F%2F10.91.198.13%3A18080%2Fxxl-job-admin" target="_blank" rel="noopener">http://10.91.198.13:18080/xxl-job-admin</a></strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-7abd94613ced5800.png" alt="img"></p>
+<p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-7abd94613ced5800.png" alt="img"></p>
 <p>进入任务管理，点击新增，进入新增任务页面</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-727d38eb0333bdac.png" alt="img"></p>
+<p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-727d38eb0333bdac.png" alt="img"></p>
 <p>任务配置参数释义如下：</p>
 <table>
 <thead>
@@ -706,10 +706,10 @@
 </tr>
 </tbody></table>
 <p>配置任务后，右击选择执行一次进行任务调度测试</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-c3d10011a98e2212.png" alt="img"></p>
+<p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-c3d10011a98e2212.png" alt="img"></p>
 <p>任务执行后进入调度日志，可以查看任务执行日志</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-f8fd356141a30a9b.png" alt="img"></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-62836b3d3f887d23.png" alt="img"></p>
+<p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-f8fd356141a30a9b.png" alt="img"></p>
+<p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-62836b3d3f887d23.png" alt="img"></p>
 <p>至此项目的任务配置完成。</p>
 <h3 id="2-7-执行器集群"><a href="#2-7-执行器集群" class="headerlink" title="2.7 执行器集群"></a>2.7 执行器集群</h3><p>执行器集群部署时，几点要求和建议：</p>
 <ul>
@@ -722,8 +722,8 @@
 <li>管理员：拥有全量权限，支持在线管理用户信息，为用户分配权限，权限分配粒度为执行器；</li>
 <li>普通用户：仅拥有被分配权限的执行器，及相关任务的操作权限；</li>
 </ul>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/image-20220214113947292.png" alt="image-20220214113947292"></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-3770bb933587dee9.png" alt="img"></p>
+<p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/image-20220214113947292.png" alt="image-20220214113947292"></p>
+<p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-3770bb933587dee9.png" alt="img"></p>
 <h2 id="四、任务详解"><a href="#四、任务详解" class="headerlink" title="四、任务详解"></a>四、任务详解</h2><h3 id="4-1-BEAN模式（类形式）"><a href="#4-1-BEAN模式（类形式）" class="headerlink" title="4.1 BEAN模式（类形式）"></a>4.1 BEAN模式（类形式）</h3><p>Bean模式任务，支持基于方法的开发方式，每个任务对应一个方法。</p>
 <ul>
 <li>优点：<ul>
@@ -752,10 +752,10 @@ data: post-data</code></pre>
 </ul>
 <h3 id="4-2-GLUE模式-Java"><a href="#4-2-GLUE模式-Java" class="headerlink" title="4.2 GLUE模式(Java)"></a>4.2 GLUE模式(Java)</h3><p>任务以源码方式维护在调度中心，支持通过 Web IDE 在线更新，实时编译和生效，因此不需要指定 JobHandler</p>
 <h4 id="4-2-1-基本开发流程"><a href="#4-2-1-基本开发流程" class="headerlink" title="4.2.1 基本开发流程"></a>4.2.1 基本开发流程</h4><h5 id="调度中心，新建调度任务"><a href="#调度中心，新建调度任务" class="headerlink" title="调度中心，新建调度任务"></a>调度中心，新建调度任务</h5><p>参考新建的任务进行参数配置，运行模式选中 “GLUE模式(Java)”</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-a8564b646aa12389.png" alt="img"></p>
+<p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-a8564b646aa12389.png" alt="img"></p>
 <h5 id="开发任务代码"><a href="#开发任务代码" class="headerlink" title="开发任务代码"></a>开发任务代码</h5><p>选中指定任务，点击该任务右侧“GLUE”按钮，将会前往GLUE任务的Web IDE界面，在该界面支持对任务代码进行开发（也可以在IDE中开发完成后，复制粘贴到编辑中）。</p>
 <p>版本回溯功能（支持30个版本的版本回溯）：在GLUE任务的Web IDE界面，选择右上角下拉框“版本回溯”，会列出该GLUE的更新历史，选择相应版本即可显示该版本代码，保存后GLUE代码即回退到对应的历史版本；</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-af1b9ab82d9164d6.png" alt="img"></p>
+<p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-af1b9ab82d9164d6.png" alt="img"></p>
 <h5 id="执行任务"><a href="#执行任务" class="headerlink" title="执行任务"></a>执行任务</h5><p>在任务管理器中执行任务即可</p>
 <h4 id="4-2-2-注入执行器中的-Bean-实例"><a href="#4-2-2-注入执行器中的-Bean-实例" class="headerlink" title="4.2.2 注入执行器中的 Bean 实例"></a>4.2.2 注入执行器中的 Bean 实例</h4><p>在线编辑的代码可以通过 <strong><code>@Autowired</code></strong> or <strong><code>@Resource</code></strong> 注解使用执行器中注册在 spring 容器中的 bean 实例，具体配置如下：</p>
 <h5 id="添加-SpringUtils-获取-IOC-容器"><a href="#添加-SpringUtils-获取-IOC-容器" class="headerlink" title="添加 SpringUtils 获取 IOC 容器"></a>添加 SpringUtils 获取 IOC 容器</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
@@ -809,9 +809,9 @@ data: post-data</code></pre>
 
     <span class="token keyword">return</span> xxlJobSpringExecutor<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<h5 id="任务代码修改如下"><a href="#任务代码修改如下" class="headerlink" title="任务代码修改如下"></a>任务代码修改如下</h5><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-c2f6eb6386430993.png" alt="img"></p>
+<h5 id="任务代码修改如下"><a href="#任务代码修改如下" class="headerlink" title="任务代码修改如下"></a>任务代码修改如下</h5><p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-c2f6eb6386430993.png" alt="img"></p>
 <p>任务执行后，执行日志如下，可以看到 <strong>TestService#testHello()</strong> 方法成功注入并执行</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-b517e4aaafe6276b.png" alt="img"></p>
+<p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-b517e4aaafe6276b.png" alt="img"></p>
 <h3 id="4-3-GLUE模式-Shell"><a href="#4-3-GLUE模式-Shell" class="headerlink" title="4.3 GLUE模式(Shell)"></a>4.3 GLUE模式(Shell)</h3><p>待补充</p>
 <h2 id="五、XXL-JOB-VS-Kangaroo-ETL"><a href="#五、XXL-JOB-VS-Kangaroo-ETL" class="headerlink" title="五、XXL-JOB VS. Kangaroo ETL"></a>五、XXL-JOB VS. Kangaroo ETL</h2><h3 id="5-1-ETL"><a href="#5-1-ETL" class="headerlink" title="5.1 ETL"></a>5.1 ETL</h3><p><strong>ETL（Extraction-Transformation-Loading）</strong>用来描述将数据从来源端经过抽取（extract）、转换（transform）、加载（load）至目的端的过程。ETL负责将分布的、异构数据源中的数据如关系数据、平面数据文件等抽取到临时中间层后进行清洗、转换、集成，最后加载到数据仓库或数据集市中，成为联机分析处理、数据挖掘的基础。</p>
 <p>ETL 是数据仓库获取高质量数据的关键环节，也是BI（商业智能）项目最重要的一个环节，可以说，ETL设计的好坏直接关系到BI项目的成败。</p>
@@ -868,14 +868,14 @@ data: post-data</code></pre>
 <li><strong>调度模块（调度中心）</strong><br> 负责管理调度信息，按照调度配置发出调度请求，自身不承担业务代码。调度系统与任务解耦，提高了系统可用性和稳定性，同时调度系统性能不再受限于任务模块；<br> 支持可视化、简单且动态的管理调度信息，包括任务新建，更新，删除，GLUE开发和任务报警等，所有上述操作都会实时生效，同时支持监控调度结果以及执行日志，支持执行器Failover；</li>
 <li><strong>执行模块（执行器）</strong><br> 负责接收调度请求并执行任务逻辑。任务模块专注于任务的执行等操作，开发和维护更加简单和高效；<br> 接收“调度中心”的执行请求、终止请求和日志请求等；</li>
 </ul>
-<h4 id="6-1-2-架构图"><a href="#6-1-2-架构图" class="headerlink" title="6.1.2 架构图"></a>6.1.2 架构图</h4><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-f7501b3cef9ff858.png" alt="img"></p>
+<h4 id="6-1-2-架构图"><a href="#6-1-2-架构图" class="headerlink" title="6.1.2 架构图"></a>6.1.2 架构图</h4><p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-f7501b3cef9ff858.png" alt="img"></p>
 <h3 id="6-2-任务注册和自动发现"><a href="#6-2-任务注册和自动发现" class="headerlink" title="6.2 任务注册和自动发现"></a>6.2 任务注册和自动发现</h3><ul>
 <li>AppName: 每个执行器机器集群的唯一标示, 任务注册以 “执行器” 为最小粒度进行注册; 每个任务通过其绑定的执行器可感知对应的执行器机器列表</li>
 <li>注册表: 见”xxl_job_registry”表, “执行器” 在进行任务注册时将会周期性维护一条注册记录，即机器地址和AppName的绑定关系; “调度中心” 从而可以动态感知每个AppName在线的机器列表</li>
 <li><strong>执行器注册: 任务注册Beat周期默认30s;</strong> 执行器以一倍Beat进行执行器注册, 调度中心以一倍Beat进行动态任务发现; <strong>注册信息的失效时间为三倍Beat</strong></li>
 <li>执行器注册摘除：执行器销毁时，将会主动上报调度中心并摘除对应的执行器机器信息，提高心跳注册的实时性</li>
 </ul>
-<h2 id="七-源码解析"><a href="#七-源码解析" class="headerlink" title="七 源码解析"></a>七 源码解析</h2><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-7a0bb3eba628596d.png" alt="img"></p>
+<h2 id="七-源码解析"><a href="#七-源码解析" class="headerlink" title="七 源码解析"></a>七 源码解析</h2><p><img src="/xxl-job%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/6944077-7a0bb3eba628596d.png" alt="img"></p>
 <h3 id="7-1-XxlJobSpringExecutor-启动"><a href="#7-1-XxlJobSpringExecutor-启动" class="headerlink" title="7.1 XxlJobSpringExecutor 启动"></a>7.1 XxlJobSpringExecutor 启动</h3><p>项目启动后获取配置文件中的属性值并实例化配置类 XxlJobSpringExecutor，XxlJobSpringExecutor 实现了 SmartInitializingSingleton 接口的 afterSingletonsInstantiated 方法，在实例化 XxlJobSpringExecutor 后触发执行，XxlJobSpringExecutor 在该方法里做了两件事：</p>
 <ol>
 <li>调用 <strong>initJobHandlerMethodRepository</strong> 方法扫描项目中带 @XxlJob 注解的方法（即 jobHandler）并注册；</li>

@@ -498,10 +498,10 @@
 <p>Linux 能运行主要的 UNIX 工具软件、应用程序和网络协议。它支持 32 位和 64 位硬件。Linux 继承了Unix 以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
 <h3 id="1-3、Linux-发行版"><a href="#1-3、Linux-发行版" class="headerlink" title="1.3、Linux 发行版"></a>1.3、Linux 发行版</h3><p>Linux 的发行版说简单点就是将 Linux 内核与应用软件做一个打包。</p>
 <p>Kali linux：安全渗透测试使用！（有兴趣做安全的同学可以了解一下！）</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/2020122020104278.png" class>
+<img src="/Linux/2020122020104278.png" class>
 
 <p>目前市面上较知名的发行版有：Ubuntu、RedHat、CentOS、Debian、Fedora、SuSE、OpenSUSE、Arch Linux、SolusOS 等。</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20201220201119647.png" class>
+<img src="/Linux/20201220201119647.png" class>
 
 <h3 id="1-4、Linux-应用领域"><a href="#1-4、Linux-应用领域" class="headerlink" title="1.4、Linux 应用领域"></a>1.4、Linux 应用领域</h3><p>今天各种场合都有使用各种 Linux 发行版，从嵌入式设备到超级计算机，并且在服务器领域确定了地位，通常服务器使用 LAMP（Linux + Apache + MySQL + PHP）或 LNMP（Linux + Nginx+ MySQL +PHP）组合。</p>
 <p>目前 Linux 不仅在家庭与企业中使用，并且在政府中也很受欢迎。</p>
@@ -514,7 +514,7 @@
 <li>葡萄牙同样使用自己的 Linux 发布版 Caixa Mágica，用于 Magalh?es 笔记本电脑和 e-escola **软件。</li>
 <li>法国和德国同样开始逐步采用 Linux。</li>
 </ul>
-<h3 id="1-5、Linux-vs-Windows"><a href="#1-5、Linux-vs-Windows" class="headerlink" title="1.5、Linux vs Windows"></a>1.5、Linux vs Windows</h3><img src="/Mr-lee-MQ.hithub.io/Linux/20201220202154232.png" class>
+<h3 id="1-5、Linux-vs-Windows"><a href="#1-5、Linux-vs-Windows" class="headerlink" title="1.5、Linux vs Windows"></a>1.5、Linux vs Windows</h3><img src="/Linux/20201220202154232.png" class>
 
 <h2 id="2、环境搭建"><a href="#2、环境搭建" class="headerlink" title="2、环境搭建"></a>2、环境搭建</h2><p>Linux 的安装，安装步骤比较繁琐（操作系统本身也是一个软件），现在其实云服务器挺普遍的，价格也便宜，如果直接不想搭建，也可以直接买一台学习用用！</p>
 <blockquote>
@@ -523,10 +523,10 @@
 <p>Linux是一个操作系统，你也可以把自己电脑安装成双系统！</p>
 <p>虚拟机（VMware下载（收费的，注册码！）</p>
 <p>官网下载：</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20201222145631600.png" class>
+<img src="/Linux/20201222145631600.png" class>
 
 <p>安装完成后打开软件有如下界面：</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20201222145734763.png" class>
+<img src="/Linux/20201222145734763.png" class>
 
 <blockquote>
 <p>在虚拟机上安装CentOS7</p>
@@ -771,7 +771,7 @@ kuangshen kuangstudy2 www</code></pre>
 <h3 id="4-2、基本属性"><a href="#4-2、基本属性" class="headerlink" title="4.2、基本属性"></a>4.2、基本属性</h3><p>十个字母 ；1 类型</p>
 <h4 id="4-2-1、看懂文件属性-root-kuangshen"><a href="#4-2-1、看懂文件属性-root-kuangshen" class="headerlink" title="4.2.1、看懂文件属性 root kuangshen"></a>4.2.1、看懂文件属性 root kuangshen</h4><p>Linux系统是一种典型的多用户系统，不同的用户处于不同的地位，拥有不同的权限。为了保护系统的安全性，Linux系统对不同的用户访问同一文件（包括目录文件）的权限做了不同的规定。</p>
 <p>在Linux中我们可以使用 <code>ll</code> 或者 <code>ls –l</code> 命令来显示一个文件的属性以及文件所属的用户和组，如：</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210115223156210.png" class>
+<img src="/Linux/20210115223156210.png" class>
 
 <p>实例中，root文件的第一个属性用”d”表示。”d”在Linux中代表该文件是一个目录文件。</p>
 <p>在Linux中第一个字符代表这个文件是目录、文件或链接文件等等：</p>
@@ -786,7 +786,7 @@ kuangshen kuangstudy2 www</code></pre>
 <p>其中，[ r ]代表可读(read)、[ w ]代表可写(write)、[ x ]代表可执行(execute)。</p>
 <p>要注意的是，这三个权限的位置不会改变，如果没有权限，就会出现减号[ - ]而已。</p>
 <p>每个文件的属性由左边第一部分的10个字符来确定（如下图）：</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210115223324226.png" class>
+<img src="/Linux/20210115223324226.png" class>
 
 <p>从左至右用0-9这些数字来表示。</p>
 <p>第0位确定文件类型，第1-3位确定属主（该文件的所有者）拥有该文件的权限。第4-6位确定属组（所有者的同组用户）拥有该文件的权限，第7-9位确定其他用户拥有该文件的权限。</p>
@@ -900,7 +900,7 @@ i love kuangshen
 <span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cat f3 # 查看f3</span>
 i love kuangshen</code></pre>
 <p>删除f1之后，查看f2 和 f3 的区别</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116091829620.png" class>
+<img src="/Linux/20210116091829620.png" class>
 
 <pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># rm -rf f1</span>
 <span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># ls</span>
@@ -916,12 +916,12 @@ cat: f3: No such <span class="token function">file</span> or directory</code></p
 <p>所有的 Unix Like 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在。</p>
 <p>连 vim 的官方网站 (<a href="http://www.vim.org/" target="_blank" rel="noopener">http://www.vim.org</a>) 自己也说 vim 是一个程序开发工具而不是文字处理软件。</p>
 <p>vim 键盘图：</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116092222874.png" class>
+<img src="/Linux/20210116092222874.png" class>
 
 <h4 id="4-3-2、三种使用模式"><a href="#4-3-2、三种使用模式" class="headerlink" title="4.3.2、三种使用模式"></a>4.3.2、三种使用模式</h4><p>基本上 vi/vim 共分为三种模式，分别是<strong>命令模式（Command mode）</strong>，<strong>输入模式（Insert mode）</strong>和<strong>底线命令模式（Last line mode）</strong>。这三种模式的作用分别是：</p>
 <ul>
 <li><p><strong>命令模式：</strong>用户刚刚启动 vi/vim，便进入了命令模式。</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/2021011609255137.png" class>
+<img src="/Linux/2021011609255137.png" class>
 
 <p>此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。</p>
 <p>以下是常用的几个命令：</p>
@@ -934,7 +934,7 @@ cat: f3: No such <span class="token function">file</span> or directory</code></p
 <p>命令模式只有一些最基本的命令，因此仍要依靠底线命令模式输入更多命令。</p>
 </li>
 <li><p><strong>输入模式：</strong>在命令模式下按下 <code>i</code> 就进入了输入模式。</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116092739410.png" class>
+<img src="/Linux/20210116092739410.png" class>
 
 <p>在输入模式中，可以使用以下按键：</p>
 <ul>
@@ -950,7 +950,7 @@ cat: f3: No such <span class="token function">file</span> or directory</code></p
 </ul>
 </li>
 <li><p><strong>底线命令模式</strong>：在命令模式下按下:（英文冒号）就进入了底线命令模式。光标就移动到了最底下，就可以在这里输入一<br>些底线命令了！</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116092848193.png" class>
+<img src="/Linux/20210116092848193.png" class>
 
 <p>底线命令模式可以输入单个或多个字符的命令，可用的命令非常多。</p>
 <p>在底线命令模式中，基本的命令有（已经省略了冒号）：wq</p>
@@ -958,12 +958,12 @@ cat: f3: No such <span class="token function">file</span> or directory</code></p
 <li>q 退出程序</li>
 <li>w 保存文件</li>
 </ul>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116092910342.png" class>
+<img src="/Linux/20210116092910342.png" class>
 
 </li>
 </ul>
 <p>按ESC键可随时退出底线命令模式。</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116092935373.png" class>
+<img src="/Linux/20210116092935373.png" class>
 
 <p>简单的说，我们可以将这三个模式想成底下的图标来表示：</p>
 
@@ -1279,7 +1279,7 @@ cat: f3: No such <span class="token function">file</span> or directory</code></p
 </ul>
 </li>
 </ul>
-<img src="/Mr-lee-MQ.hithub.io/Linux/2021011610545543.png" class>
+<img src="/Linux/2021011610545543.png" class>
 
 <p>理解一下本质：Linux中一切皆文件，这里的添加用户说白了就是往某一个文件中写入用户的信息了！</p>
 <pre class=" language-bash"><code class="language-bash">/etc/passwd</code></pre>
@@ -1290,14 +1290,14 @@ cat: f3: No such <span class="token function">file</span> or directory</code></p
 <pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># usermod -d /home/233 qinjiang</span></code></pre>
 <p>修改完毕之后查看配置文件即可！</p>
 <h4 id="4-4-6、切换用户！"><a href="#4-4-6、切换用户！" class="headerlink" title="4.4.6、切换用户！"></a>4.4.6、切换用户！</h4><p>root用户</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116140440407.png" class>
+<img src="/Linux/20210116140440407.png" class>
 
 <p>1.切换用户的命令为：su username 【username是你的用户名】</p>
 <p>2.从普通用户切换到root用户，还可以使用命令：sudo su</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116140513318.png" class>
+<img src="/Linux/20210116140513318.png" class>
 
 <p>3.在终端输入 <code>exit</code> 或 <code>logout</code> 或使用快捷方式ctrl+d，可以退回到原来用户，其实ctrl+d也是执行的exit命令</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116140533923.png" class>
+<img src="/Linux/20210116140533923.png" class>
 
 <p>4.在切换用户时，如果想在切换用户之后使用新用户的工作环境，可以在su和username之间加 <code>-</code> ，例如：【su - root】</p>
 <ul>
@@ -1306,13 +1306,13 @@ cat: f3: No such <span class="token function">file</span> or directory</code></p
 <li><h1 id="表示超级用户，也就是root用户"><a href="#表示超级用户，也就是root用户" class="headerlink" title="表示超级用户，也就是root用户"></a>表示超级用户，也就是root用户</h1></li>
 </ul>
 <p>有的小伙伴在阿里云买完服务器后，主机名是一个随机字符串！</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116140656966.png" class>
+<img src="/Linux/20210116140656966.png" class>
 
 <h4 id="4-4-7、用户的密码设置问题！"><a href="#4-4-7、用户的密码设置问题！" class="headerlink" title="4.4.7、用户的密码设置问题！"></a>4.4.7、用户的密码设置问题！</h4><p>我们一般通过root创建用户的时候！要配置密码！</p>
 <p>Linux上输入密码是不会显示的，你正常输入就可以了，并不是系统的问题！</p>
 <p>在公司中，你们一般拿不到公司服务器的 root 权限，都是一些分配的账号！</p>
 <p>如果是超级用户的话：</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116141729455.png" class>
+<img src="/Linux/20210116141729455.png" class>
 
 <pre class=" language-bash"><code class="language-bash"><span class="token function">passwd</span> username：new password：re password：</code></pre>
 <p>如果是普通用户：</p>
@@ -1383,7 +1383,7 @@ $ newgrp root</code></pre>
 pstree -pu
 -p 显示父id
 -u 显示用户组</code></pre>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116144718583.png" class>
+<img src="/Linux/20210116144718583.png" class>
 
 <p>结束进程：杀掉进程，等价于window结束任务！</p>
 <p>kill -9 进程的id</p>
@@ -1406,10 +1406,10 @@ pstree -pu
 <span class="token comment" spellcheck="true"># rpm -ivh rpm包</span>
 <span class="token comment" spellcheck="true"># 配置环境变量！</span></code></pre>
 <p>如果存在可以提前卸载：</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116144854687.png" class>
+<img src="/Linux/20210116144854687.png" class>
 
 <p>安装：</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116144947597.png" class>
+<img src="/Linux/20210116144947597.png" class>
 
 <p>配置环境变量： <code>/etc/profile</code> 在文件的最后面增加java的配置和 window安装环境变量一样！</p>
 <pre class=" language-bash"><code class="language-bash">JAVA_HOME<span class="token operator">=</span>/usr/java/jdk1.8.0_221-amd64
@@ -1431,7 +1431,7 @@ firewall-cmd --list-ports</code></pre>
 
 <p>3、启动tomcat测试！ ./xxx.sh 脚本即可运行</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 执行 ./startup.sh# 停止 ./shotdown.sh</span></code></pre>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116173620810.png" class>
+<img src="/Linux/20210116173620810.png" class>
 
 <p>如果防火墙8080 端口开了并且阿里云安全组也开放了这个时候就可以直接访问远程了！</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看firewall服务状态</span>
@@ -1470,30 +1470,30 @@ yum -y <span class="token function">install</span> gcc-c++</code></pre>
 <h3 id="5-4、宝塔面板（懒人式安装）"><a href="#5-4、宝塔面板（懒人式安装）" class="headerlink" title="5.4、宝塔面板（懒人式安装）"></a>5.4、宝塔面板（懒人式安装）</h3><p>具体的教程 <a href="https://www.bilibili.com/video/BV177411K7bH" target="_blank" rel="noopener">https://www.bilibili.com/video/BV177411K7bH</a></p>
 <h2 id="6、扩展：Vmware使用"><a href="#6、扩展：Vmware使用" class="headerlink" title="6、扩展：Vmware使用"></a>6、扩展：Vmware使用</h2><p>很多小伙伴，比较吝啬，买不起70一年的服务器 ！ Vmware本地安装包！</p>
 <h3 id="6-1、快照"><a href="#6-1、快照" class="headerlink" title="6.1、快照"></a>6.1、快照</h3><p>保留当前系统信息为快照，随时可以恢复，以防未来系统被你玩坏，就好比游戏中的归档！</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116174006747.png" class>
+<img src="/Linux/20210116174006747.png" class>
 
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116174016866.png" class>
+<img src="/Linux/20210116174016866.png" class>
 
 <p>平时的话，我们每配置一个东西就可以拍摄一个快照，保留信息！</p>
 <h3 id="6-2、本地网络配置"><a href="#6-2、本地网络配置" class="headerlink" title="6.2、本地网络配置"></a>6.2、本地网络配置</h3><p>大一学的计算机网络原理中有！</p>
 <p>需要保证 Linux虚拟机和本机处在同一个网段！</p>
 <p>windows</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116174045480.png" class>
+<img src="/Linux/20210116174045480.png" class>
 
 <p>Linux 也必须要配置到 对应的网段 192.168.0.110</p>
 <p>/etc/sysconfig/network-scripts/</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116174107263.png" class>
+<img src="/Linux/20210116174107263.png" class>
 
 <p>桥接模式 : 192.168.0.110 192.168.0. 160</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116174137674.png" class>
+<img src="/Linux/20210116174137674.png" class>
 
 <p>一定要桥接到正确的网卡即可！<br>静态的话就需要配置IP地址，IPADDR=192.168.0.110，以下是静态的网络配置，这两种方式，都可以让虚拟机连接外网从而实现网络开发！</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116174200326.png" class>
+<img src="/Linux/20210116174200326.png" class>
 
 <p>傻瓜式配置，只能在图形界面下有效！</p>
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116174215692.png" class>
+<img src="/Linux/20210116174215692.png" class>
 
-<img src="/Mr-lee-MQ.hithub.io/Linux/20210116174222994.png" class>
+<img src="/Linux/20210116174222994.png" class>
 
 <p>配置完毕即可上网！</p>
 

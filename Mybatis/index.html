@@ -490,7 +490,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis<a id="more"></a></h1><img src="/Mr-lee-MQ.hithub.io/Mybatis/mybatis-logo.png" class>
+                <h1 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis<a id="more"></a></h1><img src="/Mybatis/mybatis-logo.png" class>
 
 <ul>
 <li>MyBatis 是支持定制化SQL、存储过程以及高级映射的优秀的持久层框架。</li>
@@ -643,7 +643,7 @@ SqlSessionFactory sqlSessionFactory <span class="token operator">=</span> <span 
 <li>全限定名（比如 “com.mypackage.MyMapper.selectAllThings）将被直接用于查找及使用。</li>
 <li>短名称（比如 “selectAllThings”）如果全局唯一也可以作为一个单独的引用。 如果不唯一，有两个或两个以上的相同名称（比如 “com.foo.selectAllThings” 和 “com.bar.selectAllThings”），那么使用时就会产生“短名称不唯一”的错误，这种情况下就必须使用全限定名。</li>
 </ul>
-<h2 id="3、作用域（Scope）和生命周期"><a href="#3、作用域（Scope）和生命周期" class="headerlink" title="3、作用域（Scope）和生命周期"></a>3、作用域（Scope）和生命周期</h2><img src="/Mr-lee-MQ.hithub.io/Mybatis/20201105214905865.png" class>
+<h2 id="3、作用域（Scope）和生命周期"><a href="#3、作用域（Scope）和生命周期" class="headerlink" title="3、作用域（Scope）和生命周期"></a>3、作用域（Scope）和生命周期</h2><img src="/Mybatis/20201105214905865.png" class>
 
 <p>不同作用域和生命周期类别是至关重要的，因为错误的使用会导致非常严重的并发问题。</p>
 <h4 id="SqlSessionFactoryBuilder"><a href="#SqlSessionFactoryBuilder" class="headerlink" title="SqlSessionFactoryBuilder"></a>SqlSessionFactoryBuilder</h4><blockquote>
@@ -673,7 +673,7 @@ SqlSessionFactory sqlSessionFactory <span class="token operator">=</span> <span 
 <pre class=" language-java"><code class="language-java"><span class="token keyword">try</span> <span class="token punctuation">(</span>SqlSession session <span class="token operator">=</span> sqlSessionFactory<span class="token punctuation">.</span><span class="token function">openSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">// 你的应用逻辑代码</span>
 <span class="token punctuation">}</span></code></pre>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201105215925916.png" class>
+<img src="/Mybatis/20201105215925916.png" class>
 
 <p>这里面的每一个Mapper，就代表一个具体的业务</p>
 <h4 id="映射器实例"><a href="#映射器实例" class="headerlink" title="映射器实例"></a>映射器实例</h4><p>映射器是一些绑定映射语句的接口。映射器接口的实例是从 SqlSession 中获得的。虽然从技术层面上来讲，任何映射器实例的最大作用域与请求它们的 SqlSession 相同。但方法作用域才是映射器实例的最合适的作用域。 也就是说，映射器实例应该在调用它们的方法中被获取，使用完毕之后即可丢弃。 映射器实例并不需要被显式地关闭。尽管在整个请求作用域保留映射器实例不会有什么问题，但是你很快会发现，在这个作用域上管理太多像 SqlSession 的资源会让你忙不过来。 因此，最好将映射器放在方法作用域内。就像下面的例子一样：</p>
@@ -764,7 +764,7 @@ mappers（映射器）</code></pre>
 <p>Mybatis默认的事务管理器就是JDBC， 连接池：POOLED</p>
 <h3 id="3-属性（Properties）"><a href="#3-属性（Properties）" class="headerlink" title="3. 属性（Properties）"></a>3. 属性（Properties）</h3><p>我们可以通过properties属性来实现引用配置文件</p>
 <p>这些属性可以在外部进行配置，并可以进行动态替换。既可以在典型的 Java 属性文件中配置这些属性，也可以在 properties 元素的子元素中设置。【db.properties】</p>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201105204653974.png" class>
+<img src="/Mybatis/20201105204653974.png" class>
 
 <p>编写一个配置文件</p>
 <p>db.properties</p>
@@ -808,7 +808,7 @@ password <span class="token operator">=</span> root</code></pre>
 </li>
 </ul>
 <h3 id="5-设置（settings）"><a href="#5-设置（settings）" class="headerlink" title="5. 设置（settings）"></a>5. 设置（settings）</h3><p>这是Mybatis中极为重要的调整设置，他们会改变Mybatis的运行时行为</p>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201105212101118.png" class>
+<img src="/Mybatis/20201105212101118.png" class>
 
 <h3 id="6-其他配置"><a href="#6-其他配置" class="headerlink" title="6. 其他配置"></a>6. 其他配置</h3><ul>
 <li>typeHandlers（类型处理器）</li>
@@ -842,10 +842,10 @@ password <span class="token operator">=</span> root</code></pre>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>package</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.susu.dao<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mappers</span><span class="token punctuation">></span></span></code></pre>
 <h2 id="6、解决属性名和字段名不一致的问题"><a href="#6、解决属性名和字段名不一致的问题" class="headerlink" title="6、解决属性名和字段名不一致的问题"></a>6、解决属性名和字段名不一致的问题</h2><h3 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h3><p>数据库中的字段</p>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/2020110522014864.png" class>
+<img src="/Mybatis/2020110522014864.png" class>
 
 <p>新建一个项目，拷贝之前的，测试实体类字段不一致的情况</p>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201105222845660.png" class>
+<img src="/Mybatis/20201105222845660.png" class>
 
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> muser
 <span class="token keyword">select</span> id<span class="token punctuation">,</span>name<span class="token punctuation">,</span>pwd <span class="token keyword">from</span> muser <span class="token keyword">where</span> id <span class="token operator">=</span> <span class="token comment" spellcheck="true">#{id}</span></code></pre>
@@ -872,7 +872,7 @@ password <span class="token operator">=</span> root</code></pre>
 <li>ResultMap 的设计思想是，对简单的语句做到零配置，对于复杂一点的语句，只需要描述语句之间的关系就行了。</li>
 </ul>
 <h2 id="7、日志"><a href="#7、日志" class="headerlink" title="7、日志"></a>7、日志</h2><h3 id="1-日志工厂"><a href="#1-日志工厂" class="headerlink" title="1. 日志工厂"></a>1. 日志工厂</h3><p>如果一个数据库操作出现了异常，我们需要排错，日志就是最好的助手！</p>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201105212101118.png" class>
+<img src="/Mybatis/20201105212101118.png" class>
 
 <ul>
 <li>SLF4J</li>
@@ -889,7 +889,7 @@ password <span class="token operator">=</span> root</code></pre>
 <pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>settings</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>setting</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>logImpl<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>STDOUT_LOGGING<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>settings</span><span class="token punctuation">></span></span></code></pre>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201107085843721.png" class>
+<img src="/Mybatis/20201107085843721.png" class>
 
 <h3 id="2-Log4j"><a href="#2-Log4j" class="headerlink" title="2. Log4j"></a>2. Log4j</h3><p>什么是Log4j？</p>
 <ul>
@@ -939,7 +939,7 @@ log4j.logger.java.sql.PreparedStatement=DEBUG</code></pre>
 <li><p>Log4j的使用！直接测试运行</p>
 </li>
 </ol>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201107145021204.png" class>
+<img src="/Mybatis/20201107145021204.png" class>
 
 <p><strong>简单实用</strong></p>
 <ol>
@@ -1010,7 +1010,7 @@ logger<span class="token punctuation">.</span><span class="token function">error
 <span class="token punctuation">}</span></code></pre>
 </li>
 </ol>
-<h3 id="3-插件实现"><a href="#3-插件实现" class="headerlink" title="3. 插件实现"></a>3. 插件实现</h3><img src="/Mr-lee-MQ.hithub.io/Mybatis/20201107155011558.png" class>
+<h3 id="3-插件实现"><a href="#3-插件实现" class="headerlink" title="3. 插件实现"></a>3. 插件实现</h3><img src="/Mybatis/20201107155011558.png" class>
 
 <p>了解即可</p>
 <h2 id="9、使用注解开发"><a href="#9、使用注解开发" class="headerlink" title="9、使用注解开发"></a>9、使用注解开发</h2><h3 id="1-面向接口编程"><a href="#1-面向接口编程" class="headerlink" title="1. 面向接口编程"></a>1. 面向接口编程</h3><ul>
@@ -1051,10 +1051,10 @@ List<span class="token operator">&lt;</span>User<span class="token operator">></
 </ol>
 <p>本质： 反射机制实现</p>
 <p>底层： 动态代理！</p>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201107172653420.png" class>
+<img src="/Mybatis/20201107172653420.png" class>
 
 <p><strong>Mybatis详细的执行流程</strong></p>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201121115835179.png" class>
+<img src="/Mybatis/20201121115835179.png" class>
 
 <h3 id="3-CURD"><a href="#3-CURD" class="headerlink" title="3. CURD"></a>3. CURD</h3><ol>
 <li><p>我们可以在工具类创建的时候实现事务自动提交</p>
@@ -1131,7 +1131,7 @@ List<span class="token operator">&lt;</span>User<span class="token operator">></
 <h3 id="2-使用步骤："><a href="#2-使用步骤：" class="headerlink" title="2. 使用步骤："></a>2. 使用步骤：</h3><ol>
 <li>在idea中下载插件</li>
 </ol>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201107205012805.png" class>
+<img src="/Mybatis/20201107205012805.png" class>
 
 <ol>
 <li><p>导入依赖</p>
@@ -1154,16 +1154,16 @@ List<span class="token operator">&lt;</span>User<span class="token operator">></
 <span class="token punctuation">}</span></code></pre>
 </li>
 </ol>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201107210641240.png" class>
+<img src="/Mybatis/20201107210641240.png" class>
 
-<h2 id="11、多对一处理"><a href="#11、多对一处理" class="headerlink" title="11、多对一处理"></a>11、多对一处理</h2><img src="/Mr-lee-MQ.hithub.io/Mybatis/2020112111591778.png" class>
+<h2 id="11、多对一处理"><a href="#11、多对一处理" class="headerlink" title="11、多对一处理"></a>11、多对一处理</h2><img src="/Mybatis/2020112111591778.png" class>
 
 <ul>
 <li>多个学生，对应一个老师</li>
 <li>对于学生这边而言， <strong>关联</strong> .. 多个学生，关联一个老师 【多对一】</li>
 <li>对于老师而言， <strong>集合</strong> ， 一个老师，有很多学生 【一对多】</li>
 </ul>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201121115948965.png" class>
+<img src="/Mybatis/20201121115948965.png" class>
 
 <p>sql</p>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>teacher<span class="token punctuation">`</span> <span class="token punctuation">(</span>
@@ -1395,7 +1395,7 @@ foreach</code></pre>
 <li>不要存在where标签</li>
 </ul>
 <h3 id="foreach"><a href="#foreach" class="headerlink" title="foreach"></a>foreach</h3><p>动态 SQL 的另一个常见使用场景是对集合进行遍历（尤其是在构建 IN 条件语句的时候）。</p>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201108200024299.png" class>
+<img src="/Mybatis/20201108200024299.png" class>
 
 <pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>queryBlogForeach<span class="token punctuation">"</span></span> <span class="token attr-name">parameterType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>map<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.susu.pojo.Blog<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     select * from blog
@@ -1477,7 +1477,7 @@ void updateAuthorValues(Author author);</code></pre>
 <li><p>测试在一个session中查询两次相同记录</p>
 </li>
 <li><p>查看日志输出</p>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201108210140810.png" class>
+<img src="/Mybatis/20201108210140810.png" class>
 
 </li>
 </ol>
@@ -1486,12 +1486,12 @@ void updateAuthorValues(Author author);</code></pre>
 <li><p>查询不同的东西</p>
 </li>
 <li><p>增删改操作，可能会改变原来的数据，所以必定会刷新缓存！</p>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201108210746147.png" class>
+<img src="/Mybatis/20201108210746147.png" class>
 </li>
 <li><p>查询不同的Mapper.xml</p>
 </li>
 <li><p>手动清理缓存！</p>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201108210920651.png" class>
+<img src="/Mybatis/20201108210920651.png" class>
 
 </li>
 </ol>
@@ -1528,7 +1528,7 @@ void updateAuthorValues(Author author);</code></pre>
 <li><p>测试</p>
 <ol>
 <li><p>问题：我们需要将实体类序列化，否则就会报错！</p>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/2020110908494028.png" class>
+<img src="/Mybatis/2020110908494028.png" class>
 </li>
 <li><p>需要在实体类中：</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
@@ -1547,7 +1547,7 @@ void updateAuthorValues(Author author);</code></pre>
 <li>所有的数据都会先放在一级缓存中</li>
 <li>只有当回话提交，或者关闭的时候，才会提交到二级缓存中</li>
 </ul>
-<h3 id="5-缓存原理"><a href="#5-缓存原理" class="headerlink" title="5. 缓存原理"></a>5. 缓存原理</h3><img src="/Mr-lee-MQ.hithub.io/Mybatis/20201108221845889.png" class>
+<h3 id="5-缓存原理"><a href="#5-缓存原理" class="headerlink" title="5. 缓存原理"></a>5. 缓存原理</h3><img src="/Mybatis/20201108221845889.png" class>
 
 <h3 id="6-自定义缓存-ehcache"><a href="#6-自定义缓存-ehcache" class="headerlink" title="6. 自定义缓存- ehcache"></a>6. 自定义缓存- ehcache</h3><p>EhCache 是一个纯Java的进程内缓存框架，具有快速、精干等特点，是Hibernate中默认的CacheProvider。</p>
 <p>要在程序中使用ehcache，先导包</p>
@@ -1610,7 +1610,7 @@ void updateAuthorValues(Author author);</code></pre>
         LRU，Least Recent1y used，最近最少使用的，缓存的元素有一个时间戳，当缓存容量满了，而又需要腾出地方来缓存新的元素的时候，那么现有缓存元素中时间戳离当前时间最远的元素将被清出缓存。
 --></span></code></pre>
 <h2 id="15、SQL-语句构建器"><a href="#15、SQL-语句构建器" class="headerlink" title="15、SQL 语句构建器"></a>15、SQL 语句构建器</h2><h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a><strong>问题：</strong></h3><p>Java 程序员面对的最痛苦的事情之一就是在 Java 代码中嵌入 SQL 语句。这通常是因为需要动态生成 SQL 语句，不然我们可以将它们放到外部文件或者存储过程中。如你所见，MyBatis 在 XML 映射中具备强大的 SQL 动态生成能力。但有时，我们还是需要在 Java 代码里构建 SQL 语句。此时，MyBatis 有另外一个特性可以帮到你，让你从处理典型问题中解放出来，比如加号、引号、换行、格式化问题、嵌入条件的逗号管理及 AND 连接。确实，在 Java 代码中动态生成 SQL 代码真的就是一场噩梦。例如：</p>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201109091515173.png" class>
+<img src="/Mybatis/20201109091515173.png" class>
 
 <h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>MyBatis 3 提供了方便的工具类来帮助解决此问题。借助 SQL 类，我们只需要简单地创建一个实例，并调用它的方法即可生成 SQL 语句。让我们来用 SQL 类重写上面的例子：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> String <span class="token function">selectPersonSql</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1689,14 +1689,14 @@ void updateAuthorValues(Author author);</code></pre>
   <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p>注意，SQL 类将原样插入 <code>LIMIT</code>、<code>OFFSET</code>、<code>OFFSET n ROWS</code> 以及 <code>FETCH FIRST n ROWS ONLY</code> 子句。换句话说，类库不会为不支持这些子句的数据库执行任何转换。 因此，用户应该要了解目标数据库是否支持这些子句。如果目标数据库不支持这些子句，产生的 SQL 可能会引起运行错误。</p>
-<h2 id="16、遇到的问题"><a href="#16、遇到的问题" class="headerlink" title="16、遇到的问题"></a>16、遇到的问题</h2><img src="/Mr-lee-MQ.hithub.io/Mybatis/2020111409083967.png" class>
+<h2 id="16、遇到的问题"><a href="#16、遇到的问题" class="headerlink" title="16、遇到的问题"></a>16、遇到的问题</h2><img src="/Mybatis/2020111409083967.png" class>
 
 <p>解决方法：</p>
 <p>中文意思就是统一资源标识符没有注册，解决方法就是将这个标识符手动添加到IDEA中，首先复制报红色的那串代码（只要红色的部分），然后按照步骤添加就行。</p>
 <ul>
 <li>file —&gt; settings- -&gt; languages &amp; frameworks —&gt;Schemas and DTDs,</li>
 </ul>
-<img src="/Mr-lee-MQ.hithub.io/Mybatis/20201114091127577.png" class>
+<img src="/Mybatis/20201114091127577.png" class>
                 
             </div>
             <hr/>

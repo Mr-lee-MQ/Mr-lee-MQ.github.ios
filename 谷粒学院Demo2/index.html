@@ -491,7 +491,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="谷粒学院Demo（前端页面）"><a href="#谷粒学院Demo（前端页面）" class="headerlink" title="谷粒学院Demo（前端页面）"></a>谷粒学院Demo（前端页面）<a id="more"></a></h1><h2 id="1、后台系统登陆功能改造"><a href="#1、后台系统登陆功能改造" class="headerlink" title="1、后台系统登陆功能改造"></a>1、后台系统登陆功能改造</h2><h3 id="1-1、-修改配置文件请求地址"><a href="#1-1、-修改配置文件请求地址" class="headerlink" title="1.1、 修改配置文件请求地址"></a>1.1、 修改配置文件请求地址</h3><p>系统默认使用这个地址</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210424145413313.png" alt="image-20210424145413313"></p>
+<p><img src="/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210424145413313.png" alt="image-20210424145413313"></p>
 <p><strong>更改：</strong>config文件夹中的dev.env.js文件为</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token string">'use strict'</span>
 <span class="token keyword">const</span> merge <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack-merge'</span><span class="token punctuation">)</span>
@@ -504,7 +504,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
   BASE_API<span class="token punctuation">:</span> <span class="token string">'"https://localhost:8001"'</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 <h3 id="1-2、创建接口"><a href="#1-2、创建接口" class="headerlink" title="1.2、创建接口"></a>1.2、创建接口</h3><p><strong>进行登录调用两个方法，login登陆操作方法，和info登陆之后获取用户信息的方法。所以，创建接口的两个方法实现登录</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210424183052388.png" alt="image-20210424183052388"></p>
+<p><img src="/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210424183052388.png" alt="image-20210424183052388"></p>
 <p><strong>创建EduLoginController</strong></p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
 <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"deuservice/user"</span><span class="token punctuation">)</span>
@@ -545,7 +545,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
   <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="1-4、出现并解决跨域问题"><a href="#1-4、出现并解决跨域问题" class="headerlink" title="1.4、出现并解决跨域问题"></a>1.4、出现并解决跨域问题</h3><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426093252038.png" alt="image-20210426093252038"></p>
+<h3 id="1-4、出现并解决跨域问题"><a href="#1-4、出现并解决跨域问题" class="headerlink" title="1.4、出现并解决跨域问题"></a>1.4、出现并解决跨域问题</h3><p><img src="/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426093252038.png" alt="image-20210426093252038"></p>
 <p>No ‘Access-Control-Allow-Origin’  </p>
 <p><strong>跨域问题：</strong>通过一个地址去访问另外一个地址，这个过程中如果有三个地方任何一个不一样，就会产生跨域问题</p>
 <p>访问协议：https   http</p>
@@ -559,7 +559,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <h2 id="2、框架开发流程"><a href="#2、框架开发流程" class="headerlink" title="2、框架开发流程"></a>2、框架开发流程</h2><h3 id="2-1、开发流程"><a href="#2-1、开发流程" class="headerlink" title="2.1、开发流程"></a>2.1、开发流程</h3><ol>
 <li>添加路由</li>
 </ol>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426100147123.png" alt="image-20210426100147123"></p>
+<p><img src="/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426100147123.png" alt="image-20210426100147123"></p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//所有路由都放在一个Map中</span>
 <span class="token keyword">export</span> <span class="token keyword">const</span> constantRouterMap <span class="token operator">=</span> <span class="token punctuation">[</span>
   <span class="token punctuation">{</span> path<span class="token punctuation">:</span> <span class="token string">'/login'</span><span class="token punctuation">,</span> component<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'@/views/login/index'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> hidden<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -601,13 +601,13 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <ol start="2">
 <li>点击某个路由，显示路由对应页面内容</li>
 </ol>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426102926316.png" alt="image-20210426102926316"></p>
+<p><img src="/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426102926316.png" alt="image-20210426102926316"></p>
 <p>component：指向引入页面。也可以在views中创建页面</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426103155481.png" alt="image-20210426103155481"></p>
+<p><img src="/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426103155481.png" alt="image-20210426103155481"></p>
 <ol start="3">
 <li>在api文件夹中创建js文件，定义接口地址和参数。</li>
 </ol>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426104330868.png" alt="image-20210426104330868"></p>
+<p><img src="/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426104330868.png" alt="image-20210426104330868"></p>
 <p>需要修改的参数</p>
 <ol start="4">
 <li>在创建Vue页面引入js文件，调用方法，实现功能，最后使用element-ui显示内容。</li>
@@ -636,11 +636,11 @@ module<span class="token punctuation">.</span>exports <span class="token operato
       <span class="token punctuation">}</span>
     <span class="token punctuation">]</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426105840170.png" alt="image-20210426105840170"></p>
+<p><img src="/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426105840170.png" alt="image-20210426105840170"></p>
 <ol start="2">
 <li>创建路由对应的界面</li>
 </ol>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426111047130.png" alt="image-20210426111047130"></p>
+<p><img src="/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426111047130.png" alt="image-20210426111047130"></p>
 <p>修改访问对应的路径</p>
 <pre class=" language-javascript"><code class="language-javascript">component<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'@/views/edu/teacher/list'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 component<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'@/views/edu/teacher/save'</span><span class="token punctuation">)</span><span class="token punctuation">,</span></code></pre>
@@ -722,7 +722,7 @@ component<span class="token punctuation">:</span> <span class="token punctuation
         }
     }
 </script></code></pre>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426150906363.png" alt="image-20210426150906363"></p>
+<p><img src="/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426150906363.png" alt="image-20210426150906363"></p>
 <ol start="5">
 <li>把请求接口获得的数据在页面上显示</li>
 </ol>
@@ -811,7 +811,7 @@ component<span class="token punctuation">:</span> <span class="token punctuation
         }
     }
 </script></code></pre>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426153424245.png" alt="image-20210426153424245"></p>
+<p><img src="/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210426153424245.png" alt="image-20210426153424245"></p>
 <h3 id="2-3、分页组件"><a href="#2-3、分页组件" class="headerlink" title="2.3、分页组件"></a>2.3、分页组件</h3><pre class=" language-vue"><code class="language-vue"><!-- 分页 -->
     <el-pagination
       :current-page="page"
@@ -1016,7 +1016,7 @@ vue.runtime.esm.js:587 [Vue warn]: Property or method "listLoading" is not defin
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//添加讲师时报错</span>
 <span class="token comment" spellcheck="true">//Data truncation: Data too long for column 'id' at row 1</span>
 <span class="token comment" spellcheck="true">//id设置的长度太短了，从20改到40解决问题</span></code></pre>
-<h3 id="2-7、讲师修改功能"><a href="#2-7、讲师修改功能" class="headerlink" title="2.7、讲师修改功能"></a>2.7、讲师修改功能</h3><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210427185935891.png" alt="image-20210427185935891"></p>
+<h3 id="2-7、讲师修改功能"><a href="#2-7、讲师修改功能" class="headerlink" title="2.7、讲师修改功能"></a>2.7、讲师修改功能</h3><p><img src="/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210427185935891.png" alt="image-20210427185935891"></p>
 <ol>
 <li>添加路由</li>
 </ol>
@@ -1050,7 +1050,7 @@ vue.runtime.esm.js:587 [Vue warn]: Property or method "listLoading" is not defin
 <ul>
 <li>在页面调用接口实现数据的回显</li>
 </ul>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210428173556962.png" alt="image-20210428173556962"></p>
+<p><img src="/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo2/image-20210428173556962.png" alt="image-20210428173556962"></p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//根据讲师Id查询的方法</span>
     <span class="token function">getInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
       teacherApi<span class="token punctuation">.</span><span class="token function">getTeacherInfo</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>

@@ -491,21 +491,21 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法 "></a>数据结构与算法 <a id="more"></a></h1><h2 id="1、数据结构"><a href="#1、数据结构" class="headerlink" title="1、数据结构"></a>1、数据结构</h2><h3 id="1-1、链表"><a href="#1-1、链表" class="headerlink" title="1.1、链表"></a>1.1、链表</h3><p>​    链表是数据结构之一，其中的数据呈线性排列。在链表中，数据的添加和删除都较为方便， 就是访问比较耗费时间。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420221112456.png" alt="image-20210420221112456"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420221112456.png" alt="image-20210420221112456"></p>
 <ul>
 <li>这就是链表的概念图。Blue、Yellow、Red 这 3 个字符串作为数据被存储于链表中。每个数据都有 1 个 “指针”，它指向下一个数据的内存地址。</li>
 <li>在链表中，数据一般都是分散存储于内存中 的，无须存储在连续空间内。</li>
 <li>因为数据都是分散存储的，所以如果想要访问 数据，只能从第1个数据开始，顺着指针的指 向一一往下访问（这便是顺序访问）。比如，想 要找到Red这一数据，就得从Blue开始访问，这之后，还要经过 Yellow，我们才能找到 Red。</li>
 </ul>
 <p><strong>如果想要添加数据，只需要改变添加位置前后 的指针指向就可以</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420221421821.png" alt="image-20210420221421821"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420221421821.png" alt="image-20210420221421821"></p>
 <ul>
 <li><strong>访问数据</strong>时，我们需要从链表头部开始查找（线性查找），如果目标数据在链表最后 的话，需要的时间就是 O(n)。</li>
 <li><strong>添加数据</strong>只需要更改两个指针的指向，所以耗费的时间与 n 无关。如果已 经到达了添加数据的位置，那么添加操作只需花费 O(1) 的时间。删除数据同样也只需 O(1) 的时间。</li>
 </ul>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420221800962.png" alt="image-20210420221800962"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420221800962.png" alt="image-20210420221800962"></p>
 <h3 id="1-2、数组"><a href="#1-2、数组" class="headerlink" title="1.2、数组"></a>1.2、数组</h3><p>​    数组也是数据呈线性排列的一种数据结构。与链表不同，在数组中，访问数据十分 简单，而添加和删除数据比较耗工夫。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420221918737.png" alt="image-20210420221918737"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420221918737.png" alt="image-20210420221918737"></p>
 <ul>
 <li>这就是数组的概念图。Blue、Yellow、Red作为数据存储在数组中。</li>
 <li>数据按顺序存储在内存的连续空间内。</li>
@@ -513,16 +513,16 @@
 <li>比如现在我们想要<strong>访问Red</strong>。如果使用指针就 只能从头开始查找，但在数组中，只需要指定 a[2]，便能直接访问Red。</li>
 <li>如果想在任意位置上<strong>添加或者删除数据</strong>，数组的操作就要比链表复杂多了。这里我 们尝试将Green添加到第2个位置上。</li>
 </ul>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420222214330.png" alt="image-20210420222214330"></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420222252816.png" alt="image-20210420222252816"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420222214330.png" alt="image-20210420222214330"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420222252816.png" alt="image-20210420222252816"></p>
 <p>最后再删掉多余的空间。这样一来Green便被删掉了。</p>
 <ul>
 <li>假设数组中有 n 个数据，由于<strong>访问数据</strong>时使用的是随机访问（通过下标可计算出内存地址），所以需要的运行时间仅为恒定的 O(1)。</li>
 <li>想要向<strong>数组中添加新数据</strong>时，必须把目标位置后面的数据一个个移 开。所以，如果在数组头部添加数据，就需要 O(n) 的时间。删除操作同理。</li>
 </ul>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420222441745.png" alt="image-20210420222441745"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420222441745.png" alt="image-20210420222441745"></p>
 <h3 id="1-3、栈"><a href="#1-3、栈" class="headerlink" title="1.3、栈"></a>1.3、栈</h3><p>​    栈也是一种数据呈线性排列的数据结构，不过在这种结构中，我们只能访问最新添加的数 据。栈就像是一摞书，拿到新书时我们会把它放在书堆的最上面，取书时也只能从最上面的新 书开始取。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420222813666.png" alt="image-20210420222813666"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420222813666.png" alt="image-20210420222813666"></p>
 <ul>
 <li><p><strong>入栈：</strong>往栈中添加数据 的操作叫作“入 栈”（push）。</p>
 </li>
@@ -536,7 +536,7 @@
 </li>
 </ul>
 <h3 id="1-4、队列"><a href="#1-4、队列" class="headerlink" title="1.4、队列"></a>1.4、队列</h3><p>​    队列中的数据是呈线性排列。虽然与栈有些相似，但队列中 添加和删除数据的操作分别是在两端进行的。在队列中，处理总是从第一名开始往后进行，而新来的人只能排在队尾。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420223132296.png" alt="image-20210420223132296"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420223132296.png" alt="image-20210420223132296"></p>
 <ul>
 <li><strong>入队：</strong>往队列中添加 数据的操作叫 作“入队”。</li>
 <li><strong>出队：</strong>从队列中删除 数据的操作叫 作“出队”。</li>
@@ -544,31 +544,31 @@
 <li>在栈中，数据的添加和删除都在同一端进行，而在队列中则分别是在两端进行的。队列也不能直接访问位于中间 的数据，必须通过出队操作将目标数据变成首位后才能访问。</li>
 </ul>
 <h3 id="1-5、哈希表"><a href="#1-5、哈希表" class="headerlink" title="1.5、哈希表"></a>1.5、哈希表</h3><p>在哈希表这种数据结构中，可以使数据的查询效率得 到显著提升。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420223521600.png" alt="image-20210420223521600"></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420223603446.png" alt="image-20210420223603446"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420223521600.png" alt="image-20210420223521600"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420223603446.png" alt="image-20210420223603446"></p>
 <ul>
 <li>0号箱子中存储的键是Joe而不是Ally。1号箱子中的也不是Ally。同样，2号、3号箱子中的也都不是Ally。</li>
 <li>查找到4号箱子的时候，发现其中数据的键为 Ally。把键对应的值取出，我们就知道 Ally 的性 别为女（F）了。</li>
 <li><strong>数据量越多，线性查找耗费的时间就越长。</strong>由 此可知 ：由于数据的查询较为耗时，所以此处 并不适合使用数组来存储数据。</li>
 </ul>
 <p><strong>使用哈希表解决问题</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420223823131.png" alt="image-20210420223823131"></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420223927024.png" alt="image-20210420223927024"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420223823131.png" alt="image-20210420223823131"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420223927024.png" alt="image-20210420223927024"></p>
 <p><strong>哈希冲突</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420224120786.png" alt="image-20210420224120786"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420224120786.png" alt="image-20210420224120786"></p>
 <p><strong>数据的查询方法</strong></p>
 <ul>
 <li><strong>先要算出Ally键的哈希值</strong>，<strong>再对其进行mod运算</strong>。最终得到的结果为3。</li>
 <li>然而3号箱中数据的键是Joe而不是Ally。此 时便需要对Joe<strong>所在的链表进行线性查找</strong>。</li>
 <li>找到了键为Ally的数据。取出其对应 的值，便知道了Ally 的性别为女（F）。</li>
 </ul>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420224602432.png" alt="image-20210420224602432"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420224602432.png" alt="image-20210420224602432"></p>
 <ul>
 <li><strong>链地址法：</strong>在存储数据的过程中，如果发生冲突，可以利用链表在已有数据的后面插入新数据 来解决冲突。</li>
 <li><strong>开放地 址法：</strong>当冲突发生时，立刻计算出一个候补地址（数组上的位置）并将数 据存进去。如果仍然有冲突，便继续计算下一个候补地址，直到有空地址为止。可以通 过多次使用哈希函数或“线性探测法”等方法计算候补地址。</li>
 </ul>
 <h3 id="1-6、堆"><a href="#1-6、堆" class="headerlink" title="1.6、堆"></a>1.6、堆</h3><p>​    堆是一种图的树形结构，被用于实现“优先队列”（priority queues），优先队列是一种数据结构，可以自由添加数据，但取出数据时要从最小值开始按顺 序取出。在堆的树形结构中，各个顶点被称为“结点”（node），数据就存储在这些结点中。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420225114583.png" alt="image-20210420225114583"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image-20210420225114583.png" alt="image-20210420225114583"></p>
 <ul>
 <li>在堆中存储数据时必须遵守这 样一条规则 ：子结点必定大于父 结点。</li>
 </ul>

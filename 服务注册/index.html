@@ -867,9 +867,9 @@ eureka:
         <span class="token keyword">return</span> restTemplate<span class="token punctuation">.</span><span class="token function">postForObject</span><span class="token punctuation">(</span>PAYENT_URL<span class="token operator">+</span><span class="token string">"/payment/create"</span><span class="token punctuation">,</span>payment<span class="token punctuation">,</span>CommonResult<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h3 id="5、Eureka集群"><a href="#5、Eureka集群" class="headerlink" title="5、Eureka集群"></a>5、Eureka集群</h3><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/image-20211002142502121.png" alt="image-20211002142502121"></p>
+<h3 id="5、Eureka集群"><a href="#5、Eureka集群" class="headerlink" title="5、Eureka集群"></a>5、Eureka集群</h3><p><img src="/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/image-20211002142502121.png" alt="image-20211002142502121"></p>
 <p><strong>集群要点：互相注册，互相守望</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/image-20211002143156250.png" alt="image-20211002143156250"></p>
+<p><img src="/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/image-20211002143156250.png" alt="image-20211002143156250"></p>
 <h3 id="6、集群搭建"><a href="#6、集群搭建" class="headerlink" title="6、集群搭建"></a>6、集群搭建</h3><ol>
 <li>服务端注册中心集群搭建（7001,7002）仿写7001.得到7002</li>
 <li>修改hosts文件</li>
@@ -1045,7 +1045,7 @@ eureka:
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="9、Eureka自我保护机制"><a href="#9、Eureka自我保护机制" class="headerlink" title="9、Eureka自我保护机制"></a>9、Eureka自我保护机制</h3><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/image-20211002160532718.png" alt="image-20211002160532718"></p>
+<h3 id="9、Eureka自我保护机制"><a href="#9、Eureka自我保护机制" class="headerlink" title="9、Eureka自我保护机制"></a>9、Eureka自我保护机制</h3><p><img src="/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/image-20211002160532718.png" alt="image-20211002160532718"></p>
 <p><strong>原因</strong></p>
 <p>某时刻某一个微服务不可用了，Eureka不会立刻清理，，依旧会对该微服务的信息进行保存。<strong>属于ACP中的AP分支</strong></p>
 <p><strong>自我保护机制的定义</strong></p>
@@ -1467,7 +1467,7 @@ spring:
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h2 id="4、三种注册中心的异同点"><a href="#4、三种注册中心的异同点" class="headerlink" title="4、三种注册中心的异同点"></a>4、三种注册中心的异同点</h2><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/image-20211002173957900.png" alt="image-20211002173957900"></p>
+<h2 id="4、三种注册中心的异同点"><a href="#4、三种注册中心的异同点" class="headerlink" title="4、三种注册中心的异同点"></a>4、三种注册中心的异同点</h2><p><img src="/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/image-20211002173957900.png" alt="image-20211002173957900"></p>
 <p><strong>CAP理论</strong></p>
 <p>CAP理论关注粒度是数据，而不是整体系统设计的策略。</p>
 <ul>
@@ -1477,9 +1477,9 @@ spring:
 </ul>
 <p><strong>经典CAP图</strong></p>
 <p><strong>AP：</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/image-20211002174424525.png" alt="image-20211002174424525"></p>
+<p><img src="/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/image-20211002174424525.png" alt="image-20211002174424525"></p>
 <p><strong>CP：</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/image-20211002174527825.png" alt="image-20211002174527825"></p>
+<p><img src="/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/image-20211002174527825.png" alt="image-20211002174527825"></p>
 
                 
             </div>

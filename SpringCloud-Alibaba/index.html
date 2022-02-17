@@ -775,7 +775,7 @@ server-url:
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p><strong>服务注册中心对比</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/SpringCloud-Alibaba/image-20211010174738127.png" alt="image-20211010174738127"></p>
+<p><img src="/SpringCloud-Alibaba/image-20211010174738127.png" alt="image-20211010174738127"></p>
 <p><strong>Nacos支持AP和CP的切换</strong></p>
 <p>C是所有节点在同一时间看到的数据是一致的；而A的定义是所有的请求都会收到响应。</p>
 <p><strong>何时选则使用哪种模式？</strong></p>
@@ -930,7 +930,7 @@ spring:
 <ol start="2">
 <li>三者关系</li>
 </ol>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/SpringCloud-Alibaba/image-20211011110715686.png" alt="image-20211011110715686"></p>
+<p><img src="/SpringCloud-Alibaba/image-20211011110715686.png" alt="image-20211011110715686"></p>
 <ol start="3">
 <li>为何如此设计？</li>
 </ol>
@@ -1029,7 +1029,7 @@ spring:
 <li><p>编辑nacos的启动脚本startup.sh，使它能够接受不同的启动端口</p>
 </li>
 </ol>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/SpringCloud-Alibaba/image-20211011131016639.png" alt="image-20211011131016639"></p>
+<p><img src="/SpringCloud-Alibaba/image-20211011131016639.png" alt="image-20211011131016639"></p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*
 1. 将while getopts ":m:f:s:" opt    
  改为
@@ -1312,7 +1312,7 @@ management:
 <blockquote>
 <p>基本使用</p>
 </blockquote>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/SpringCloud-Alibaba/20191025165142913.png" alt="img"></p>
+<p><img src="/SpringCloud-Alibaba/20191025165142913.png" alt="img"></p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*
 @SentinelResource(value = "testHotKey" 作为唯一标识
 blockHandler = "deal_testHotKet"    触发热点规则后，调用deal_testHotKet方法。
@@ -1338,7 +1338,7 @@ blockHandler = "deal_testHotKet"    触发热点规则后，调用deal_testHotKe
 <p>我们期望p1参数当它是某个特殊值的时候，它的限流值和平时不一样。</p>
 <p>假如当p1的值等于5时，它的阙值可以达到200。</p>
 <h3 id="7、系统规则"><a href="#7、系统规则" class="headerlink" title="7、系统规则"></a>7、系统规则</h3><p><strong>系统自适应限流</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/SpringCloud-Alibaba/image-20211015100602473.png" alt="image-20211015100602473"></p>
+<p><img src="/SpringCloud-Alibaba/image-20211015100602473.png" alt="image-20211015100602473"></p>
 <p>系统保护规则是从应用级别的入口流量进行控制，从单台机器的load，CPU使用率，平均RT，入口QPS和并发线程数等几个维度监控应用指标，让系统尽可能跑在最大吞吐量的同时保证系统整体性的稳定性。</p>
 <p>系统保护规则是应用整体维度的，而不是资源维度的，并且仅对入口流量生效，入口流量指的是进入应用的流量，比如Web服务或者Dubbo服务端接受的请求，都属于入口流量。</p>
 <p>系统规则支持以下的模式：</p>
@@ -1525,9 +1525,9 @@ blockHandler = "deal_testHotKet"    触发热点规则后，调用deal_testHotKe
             data_type: json
             rule_type: flow</code></pre>
 <p><strong>在nacos控制台中新建配置</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/SpringCloud-Alibaba/image-20211015131241743.png" alt="image-20211015131241743"></p>
+<p><img src="/SpringCloud-Alibaba/image-20211015131241743.png" alt="image-20211015131241743"></p>
 <p><strong>配置内容解析</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/SpringCloud-Alibaba/image-20211015131429838.png" alt="image-20211015131429838"></p>
+<p><img src="/SpringCloud-Alibaba/image-20211015131429838.png" alt="image-20211015131429838"></p>
 <ul>
 <li>resouse：资源名称</li>
 <li>limitApp：来源应用</li>
@@ -1549,7 +1549,7 @@ blockHandler = "deal_testHotKet"    触发热点规则后，调用deal_testHotKe
 <p><strong>Transaction Manager(TM)：</strong>控制全局事务的边界,负责开启一个全局事务,并最终发起全局提交或全局回滚的决议。</p>
 <p><strong>Resource Manager(RM)：</strong>控制分支事务,负责分支注册、状态汇报,并接受事务协调的指令,驱动分支(本地)事务的提交和回滚。</p>
 <p><strong>处理过程：</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/SpringCloud-Alibaba/image-20211015134919895.png" alt="image-20211015134919895"></p>
+<p><img src="/SpringCloud-Alibaba/image-20211015134919895.png" alt="image-20211015134919895"></p>
 <ol>
 <li>TM向TC申请开启一个全局事务，全局事务创建成功并生成一个全局唯一的XID；</li>
 <li>XID在微服务调用链路的上下文中传播</li>
@@ -1578,7 +1578,7 @@ password:
 <li><p>修改registry.conf配置文件，目的是指明配置中心为nacos，以及修改nacos连接信息。</p>
 </li>
 </ol>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/SpringCloud-Alibaba/image-20211015144627179.png" alt="image-20211015144627179"></p>
+<p><img src="/SpringCloud-Alibaba/image-20211015144627179.png" alt="image-20211015144627179"></p>
 <pre class=" language-xml"><code class="language-xml">registry{
 type = "nacos"
 }
@@ -2956,7 +2956,7 @@ config <span class="token punctuation">{</span>
 <h3 id="4、Seata补充"><a href="#4、Seata补充" class="headerlink" title="4、Seata补充"></a>4、Seata补充</h3><blockquote>
 <p>TC/TM/RM三个组件</p>
 </blockquote>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/SpringCloud-Alibaba/image-20211015144627170.png" alt></p>
+<p><img src="/SpringCloud-Alibaba/image-20211015144627170.png" alt></p>
 <blockquote>
 <p>分布式事务的执行流程</p>
 </blockquote>
@@ -2993,14 +2993,14 @@ config <span class="token punctuation">{</span>
 <li>其保存成“after image”，最后生成行锁。</li>
 </ol>
 <p>以上操作全部在一个数据库事务中完成，这样保证了一阶段操作的原子性。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/SpringCloud-Alibaba/image-20211016102335449.png" alt="image-20211016102335449"></p>
+<p><img src="/SpringCloud-Alibaba/image-20211016102335449.png" alt="image-20211016102335449"></p>
 <p><strong>二阶段提交：</strong></p>
 <p>二阶段如果顺利提交的话，因为业务SQL在一阶段已经提交至数据库，所以Seata框架只需将一阶段保存的快照数据和行锁删掉，完成数据清理即可。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/SpringCloud-Alibaba/image-20211016102844204.png" alt="image-20211016102844204"></p>
+<p><img src="/SpringCloud-Alibaba/image-20211016102844204.png" alt="image-20211016102844204"></p>
 <p><strong>三阶段回滚：</strong></p>
 <p>二阶段如果是回滚的话，Seata就需要回滚一阶段已经执行的业务SQL，还原业务数据。</p>
 <p>回滚方式便是用“before image”还原业务数据；但在还原前首先要校验脏写，对比“数据库当前业务数据”和“after image”，如果两份数据完全一致就说明没有脏写，可以还原业务数据，如果不一致就说明有脏写，出现脏写就需要转人工处理。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/SpringCloud-Alibaba/image-20211016103513868.png" alt="image-20211016103513868"></p>
+<p><img src="/SpringCloud-Alibaba/image-20211016103513868.png" alt="image-20211016103513868"></p>
 
                 
             </div>

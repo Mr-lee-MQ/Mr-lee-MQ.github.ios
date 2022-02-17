@@ -490,7 +490,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1、Offer来了-网络与负载均衡"><a href="#1、Offer来了-网络与负载均衡" class="headerlink" title="1、Offer来了_网络与负载均衡"></a>1、Offer来了_网络与负载均衡<a id="more"></a></h1><h2 id="1-1、网络"><a href="#1-1、网络" class="headerlink" title="1.1、网络"></a>1.1、网络</h2><h3 id="1-1-1、OSI七层网络模型"><a href="#1-1-1、OSI七层网络模型" class="headerlink" title="1.1.1、OSI七层网络模型"></a>1.1.1、OSI七层网络模型</h3><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/705728-20160424234824085-667046040.png" alt="img"></p>
+                <h1 id="1、Offer来了-网络与负载均衡"><a href="#1、Offer来了-网络与负载均衡" class="headerlink" title="1、Offer来了_网络与负载均衡"></a>1、Offer来了_网络与负载均衡<a id="more"></a></h1><h2 id="1-1、网络"><a href="#1-1、网络" class="headerlink" title="1.1、网络"></a>1.1、网络</h2><h3 id="1-1-1、OSI七层网络模型"><a href="#1-1-1、OSI七层网络模型" class="headerlink" title="1.1.1、OSI七层网络模型"></a>1.1.1、OSI七层网络模型</h3><p><img src="/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/705728-20160424234824085-667046040.png" alt="img"></p>
 <ul>
 <li><strong>物理层：</strong>主要定义物理设备标准，如网线的接口类型、光纤的接口类型、各种传输介质的传输速率 等。它的主要作用是传输比特流（就是由 1、0 转化为电流强弱来进行传输,到达目的地后在转化为 1、0，也就是我们常说的模数转换与数模转换）。这一层的数据叫做<strong>比特</strong>。</li>
 <li><strong>数据链路层：</strong>主要将从物理层接收的数据进行 MAC 地址（网卡的地址）的封装与解封装。常把这 一层的数据叫做<strong>帧</strong>。在这一层工作的设备是交换机，数据通过交换机来传输。 </li>
@@ -508,7 +508,7 @@
 <li><strong>应用层：</strong>包含所有的高层协议，包括：虚拟终端协议(TELNET， TELecommunications NETwork)、文件传输协议(FTP，File Transfer Protocol)、电子邮件传输协议(SMTP，Simple Mail Transfer Protocol)、域名服务(DNS，Domain Name  13/04/2018 Page 161 of 283 Service)、网上新闻传输协议(NNTP，Net News Transfer Protocol)和超文本传送协议 (HTTP，HyperText Transfer Protocol)等。</li>
 </ul>
 <h3 id="1-1-3、TCP三次握手-四次挥手"><a href="#1-1-3、TCP三次握手-四次挥手" class="headerlink" title="1.1.3、TCP三次握手/四次挥手"></a>1.1.3、TCP三次握手/四次挥手</h3><p>TCP 在传输之前会进行三次沟通，一般称为“三次握手”，传完数据断开的时候要进行四次沟通，一般 称为“四次挥手”。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/20180208112533496" alt="img"></p>
+<p><img src="/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/20180208112533496" alt="img"></p>
 <h4 id="1-1-3-1、TCP的数据包结构"><a href="#1-1-3-1、TCP的数据包结构" class="headerlink" title="1.1.3.1、TCP的数据包结构"></a>1.1.3.1、TCP的数据包结构</h4><ul>
 <li>源端口号（ 16 位）：它（连同源主机 IP 地址）标识源主机的一个应用进程。 </li>
 <li>目的端口号（ 16 位）：它（连同目的主机 IP 地址）标识目的主机的一个应用进程。这两个值 加上 IP 报头中的源主机 IP 地址和目的主机 IP 地址唯一确定一个 TCP 连接。 </li>
@@ -531,8 +531,8 @@
 <li>选项：最常见的可选字段是最长报文大小，又称为 MSS(Maximum Segment Size) 。每个连 接方通常都在通信的第一个报文段（为建立连接而设置 SYN 标志的那个段）中指明这个选项， 它指明本端所能接收的最大长度的报文段。选项长度不一定是 32 位字的整数倍，所以要加填充 位，使得报头长度成为整字数。 </li>
 <li>数据： TCP 报文段中的数据部分是可选的。在一个连接建立和一个连接终止时，双方交换的报 文段仅有 TCP 首部。如果一方没有数据要发送，也使用没有任何数据的首部来确认收到的数 据。在处理超时的许多情况中，也会发送不带任何数据的报文段。</li>
 </ul>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/image-20210731162816712.png" alt="image-20210731162816712"></p>
-<h4 id="1-1-3-2、三次握手"><a href="#1-1-3-2、三次握手" class="headerlink" title="1.1.3.2、三次握手"></a>1.1.3.2、三次握手</h4><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/20191129144820655.png" alt="img"></p>
+<p><img src="/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/image-20210731162816712.png" alt="image-20210731162816712"></p>
+<h4 id="1-1-3-2、三次握手"><a href="#1-1-3-2、三次握手" class="headerlink" title="1.1.3.2、三次握手"></a>1.1.3.2、三次握手</h4><p><img src="/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/20191129144820655.png" alt="img"></p>
 <p>​        <strong>第一次握手：</strong>客户主动（active open）去connect服务器，并且发送SYN 假设序列号为J,服务器是被动打开(passive open)。</p>
 <p>​        <strong>第二次握手：</strong>服务器在收到SYN后，它会发送一个SYN以及一个ACK（应答）给客户，ACK的序列号是 J+1表示是给SYN J的应答，新发送的SYN K 序列号是K。</p>
 <p>​        <strong>第三次握手：</strong>客户在收到新SYN K, ACK J+1 后，也回应ACK K+1 以表示收到了，然后两边就可以开始数据发送数据了。</p>
@@ -543,7 +543,7 @@
 </ul>
 <h4 id="1-1-3-3、四次挥手"><a href="#1-1-3-3、四次挥手" class="headerlink" title="1.1.3.3、四次挥手"></a>1.1.3.3、四次挥手</h4><p>​        TCP 建立连接要进行三次握手，而断开连接要进行四次。这是由于 TCP 的半关闭造成的。因为 TCP 连 接是全双工的(即数据可在两个方向上同时传递)所以进行关闭时每个方向上都要单独进行关闭。这个单 方向的关闭就叫半关闭。当一方完成它的数据发送任务，就发送一个 FIN 来向另一方通告将要终止这个 方向的连接。</p>
 <p>​        TCP断开连接可以由客户端发起（客户端主动断开连接），也可以由服务端发起（服务端主动断开连接）。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/image-20210731165436492.png" alt="image-20210731165436492"></p>
+<p><img src="/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/image-20210731165436492.png" alt="image-20210731165436492"></p>
 <p>​        <strong>第一次挥手：</strong>客户端应用进程调用断开连接的请求，向服务器短发送一个 终止标志位 FIN = 1，seq = u 的消息，表示在客户端关闭链路前要发送的数据已经发送完毕，可以开始关闭链路操作，并请求服务器端确认关闭服务器到客户端的链路操作。此时客户端处于FIN-WAIT-1的状态。</p>
 <p>​        <strong>第二次挥手：</strong>服务器在收到这个 FIN 的消息后返回一个 ACK = 1 ,seq = v , ack = u+1 的消息给客户端，表示接收到客户端断开链路的请求操作，这时 TCP 服务器端进程通知高层应用进程释放客户端到服务端的链路，服务器处于CLOSE-WAIT状态，即半关闭状态。客户端在收到消息后处于 FIN- WAIT-2状态。</p>
 <p>​        <strong>第三次挥手：</strong>服务器端在关闭链路前将需要发送个客户端的消息发送给客户端，等待该数据发送完成后，发送一个终止标志位 FIN  = 1 ，ASK = 1 ，seq = w ，ack = u + 1 ，的消息给客户端，表示关闭链路前服务器需要向客户端发送的消息已经发送完毕，请求客户端确认关闭从服务器端到客户端的链路操作，此时服务器端处于 LAST-ACK 状态，等待客户端最终断开链路。</p>
@@ -570,9 +570,9 @@
 </ul>
 <h4 id="1-1-4-2、HTTP中常见的状态码"><a href="#1-1-4-2、HTTP中常见的状态码" class="headerlink" title="1.1.4.2、HTTP中常见的状态码"></a>1.1.4.2、HTTP中常见的状态码</h4><p>​    在HTTP请求中，无论请求成功还是失败都会有对应的状态码返回。状态码是我们定位错误的主要依据，一般 “20x”格式的状态码表示成功，“30x”格式的状态码表示网络重定向，“40x”格式的状态码表示客户端请求错误，“50x”格式的状态码标识服务器错误。</p>
 <p><strong>常见状态码如下：</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/image-20210731181701046.png" alt="image-20210731181701046"></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/image-20210731181729606.png" alt="image-20210731181729606"></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/image-20210731181747881.png" alt="image-20210731181747881"></p>
+<p><img src="/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/image-20210731181701046.png" alt="image-20210731181701046"></p>
+<p><img src="/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/image-20210731181729606.png" alt="image-20210731181729606"></p>
+<p><img src="/Offer%E6%9D%A5%E4%BA%86-%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/image-20210731181747881.png" alt="image-20210731181747881"></p>
 <h4 id="1-1-4-3、-HTTPS"><a href="#1-1-4-3、-HTTPS" class="headerlink" title="1.1.4.3、 HTTPS"></a>1.1.4.3、 HTTPS</h4><p>​        HTTPS是以安全为目标的HTTP通道，它在HTTP中加入SSL层以提高数据传输的安全性。HTTP被用于在Web浏览器和网站服务器之间传递信息，但以明文方式发送内容，不提供任何方式的数据加密，如果攻击者截取了Web浏览器和网站服务器之间的传输报文，就可以直接读懂其中的信息，因此HTTP不适合传输一些敏感信息，比如身份证号码，密码等。为了数据传输的安全，HTTPS在HTTP的基础上加入了SSL协议，SSL依靠证书来验证服务器的身份，并对浏览器和服务器之间的通信进行数据加密，以保障数据传输的安全性，其端口一般为443。</p>
 <p>​        <strong>HTTP的加密流程：</strong></p>
 <ul>

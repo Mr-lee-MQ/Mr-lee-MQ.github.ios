@@ -493,16 +493,16 @@
                 <h1 id="MyBatis-Plus简介"><a href="#MyBatis-Plus简介" class="headerlink" title="MyBatis-Plus简介"></a>MyBatis-Plus简介<a id="more"></a></h1><blockquote>
 <p>MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis<br>的基础上只做增强不做改变，为简化开发、提高效率而生。<br>MyBatis 最好的搭档，就像 魂斗罗 中的 1P、2P，基友搭配，效率翻倍。</p>
 </blockquote>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503203750655.png" class>
+<img src="/MyBatisPlus/20200503203750655.png" class>
 
 <h2 id="为什么要学习它呢？"><a href="#为什么要学习它呢？" class="headerlink" title="为什么要学习它呢？"></a>为什么要学习它呢？</h2><blockquote>
 <p>MyBatisPlus可以节省我们大量工作时间，所有的CRUD代码它都可以自动化完成！</p>
 </blockquote>
-<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503203844412.png" class>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><img src="/MyBatisPlus/20200503203844412.png" class>
 
-<h2 id="支持数据库"><a href="#支持数据库" class="headerlink" title="支持数据库"></a>支持数据库</h2><img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/2020050320390716.png" class>
+<h2 id="支持数据库"><a href="#支持数据库" class="headerlink" title="支持数据库"></a>支持数据库</h2><img src="/MyBatisPlus/2020050320390716.png" class>
 
-<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503203930412.png" class>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><img src="/MyBatisPlus/20200503203930412.png" class>
 
 <h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><ol>
 <li>创建user表</li>
@@ -558,10 +558,10 @@ INSERT INTO user (id, name, age, email) VALUES
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>runtime<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span></code></pre>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503204841423.png" class>
+<img src="/MyBatisPlus/20200503204841423.png" class>
 
 <ol>
-<li>配置 连接数据库<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503210714437.png" class>
+<li>配置 连接数据库<img src="/MyBatisPlus/20200503210714437.png" class>
 
 </li>
 </ol>
@@ -589,7 +589,7 @@ INSERT INTO user (id, name, age, email) VALUES
 <ol>
 <li>创建启动类</li>
 </ol>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503210253206.png" class>
+<img src="/MyBatisPlus/20200503210253206.png" class>
 
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
 <span class="token annotation punctuation">@MapperScan</span><span class="token punctuation">(</span><span class="token string">"com.mybatisplus.mybatisplus.mapper"</span><span class="token punctuation">)</span>
@@ -599,8 +599,8 @@ INSERT INTO user (id, name, age, email) VALUES
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <ol>
-<li>测试<br>查询全部用户<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503210742607.png" class>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503210748929.png" class>
+<li>测试<br>查询全部用户<img src="/MyBatisPlus/20200503210742607.png" class>
+<img src="/MyBatisPlus/20200503210748929.png" class>
 
 </li>
 </ol>
@@ -618,15 +618,15 @@ INSERT INTO user (id, name, age, email) VALUES
 <p>通过以上几个简单的步骤，我们就实现了 User 表的 CRUD 功能，甚至连 XML 文件都不用编写！<br>从以上步骤中，我们可以看到集成MyBatis-Plus非常的简单，只需要引入 starter 工程，并配置 mapper 扫描路径即可。<br>但 MyBatis-Plus 的强大远不止这些功能，想要详细了解 MyBatis-Plus 的强大功能？那就继续往下看吧！（官网原话）</p>
 </blockquote>
 <h2 id="配置日志"><a href="#配置日志" class="headerlink" title="配置日志"></a>配置日志</h2><p>所有的sql不可见，我们需要观看sql是怎么执行的</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503211316108.png" class>
+<img src="/MyBatisPlus/20200503211316108.png" class>
 
 <pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true">#mybatis日志配置</span>
 <span class="token key atrule">mybatis-plus</span><span class="token punctuation">:</span>
   <span class="token key atrule">configuration</span><span class="token punctuation">:</span>
     <span class="token key atrule">log-impl</span><span class="token punctuation">:</span> org.apache.ibatis.logging.stdout.StdOutImpl</code></pre>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503211404264.png" class>
+<img src="/MyBatisPlus/20200503211404264.png" class>
 
-<h1 id="CRUD拓展"><a href="#CRUD拓展" class="headerlink" title="CRUD拓展"></a>CRUD拓展</h1><h2 id="insert插入"><a href="#insert插入" class="headerlink" title="insert插入"></a>insert插入</h2><img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503211616588.png" class>
+<h1 id="CRUD拓展"><a href="#CRUD拓展" class="headerlink" title="CRUD拓展"></a>CRUD拓展</h1><h2 id="insert插入"><a href="#insert插入" class="headerlink" title="insert插入"></a>insert插入</h2><img src="/MyBatisPlus/20200503211616588.png" class>
 
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Test</span>
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testinsert</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -636,19 +636,19 @@ INSERT INTO user (id, name, age, email) VALUES
         u<span class="token punctuation">.</span><span class="token function">setEmail</span><span class="token punctuation">(</span><span class="token string">"2332810801@qq.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         mapper<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>u<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span></code></pre>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503211654341.png" class>
+<img src="/MyBatisPlus/20200503211654341.png" class>
 <p><strong>ID会自动生成</strong></p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503211751288.png" class>
+<img src="/MyBatisPlus/20200503211751288.png" class>
 <p>常见的id生成有</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503211901873.png" class>
+<img src="/MyBatisPlus/20200503211901873.png" class>
 
 <h3 id="雪花算法"><a href="#雪花算法" class="headerlink" title="雪花算法"></a>雪花算法</h3><p>自增ID：对于数据敏感场景不宜使用，且不适合于分布式场景。<br>GUID：采用无意义字符串，数据量增大时造成访问过慢，且不宜排序。</p>
 <p>最高位是符号位，始终为0，不可用。<br>41位的时间序列，精确到毫秒级，41位的长度可以使用69年。时间位还有一个很重要的作用是可以根据时间进行排序。<br>10位的机器标识，10位的长度最多支持部署1024个节点。<br>12位的计数序列号，序列号即一系列的自增id，可以支持同一节点同一毫秒生成多个ID序号，12位的计数序列号支持每个节点每毫秒产生4096个ID序号。</p>
-<h2 id="测试不同的主键自增策略"><a href="#测试不同的主键自增策略" class="headerlink" title="测试不同的主键自增策略"></a>测试不同的主键自增策略</h2><img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503212427469.png" class>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503212506356.png" class>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/202005032125547.png" class>
+<h2 id="测试不同的主键自增策略"><a href="#测试不同的主键自增策略" class="headerlink" title="测试不同的主键自增策略"></a>测试不同的主键自增策略</h2><img src="/MyBatisPlus/20200503212427469.png" class>
+<img src="/MyBatisPlus/20200503212506356.png" class>
+<img src="/MyBatisPlus/202005032125547.png" class>
 <p>自增策略</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503212641282.png" class>
+<img src="/MyBatisPlus/20200503212641282.png" class>
 
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">enum</span> IdType <span class="token punctuation">{</span>
     <span class="token function">AUTO</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">//主键自增</span>
@@ -658,25 +658,25 @@ INSERT INTO user (id, name, age, email) VALUES
     <span class="token function">UUID</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">//全局唯一id uuid</span>
     <span class="token function">ID_WORKER_STR</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//字符串表示法</span>
 <span class="token punctuation">}</span></code></pre>
-<h2 id="update更新"><a href="#update更新" class="headerlink" title="update更新"></a>update更新</h2><img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503213252886.png" class>
+<h2 id="update更新"><a href="#update更新" class="headerlink" title="update更新"></a>update更新</h2><img src="/MyBatisPlus/20200503213252886.png" class>
 
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503213324290.png" class>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/202005032133502.png" class>
+<img src="/MyBatisPlus/20200503213324290.png" class>
+<img src="/MyBatisPlus/202005032133502.png" class>
 
 <h3 id="自动填充"><a href="#自动填充" class="headerlink" title="自动填充"></a>自动填充</h3><p>创建时间、修改时间、这些操作是自动化完成的，我们不希望手动更新<br>阿里巴巴手册：所有数据表：gmt_create、gmt_modified几乎所有的表都要配置上！而且需要自动化！</p>
 <p>方式一：数据库级别</p>
 <ol>
-<li>在表中新增字段 create_time, update_time<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503213829562.png" class>
-再次测试，同步实体类<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503214147911.png" class>
+<li>在表中新增字段 create_time, update_time<img src="/MyBatisPlus/20200503213829562.png" class>
+再次测试，同步实体类<img src="/MyBatisPlus/20200503214147911.png" class>
 运行测试</li>
 </ol>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503214125535.png" class>
+<img src="/MyBatisPlus/20200503214125535.png" class>
 
 <p>方式二：代码级别</p>
 <ol>
-<li>删除数据库的默认值<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503214300654.png" class></li>
-<li>实体类上增加注解<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503214501160.png" class></li>
-<li>编写handler策略<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503215050999.png" class>
+<li>删除数据库的默认值<img src="/MyBatisPlus/20200503214300654.png" class></li>
+<li>实体类上增加注解<img src="/MyBatisPlus/20200503214501160.png" class></li>
+<li>编写handler策略<img src="/MyBatisPlus/20200503215050999.png" class>
 
 </li>
 </ol>
@@ -697,7 +697,7 @@ INSERT INTO user (id, name, age, email) VALUES
         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setFieldValByName</span><span class="token punctuation">(</span><span class="token string">"updateTime"</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>metaObject<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503215735933.png" class>
+<img src="/MyBatisPlus/20200503215735933.png" class>
 
 <h2 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h2><p>在面试过程中，我们经常会被问道乐观锁，悲观锁！这个其实非常简单！</p>
 <blockquote>
@@ -705,9 +705,9 @@ INSERT INTO user (id, name, age, email) VALUES
 </blockquote>
 <p>乐观锁实现方式：<br>取出记录时，获取当前version<br>更新时，带上这个version<br>执行更新时， set version = newVersion where version = oldVersion<br>如果version不对，就更新失败</p>
 <h2 id="测试mybatisplus的乐观锁"><a href="#测试mybatisplus的乐观锁" class="headerlink" title="测试mybatisplus的乐观锁"></a>测试mybatisplus的乐观锁</h2><p>添加字段 默认值为1</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503221931299.png" class>
+<img src="/MyBatisPlus/20200503221931299.png" class>
 <p>同步实体类</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503222058341.png" class>
+<img src="/MyBatisPlus/20200503222058341.png" class>
 <p>配置乐观锁</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@EnableTransactionManagement</span>
 <span class="token annotation punctuation">@Configuration</span>
@@ -718,18 +718,18 @@ INSERT INTO user (id, name, age, email) VALUES
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p>测试乐观锁成功案例</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503222640961.png" class>
+<img src="/MyBatisPlus/20200503222640961.png" class>
 
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503222742557.png" class>
+<img src="/MyBatisPlus/20200503222742557.png" class>
 
 <p>会发现更新操作时默认带上version</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503222756123.png" class>
+<img src="/MyBatisPlus/20200503222756123.png" class>
 <p>失败案例</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503223236768.png" class>
+<img src="/MyBatisPlus/20200503223236768.png" class>
 
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503223222759.png" class>
+<img src="/MyBatisPlus/20200503223222759.png" class>
 <p>第二次修改并没有成功</p>
-<h2 id="select查询操作"><a href="#select查询操作" class="headerlink" title="select查询操作"></a>select查询操作</h2><img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503224216425.png" class>
+<h2 id="select查询操作"><a href="#select查询操作" class="headerlink" title="select查询操作"></a>select查询操作</h2><img src="/MyBatisPlus/20200503224216425.png" class>
 
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Test</span>
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testselect01</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//查询单个用户</span>
@@ -758,7 +758,7 @@ INSERT INTO user (id, name, age, email) VALUES
 <li>MybatisPlus内置插件</li>
 </ol>
 <p>如何使用<br>配置config</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503224722674.png" class>
+<img src="/MyBatisPlus/20200503224722674.png" class>
 
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//分页插件</span>
     <span class="token annotation punctuation">@Bean</span>
@@ -766,7 +766,7 @@ INSERT INTO user (id, name, age, email) VALUES
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">PaginationInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span></code></pre>
 <p>直接使用即可</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503225515536.png" class>
+<img src="/MyBatisPlus/20200503225515536.png" class>
 
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//分页插件</span>
     <span class="token annotation punctuation">@Test</span>
@@ -779,9 +779,9 @@ INSERT INTO user (id, name, age, email) VALUES
         objectPage<span class="token punctuation">.</span><span class="token function">getRecords</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//获取数据</span>
         objectPage<span class="token punctuation">.</span><span class="token function">getRecords</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//打印输出</span>
     <span class="token punctuation">}</span></code></pre>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503225152904.png" class>
+<img src="/MyBatisPlus/20200503225152904.png" class>
 
-<h2 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h2><img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503230008809.png" class>
+<h2 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h2><img src="/MyBatisPlus/20200503230008809.png" class>
 
 <pre class=" language-java"><code class="language-java"> <span class="token comment" spellcheck="true">//删除操作 根据ID删除 单个</span>
     <span class="token annotation punctuation">@Test</span>
@@ -807,24 +807,24 @@ INSERT INTO user (id, name, age, email) VALUES
 <p>使用：</p>
 <ol>
 <li><p>在数据库中增加一个delete字段 默认值为0</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503230415359.png" class>
+<img src="/MyBatisPlus/20200503230415359.png" class>
 </li>
 <li><p>实体类同步</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503230524362.png" class>
+<img src="/MyBatisPlus/20200503230524362.png" class>
 </li>
 <li><p>配置逻辑删除</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503230710680.png" class>
+<img src="/MyBatisPlus/20200503230710680.png" class>
 
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503230919159.png" class>
+<img src="/MyBatisPlus/20200503230919159.png" class>
 
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503230919159.png" class>
+<img src="/MyBatisPlus/20200503230919159.png" class>
 
 <p>测试删除</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503231031394.png" class>
+<img src="/MyBatisPlus/20200503231031394.png" class>
 
 <p>可以看到，测试的是删除操作，实际上走的是更新操作，并不是删除操作</p>
 <p>测试查询 会跟上where deleted=0的sql 非管理员</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503231225529.png" class>
+<img src="/MyBatisPlus/20200503231225529.png" class>
 
 </li>
 </ol>
@@ -834,19 +834,19 @@ INSERT INTO user (id, name, age, email) VALUES
 <p>使用</p>
 <ol>
 <li><p>导入插件</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503232703199.png" class>
+<img src="/MyBatisPlus/20200503232703199.png" class>
 </li>
 <li><p>配置项目为测试环境</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503232736518.png" class>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503232903992.png" class>
+<img src="/MyBatisPlus/20200503232736518.png" class>
+<img src="/MyBatisPlus/20200503232903992.png" class>
 
 </li>
 </ol>
 <h2 id="条件构造器"><a href="#条件构造器" class="headerlink" title="条件构造器"></a>条件构造器</h2><p>Wrapper十分重要<br>复杂的sql就靠使用它</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503233101951.png" class>
+<img src="/MyBatisPlus/20200503233101951.png" class>
 
 <ol start="3">
-<li>判断空<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503233720656.png" class>
+<li>判断空<img src="/MyBatisPlus/20200503233720656.png" class>
 
 </li>
 </ol>
@@ -861,10 +861,10 @@ INSERT INTO user (id, name, age, email) VALUES
         <span class="token punctuation">;</span>
         mapper<span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span>Wrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span></code></pre>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/2020050323380182.png" class>
+<img src="/MyBatisPlus/2020050323380182.png" class>
 
 <ol>
-<li>等于，模糊查询<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503235023827.png" class>
+<li>等于，模糊查询<img src="/MyBatisPlus/20200503235023827.png" class>
 
 </li>
 </ol>
@@ -893,11 +893,11 @@ INSERT INTO user (id, name, age, email) VALUES
     <span class="token punctuation">}</span></code></pre>
 <ol>
 <li><p>子查询</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503235414305.png" class>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503235421755.png" class>
+<img src="/MyBatisPlus/20200503235414305.png" class>
+<img src="/MyBatisPlus/20200503235421755.png" class>
 </li>
 <li><p>排序</p>
-<img src="/Mr-lee-MQ.hithub.io/MyBatisPlus/20200503235756281.png" class>
+<img src="/MyBatisPlus/20200503235756281.png" class>
 
 <h2 id="代码生成器"><a href="#代码生成器" class="headerlink" title="代码生成器"></a>代码生成器</h2><p>dao、pojo、service、controller都给我自己去编写完成！</p>
 </li>

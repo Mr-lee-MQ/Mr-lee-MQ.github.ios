@@ -492,9 +492,9 @@
             <div id="articleContent">
                 <h1 id="服务总线"><a href="#服务总线" class="headerlink" title="服务总线"></a>服务总线<a id="more"></a></h1><h2 id="1、Bus消息总线"><a href="#1、Bus消息总线" class="headerlink" title="1、Bus消息总线"></a>1、Bus消息总线</h2><h3 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h3><p>支持两种消息队列：RabbitMQ和Kafka</p>
 <p><strong>是什么</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211007125712281.png" alt="image-20211007125712281"></p>
+<p><img src="/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211007125712281.png" alt="image-20211007125712281"></p>
 <p><strong>作用</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211007130002264.png" alt="image-20211007130002264"></p>
+<p><img src="/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211007130002264.png" alt="image-20211007130002264"></p>
 <p><strong>什么是总线</strong></p>
 <p>在微服务架构的系统中，通常会使用轻量级的消息代理来构建一个共用的消息主题，并让系统中所有的为服务实例都连接上来。由于该主题中产生的消息会被所有实例监听和消费，所以被它称为消息总线。在总线的各个实例，都可以方便地广播一些需要让其他连接在该主题的实例都知道的消息。</p>
 <p><strong>基本原理</strong></p>
@@ -753,9 +753,9 @@ management:
 <h3 id="4、Springcloud-Bus动态刷新定点通知"><a href="#4、Springcloud-Bus动态刷新定点通知" class="headerlink" title="4、Springcloud Bus动态刷新定点通知"></a>4、Springcloud Bus动态刷新定点通知</h3><p>指定具体某一实例生效而不是全部。</p>
 <p>公式：<a href="http://lcoalhost:配置中心的端口号/actuator/bus-refresh/{destination}">http://lcoalhost:配置中心的端口号/actuator/bus-refresh/{destination}</a></p>
 <p>/bus-refresh请求不再发送到具体的服务实例上，而是发给config server 。并通过destination参数类指定需要发送更新配置的服务或者实例。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211007144931343.png" alt="image-20211007144931343"></p>
+<p><img src="/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211007144931343.png" alt="image-20211007144931343"></p>
 <h2 id="2、Stream消息驱动"><a href="#2、Stream消息驱动" class="headerlink" title="2、Stream消息驱动"></a>2、Stream消息驱动</h2><h3 id="1、概述-1"><a href="#1、概述-1" class="headerlink" title="1、概述"></a>1、概述</h3><p>一句话：屏蔽底层消息中间件的差异，降低切换成本，统一消息的编程模型。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211010122048417.png" alt="image-20211010122048417"></p>
+<p><img src="/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211010122048417.png" alt="image-20211010122048417"></p>
 <p><strong>什么是SpringCloudStream</strong></p>
 <p>官方定义Spring Cloud Stream 是一个构建内消息驱动微服务的框架</p>
 <p>应用程序通过inputs或者outputs来与Spring Cloud Stream中的binder对象交互。我们配置来binding（绑定），而Spring Cloud Stream的binder对象负责与消息中间件交互。所以，我们只需要搞清楚如何与Spring Cloud Stream交互就可以方便使用消息驱动的方式。</p>
@@ -769,12 +769,12 @@ management:
 <li>消息通道MessageChannel的子接口SubscribeChannel，由MessageHandler消息处理器所订阅</li>
 </ul>
 <p><strong>Stream凭什么可以统一底层差异</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211010124406898.png" alt="image-20211010124406898"></p>
+<p><img src="/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211010124406898.png" alt="image-20211010124406898"></p>
 <p>在没有绑定器这个概念的情况下，我们的SpringBoot应用要直接与消息中间件进行信息交互的时候，由于各消息中间件构建的初衷不同，他们的实现细节上会有较大的差异性。</p>
 <p>通过定义绑定器作为中间层，完美地实现了应用程序与消息中间件细节之间的隔离。</p>
 <p>通过向应用程序暴露统一的Channel通道，使得应用程序不需要再考虑各种不同的消息中间件实现。</p>
 <p>通过定义绑定器Binder作为中间层，实现了应用程序与消息中间件细节之间的隔离。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211010125219823.png" alt="image-20211010125219823"></p>
+<p><img src="/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211010125219823.png" alt="image-20211010125219823"></p>
 <p><strong>Stream中的消息通讯方式遵循了发布-订阅模式</strong></p>
 <p><strong>Stream标准流程套路</strong></p>
 <ul>
@@ -783,7 +783,7 @@ management:
 <li>Source和Sink：简单的可理解为参照对象是Springcloud Stream自身，从Stream发布消息就是输出，接受消息就是输入</li>
 </ul>
 <p><strong>编码API和常用注解</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211010125852714.png" alt="image-20211010125852714"></p>
+<p><img src="/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211010125852714.png" alt="image-20211010125852714"></p>
 <h3 id="2、案例说明"><a href="#2、案例说明" class="headerlink" title="2、案例说明"></a>2、案例说明</h3><p><strong>新建三个子模块</strong></p>
 <ul>
 <li>cloud-stream-rabbitmq-provider8801，作为生产者进行消息模块</li>
@@ -1076,8 +1076,8 @@ eureka:
 <p><strong>术语</strong></p>
 <p>完整的调用链路</p>
 <p>表示一条请求链路，一条链路通过trace id唯一标识，Span标识发起的请求信息，各span通过parent id关联起来。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211010150302064.png" alt="image-20211010150302064"></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211010150323844.png" alt="image-20211010150323844"></p>
+<p><img src="/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211010150302064.png" alt="image-20211010150302064"></p>
+<p><img src="/%E6%9C%8D%E5%8A%A1%E6%80%BB%E7%BA%BF/image-20211010150323844.png" alt="image-20211010150323844"></p>
 <p><strong>名词解释</strong></p>
 <p><strong>Trance：</strong>类似于树结构的Span集合，表示一条调用链路，存在唯一标识。</p>
 <p><strong>Span：</strong>表示调用链路来源，通俗的理解span就是一次请求信息。</p>

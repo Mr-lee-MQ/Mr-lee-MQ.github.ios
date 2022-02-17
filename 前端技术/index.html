@@ -726,11 +726,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment" spellcheck="true">#查看是否安装成功</span>
 babel --version</code></pre>
 <p><strong>安装时报错</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/image-20210423172815958.png" alt="image-20210423172815958"></p>
+<p><img src="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/image-20210423172815958.png" alt="image-20210423172815958"></p>
 <p><strong>检查版本报错</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/image-20210423172904387.png" alt="image-20210423172904387"></p>
+<p><img src="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/image-20210423172904387.png" alt="image-20210423172904387"></p>
 <p><strong>尝试以下命令后解决</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/image-20210423173129740.png" alt="image-20210423173129740"></p>
+<p><img src="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/image-20210423173129740.png" alt="image-20210423173129740"></p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#在vscode终端获取执行政策: get-ExecutionPolicy</span>
 <span class="token comment" spellcheck="true">#如果得到的政策是限制:Restricted </span>
 <span class="token comment" spellcheck="true">#则重新设置执行策略为可远程的:set-ExecutionPolicy RemoteSigned,然后再获取执行政策:get-ExecutionPolicy</span></code></pre>
@@ -808,7 +808,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token keyword">const</span>  m <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./01"</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-<h2 id="ES6模块化写法步骤"><a href="#ES6模块化写法步骤" class="headerlink" title="ES6模块化写法步骤"></a>ES6模块化写法步骤</h2><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/image-20210423191144659.png" alt="image-20210423191144659"></p>
+<h2 id="ES6模块化写法步骤"><a href="#ES6模块化写法步骤" class="headerlink" title="ES6模块化写法步骤"></a>ES6模块化写法步骤</h2><p><img src="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/image-20210423191144659.png" alt="image-20210423191144659"></p>
 <p><strong>ES6的模块化无法在Node.js中执行，需要用Babel编辑成ES5后再执行。</strong></p>
 <pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//直接在方法前面加上export，其他的js即可引用</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
@@ -828,7 +828,7 @@ m<span class="token punctuation">.</span><span class="token function">save</span
 <span class="token comment" spellcheck="true">//转换后即可执行</span></code></pre>
 <h1 id="五、-Webpack"><a href="#五、-Webpack" class="headerlink" title="五、 Webpack"></a>五、 Webpack</h1><p>Webpack 是一个前端资源加载/打包工具。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。</p>
 <p>从图中我们可以看出，Webpack 可以将多种静态资源 js、css、less 转换成一个静态文件，减少了页面的请求。 </p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/what-is-webpack.png" alt="img"></p>
+<p><img src="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/what-is-webpack.png" alt="img"></p>
 <h2 id="1、Webpack安装"><a href="#1、Webpack安装" class="headerlink" title="1、Webpack安装"></a>1、Webpack安装</h2><ol>
 <li>全局安装</li>
 </ol>
@@ -870,7 +870,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <h3 id="2、命令行执行编译命令"><a href="#2、命令行执行编译命令" class="headerlink" title="2、命令行执行编译命令"></a>2、命令行执行编译命令</h3><pre class=" language-bash"><code class="language-bash">webpack <span class="token comment" spellcheck="true">#有黄色警告</span>
 webpack --mode<span class="token operator">=</span>development <span class="token comment" spellcheck="true">#没有警告</span>
 <span class="token comment" spellcheck="true">#执行后查看bundle.js 里面包含了上面两个js文件的内容并进行了代码压缩</span></code></pre>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/image-20210424101851609.png" alt="image-20210424101851609"></p>
+<p><img src="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/image-20210424101851609.png" alt="image-20210424101851609"></p>
 <p>也可以配置项目的npm运行命令，修改package.json文件</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token string">"scripts"</span><span class="token keyword">:</span> <span class="token punctuation">{</span>
     //<span class="token punctuation">..</span>.,
@@ -922,7 +922,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token function">npm</span> <span class="token function">install</span>
 <span class="token comment" spellcheck="true"># 启动。执行后，浏览器自动弹出并访问http://localhost:9528/</span>
 <span class="token function">npm</span> run dev</code></pre>
-<h2 id="3、目录介绍"><a href="#3、目录介绍" class="headerlink" title="3、目录介绍"></a>3、目录介绍</h2><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/image-20210424115145100.png" alt="image-20210424115145100"></p>
+<h2 id="3、目录介绍"><a href="#3、目录介绍" class="headerlink" title="3、目录介绍"></a>3、目录介绍</h2><p><img src="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/image-20210424115145100.png" alt="image-20210424115145100"></p>
 <pre class=" language-java"><code class="language-java"><span class="token punctuation">.</span> 
 ├── build <span class="token comment" spellcheck="true">// 构建脚本</span>
 ├── config <span class="token comment" spellcheck="true">// 全局配置 </span>

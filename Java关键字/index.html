@@ -515,7 +515,7 @@ Person p2 <span class="token operator">=</span> <span class="token keyword">new<
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>p1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//Person{name= 'Tom',age=21}</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>p2<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//Person{name= 'Marry',age=20}</span></code></pre>
 <p>这两个对象在内存中的存储结构如下：</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Java%E5%85%B3%E9%94%AE%E5%AD%97/image-20210808161245943.png" alt="image-20210808161245943"></p>
+<p><img src="/Java%E5%85%B3%E9%94%AE%E5%AD%97/image-20210808161245943.png" alt="image-20210808161245943"></p>
 <p>​        由上图可知，我们创建的两个对象p1和p2存储在堆中，但是其引用地址是存放在栈中的，而且这两个对象的两个变量互相独立，我们修改任何一个对象的属性值，是不会改变另外一个对象的属性值的。</p>
 <p>​        下面我们将Person类中的age属性改为由static关键字修饰：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
@@ -542,7 +542,7 @@ Person p2 <span class="token operator">=</span> <span class="token keyword">new<
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>p1<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//Person{name='Tom', age=20}</span>
 System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>p2<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//Person{name='Marry', age=20}</span></code></pre>
 <p>​        我们发现第三⾏代码打印的 p1 对象 age 属性变为 20了，这是为什么呢？</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Java%E5%85%B3%E9%94%AE%E5%AD%97/image-20210808164302608.png" alt="image-20210808164302608"></p>
+<p><img src="/Java%E5%85%B3%E9%94%AE%E5%AD%97/image-20210808164302608.png" alt="image-20210808164302608"></p>
 <p>​        这是因为⽤在 jvm 的内存构造中，会在<strong>堆</strong>中开辟⼀块内存空间，<strong>专⻔⽤来存储⽤ static 修饰的成员 变量，称为静态存储区，</strong>⽆论我们创建多少个对象，⽤static修饰的成员变量有且只有⼀份存储在静态 存储区中，<strong>所以该静态变量的值是以最后创建对象时设置该静态变量的值为准</strong>，也就是由于p1先设置age = 21，后来创建了 p2 对象，p2将 age 改为了20，那么该静态存储区的 age 属性值也被修改成了20。 　</p>
 <p>​        <strong>PS：在 JDK1.8 以前，静态存储区是存放在⽅法区的，⽽⽅法区不属于堆，在 JDK1.8 之后，才将⽅ 法区⼲掉了，⽅法区中的静态存储区改为到堆中存储。</strong> 　</p>
 <p>​        总结：static 修饰的变量被所有对象所共享，在内存中只有⼀个副本。由于与对象⽆关，所以我们可以直接通过<strong>类名.静态变量</strong> 的⽅式来直接调⽤静态变量。对应的⾮静态变量是对象所拥有的，多少个对象就有多少个⾮静态变量，各个对象所拥有的副本不受影响。</p>
@@ -681,10 +681,10 @@ OuterClass<span class="token punctuation">.</span>InnerClass in <span class="tok
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p>​        接着根据创建一个Person对象：</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Java%E5%85%B3%E9%94%AE%E5%AD%97/image-20210808175756180.png" alt="image-20210808175756180"></p>
+<p><img src="/Java%E5%85%B3%E9%94%AE%E5%AD%97/image-20210808175756180.png" alt="image-20210808175756180"></p>
 <p>​        　可以看到，⾸先通过 final 关键字修饰⼀个对象 p，然后接着将 p 对象指向另⼀个新的对象，发现报 错，也就是说final修饰的引⽤类型是不能改变其引⽤地址的。</p>
 <p>​        接着我们改动p对象的name属性：</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Java%E5%85%B3%E9%94%AE%E5%AD%97/image-20210808175843740.png" alt="image-20210808175843740"></p>
+<p><img src="/Java%E5%85%B3%E9%94%AE%E5%AD%97/image-20210808175843740.png" alt="image-20210808175843740"></p>
 <p>​        发现程序没有报错。</p>
 <p>​        <strong>结论：被final修饰的变量不可更改其引用地址，但是可以更改其内部属性。</strong></p>
 <h3 id="2、修饰方法"><a href="#2、修饰方法" class="headerlink" title="2、修饰方法"></a>2、修饰方法</h3><p>​        final 关键字修饰的⽅法不可被覆盖。</p>
@@ -740,7 +740,7 @@ OuterClass<span class="token punctuation">.</span>InnerClass in <span class="tok
 <span class="token punctuation">}</span></code></pre>
 <p>​        通过 this(“Marry”) 来调⽤另外⼀个构造⽅法 ThisTest(String name) 来给成员变量初始化赋值。</p>
 <p>​        注意：通过 this 来调⽤构造⽅法，只能将这条代码放在构造函数的第⼀⾏，这是编译器的规定，如 下所示：放在第⼆⾏会报错。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Java%E5%85%B3%E9%94%AE%E5%AD%97/image-20210808183958646.png" alt="image-20210808183958646"></p>
+<p><img src="/Java%E5%85%B3%E9%94%AE%E5%AD%97/image-20210808183958646.png" alt="image-20210808183958646"></p>
 <h3 id="3、调用普通方法"><a href="#3、调用普通方法" class="headerlink" title="3、调用普通方法"></a>3、调用普通方法</h3><p>​        this表示当前对象，那么肯定能够调用当前类的普通方法。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>

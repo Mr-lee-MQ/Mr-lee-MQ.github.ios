@@ -500,7 +500,7 @@
 <p>指的是Spring框架中GatewayFilter的实例,使用过滤器,可以在请求被路由前或者之后对请求进行修改.</p>
 <p>web请求，通过一些匹配条件，定位到真正的服务节点。并在这个转发过程的前后，进行一些精细化控制。</p>
 <p>predicate就是我们的匹配条件；而filter，就可以理解为一个无所不能的拦截器。有了这两个元素，再加上目标uri，就可以实现一个具体的路由了。</p>
-<h3 id="3、GateWay工作流程"><a href="#3、GateWay工作流程" class="headerlink" title="3、GateWay工作流程"></a>3、GateWay工作流程</h3><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/image-20211006162347385.png" alt="image-20211006162347385"></p>
+<h3 id="3、GateWay工作流程"><a href="#3、GateWay工作流程" class="headerlink" title="3、GateWay工作流程"></a>3、GateWay工作流程</h3><p><img src="/%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3/image-20211006162347385.png" alt="image-20211006162347385"></p>
 <p>客户端向Spring Cloud Gateway发出请求。然后在GatewayHandler Mapping中找到与请求相匹配的路由，将其发送到Gateway Web Handler。</p>
 <p>Handler 再通过指定的过滤器链来将请求发送到我们实际的服务执行业务逻辑，然后返回。</p>
 <p>过滤器之间用虚线分开是因为过滤器可能会在发送代理请求之前（“pre”）或之后（“post”）执行业务逻辑。</p>

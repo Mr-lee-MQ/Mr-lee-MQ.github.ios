@@ -738,7 +738,7 @@ list转换为数组后，再把各元素用,分割，成为一个字符串
 <p>SpringCloud调用接口过程</p>
 </blockquote>
 <p><strong><code>Feign</code> —–&gt;<code>Hystrix</code> —&gt;<code>Ribbon</code> —&gt;<code>Http Client``（apache http components 或者 Okhttp）</code></strong> 具体交互流程上，如下图所示：</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo5/d5be6f27-caff-45b6-8f27-837ea6b11134.jpg" alt="img"></p>
+<p><img src="/%E8%B0%B7%E7%B2%92%E5%AD%A6%E9%99%A2Demo5/d5be6f27-caff-45b6-8f27-837ea6b11134.jpg" alt="img"></p>
 <p><strong>（1）接口化请求调用</strong>当调用被<code>@FeignClient</code>注解修饰的接口时，在框架内部，将请求转换成Feign的请求实例<code>feign.Request</code>，交由Feign框架处理。</p>
 <p><strong>（2）Feign</strong> ：转化请求Feign是一个http请求调用的轻量级框架，可以以Java接口注解的方式调用Http请求，封装了Http调用流程。</p>
 <p><strong>（3）Hystrix</strong>：熔断处理机制 Feign的调用关系，会被Hystrix代理拦截，对每一个Feign调用请求，Hystrix都会将其包装成<code>HystrixCommand</code>,参与Hystrix的流控和熔断规则。如果请求判断需要熔断，则Hystrix直接熔断，抛出异常或者使用<code>FallbackFactory</code>返回熔断<code>Fallback</code>结果；如果通过，则将调用请求传递给<code>Ribbon</code>组件。</p>

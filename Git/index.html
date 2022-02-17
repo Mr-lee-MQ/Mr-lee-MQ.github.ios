@@ -557,7 +557,7 @@
 <td>编辑文件内容，a 进入编辑模式 esc+：+wq！保存并退出</td>
 </tr>
 </tbody></table>
-<h2 id="2、启动"><a href="#2、启动" class="headerlink" title="2、启动"></a>2、启动</h2><img src="/Mr-lee-MQ.hithub.io/Git/kuangstudyf96e2b66-cb3b-4143-a756-07df142f188a.png" class>
+<h2 id="2、启动"><a href="#2、启动" class="headerlink" title="2、启动"></a>2、启动</h2><img src="/Git/kuangstudyf96e2b66-cb3b-4143-a756-07df142f188a.png" class>
 
 <p><strong>点击Git Base来启动这个git，或者鼠标右键选择Git Base来启动</strong></p>
 <h2 id="3-Git配置"><a href="#3-Git配置" class="headerlink" title="3. Git配置"></a>3. Git配置</h2><h4 id="1-查看配置"><a href="#1-查看配置" class="headerlink" title="1 查看配置"></a>1 查看配置</h4><p>所有的配置文件，其实都保存在本地！</p>
@@ -571,10 +571,10 @@
 <p>git config —global user.email <a href="mailto:616326125@qq.com">616326125@qq.com</a> <strong>#邮箱</strong></p>
 <p>只需要做一次这个设置，如果你传递了—global 选项，因为Git将总是会使用该信息来处理你在系统中所做的一切操作。如果你希望在一个特定的项目中使用不同的名称或e-mail地址，你可以在该项目中运行该命令而不要—global选项。总之—global为全局配置，不加为某个项目的特定配置。</p>
 <h2 id="5-代码托管中心"><a href="#5-代码托管中心" class="headerlink" title="5. 代码托管中心"></a>5. 代码托管中心</h2><p>代码托管中心的任务：维护远程库</p>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy47cab5d5-8e23-4e36-8fc4-b90cf00f5913.png" class>
+<img src="/Git/kuangstudy47cab5d5-8e23-4e36-8fc4-b90cf00f5913.png" class>
 
 <h2 id="6-三个工作区域"><a href="#6-三个工作区域" class="headerlink" title="6. 三个工作区域"></a>6. 三个工作区域</h2><p>Git本地有三个工作区域：<strong>工作目录（Working Directory）</strong>、<strong>暂存区(Stage/Index)</strong>、<strong>资源库(Repository或Git Directory)</strong>。如果在加上远程的git仓库(Remote Directory)就可以分为四个工作区域。文件在这四个区域之间的转换关系如下：</p>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudybaa79e79-43fe-4907-82ff-7407540dc177.png" class>
+<img src="/Git/kuangstudybaa79e79-43fe-4907-82ff-7407540dc177.png" class>
 
 <h1 id="第四章：命令行操作"><a href="#第四章：命令行操作" class="headerlink" title="第四章：命令行操作"></a>第四章：命令行操作</h1><h2 id="4-1-、仓库"><a href="#4-1-、仓库" class="headerlink" title="4.1 、仓库"></a>4.1 、仓库</h2><pre class=" language-java"><code class="language-java"># 在当前目录新建一个Git代码库
 $ git init
@@ -748,7 +748,7 @@ $ git stash pop</code></pre>
 $ git archive</code></pre>
 <h1 id="第五章：分支"><a href="#第五章：分支" class="headerlink" title="第五章：分支"></a>第五章：分支</h1><h2 id="5-1、理解暂缓区域"><a href="#5-1、理解暂缓区域" class="headerlink" title="5.1、理解暂缓区域"></a>5.1、理解暂缓区域</h2><p>文件.git/index是一个包含文件索引的目录树，像是一个虚拟的工作区。在这个虚拟工作区的目录树中，记录了文件名和文件的状态信息。以便快速检测文件的变化。 索引中还包含所有Blob类型的SHA-1标识符。文件的内容没有存储在其中， 而是保存在Git对象库.git/objects目录中，文件索引建立了文件和对象库中对象实体之间的对应，</p>
 <p>如图，展示了工作区、版本库中的暂存区和版本库之间的关系。</p>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy435a4d4f-e1b0-43e4-8886-360c6a6d5b1b.png" class>
+<img src="/Git/kuangstudy435a4d4f-e1b0-43e4-8886-360c6a6d5b1b.png" class>
 
 <p>- 图中左侧为工作区，右侧为版本库。在版本库中标记为index的区域是暂存区，标记为master的是master分支代表的目录树。</p>
 <p>- HEAD实际是指向master分支的一个“游标”，所以图示的命令中出现的HEAD的地方可以用master来替代。</p>
@@ -765,14 +765,14 @@ $ git archive</code></pre>
 <p>假设一个工作目录，包含了三个将要被暂存和提交的文件。 暂存操作会为每一个文件计算校验和（使用我们在 起步 中提到的 SHA-1 哈希算法），然后把当前版本的文件快照保存到Git 仓库中（objects，Git 使用 blob 对象来保存它们），将校验和加入到暂存区域等待提交：</p>
 <p>当使用 git commit 进行提交操作时，Git 会先计算每一个子目录（本例中只有项目根目录）的校验和，然后在Git 仓库中这些校验和保存为树对象。Git 会创建一个提交对象，它除了包含上面提到的那些信息外，还包含指向这个树对象（项目根目录）的指针。如此一来，Git 就可以在需要的时候重现此次保存的快照。</p>
 <p>现在，Git 仓库中有五个对象：三个 blob 对象（保存着文件快照）、一个树对象（记录着目录结构和 blob 对象索引）以及一个提交对象（包含着指向前述树对象的指针和所有提交信息）。</p>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudyfddc4adb-c73c-4b5c-95d4-b278e9c614be.png" class>
+<img src="/Git/kuangstudyfddc4adb-c73c-4b5c-95d4-b278e9c614be.png" class>
 
 <p>Git 的分支，其实本质上仅仅是指向提交对象的可变指针。 <font color="red"><strong>Git 的默认分支名字是 master</strong></font>。 在多次提交操作之后，你其实已经有一个指向最后<br>那个提交对象的 master 分支。 它会在每次的提交操作中自动向前移动。</p>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy6e09d36e-a0f0-43f4-a43f-3009d5cff505.png" class>
+<img src="/Git/kuangstudy6e09d36e-a0f0-43f4-a43f-3009d5cff505.png" class>
 
 <h2 id="5-3、简单的来说"><a href="#5-3、简单的来说" class="headerlink" title="5.3、简单的来说"></a>5.3、简单的来说</h2><p>分支在GIT中相对较难，分支就是科幻电影里面的平行宇宙，如果两个平行宇宙互不干扰，那对现在的你也没啥影响。不过，在某个时间点，两个平行宇宙合并了，我们就需要处理一些问题了！如果一个平行宇宙有错误了，我们把他毁灭了就可以了。</p>
 <p>如下图：</p>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy26f9ea9e-f377-43d2-b950-b686476cab1e.png" class>
+<img src="/Git/kuangstudy26f9ea9e-f377-43d2-b950-b686476cab1e.png" class>
 
 <p><strong>三条分支：master是我们的主分支，其余两个是我们的自己创建的分支</strong></p>
 <h2 id="5-4、默认分支"><a href="#5-4、默认分支" class="headerlink" title="5.4、默认分支"></a>5.4、默认分支</h2><p><strong>Git有一个默认的分支：他是master</strong></p>
@@ -834,15 +834,15 @@ origin<span class="token operator">/</span>muscleape         f938a3d8e9 测试te
 </ul>
 <h2 id="6-2、为什么选择GitEE"><a href="#6-2、为什么选择GitEE" class="headerlink" title="6.2、为什么选择GitEE"></a>6.2、为什么选择GitEE</h2><p>他们每一个功能界面都差不多，我们就学习配置GitEE就可以了，因为他网速快方便。</p>
 <p>网址：<strong><a href="https://gitee.com/" target="_blank" rel="noopener">https://gitee.com/</a></strong></p>
-<h2 id="6-3、创建远程仓库"><a href="#6-3、创建远程仓库" class="headerlink" title="6.3、创建远程仓库"></a>6.3、创建远程仓库</h2><h3 id="1、登录"><a href="#1、登录" class="headerlink" title="1、登录"></a><strong>1、登录</strong></h3><img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy66e33e4a-7a14-45b7-b216-4b6acf9d163f.png" class>
+<h2 id="6-3、创建远程仓库"><a href="#6-3、创建远程仓库" class="headerlink" title="6.3、创建远程仓库"></a>6.3、创建远程仓库</h2><h3 id="1、登录"><a href="#1、登录" class="headerlink" title="1、登录"></a><strong>1、登录</strong></h3><img src="/Git/kuangstudy66e33e4a-7a14-45b7-b216-4b6acf9d163f.png" class>
 
 <h3 id="2、点击右上角"><a href="#2、点击右上角" class="headerlink" title="2、点击右上角"></a>2、点击右上角</h3><p>点击右上角+号选择新建立仓库</p>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy8ff909d9-9438-4ac2-a470-eb588b38cf4e.png" class>
+<img src="/Git/kuangstudy8ff909d9-9438-4ac2-a470-eb588b38cf4e.png" class>
 
-<h3 id="3、配置"><a href="#3、配置" class="headerlink" title="3、配置"></a>3、配置</h3><img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy10b80ed4-ecd5-42cf-940f-2fd96891c295.png" class>
+<h3 id="3、配置"><a href="#3、配置" class="headerlink" title="3、配置"></a>3、配置</h3><img src="/Git/kuangstudy10b80ed4-ecd5-42cf-940f-2fd96891c295.png" class>
 
 <h3 id="4、拉取代码"><a href="#4、拉取代码" class="headerlink" title="4、拉取代码"></a><strong>4、拉取代码</strong></h3><p>点击复制</p>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudyac762cb6-bd4d-44f5-a5d2-1a440b67d52a.png" class>
+<img src="/Git/kuangstudyac762cb6-bd4d-44f5-a5d2-1a440b67d52a.png" class>
 
 <p>命令行输入 <strong><code>git clone https://gitee.com/little_bingedream/lovely-old-sister.git</code></strong></p>
 <h2 id="6-4、生成ssh密钥"><a href="#6-4、生成ssh密钥" class="headerlink" title="6.4、生成ssh密钥"></a>6.4、生成ssh密钥</h2><ul>
@@ -870,56 +870,56 @@ Enter same passphrase again<span class="token operator">:</span></code></pre>
 <pre class=" language-java"><code class="language-java">cd <span class="token operator">~</span><span class="token operator">/</span><span class="token punctuation">.</span>ssh            #<span class="token comment" spellcheck="true">//进入. ssh 目录：</span>
 cat id_rsa<span class="token punctuation">.</span>pub    #或者 vim id_rsa<span class="token punctuation">.</span>pub</code></pre>
 <h2 id="6-5、配置ssh公钥"><a href="#6-5、配置ssh公钥" class="headerlink" title="6.5、配置ssh公钥"></a>6.5、配置ssh公钥</h2><p><strong>我们登录码云进入到个人设置中，然后点击ssh公钥，将我们自己的公钥信息设置进去：</strong></p>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy68fc2f66-86ca-4599-871c-4270fbc3be03.png" class>
+<img src="/Git/kuangstudy68fc2f66-86ca-4599-871c-4270fbc3be03.png" class>
 
 <h2 id="6-6、gitee拉取新成员加入"><a href="#6-6、gitee拉取新成员加入" class="headerlink" title="6.6、gitee拉取新成员加入"></a>6.6、gitee拉取新成员加入</h2><ul>
 <li>1、<strong>进入仓库的详情页面</strong></li>
 </ul>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy98f2e3fd-6ff0-4c5e-8bf2-bb76b84f7ba4.png" class>
+<img src="/Git/kuangstudy98f2e3fd-6ff0-4c5e-8bf2-bb76b84f7ba4.png" class>
 
 <ul>
 <li>2、<strong>选择成员</strong></li>
 </ul>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy5b0ce8d1-7535-49d2-8f48-372ed99bfa23.png" class>
+<img src="/Git/kuangstudy5b0ce8d1-7535-49d2-8f48-372ed99bfa23.png" class>
 
 <ul>
 <li>3、发送链接</li>
 </ul>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy389a7322-2c2d-4b40-84ee-fd2c0b9a0db1.png" class>
+<img src="/Git/kuangstudy389a7322-2c2d-4b40-84ee-fd2c0b9a0db1.png" class>
 
-<h1 id="第七章：Idea配置并使用"><a href="#第七章：Idea配置并使用" class="headerlink" title="第七章：Idea配置并使用"></a>第七章：Idea配置并使用</h1><h2 id="7-1、安装GitEE插件"><a href="#7-1、安装GitEE插件" class="headerlink" title="7.1、安装GitEE插件"></a>7.1、安装GitEE插件</h2><img src="/Mr-lee-MQ.hithub.io/Git/kuangstudye423806e-019a-4344-baed-17b45af44dab.png" class>
+<h1 id="第七章：Idea配置并使用"><a href="#第七章：Idea配置并使用" class="headerlink" title="第七章：Idea配置并使用"></a>第七章：Idea配置并使用</h1><h2 id="7-1、安装GitEE插件"><a href="#7-1、安装GitEE插件" class="headerlink" title="7.1、安装GitEE插件"></a>7.1、安装GitEE插件</h2><img src="/Git/kuangstudye423806e-019a-4344-baed-17b45af44dab.png" class>
 
 <p>注意：安装完后重启idea</p>
 <h2 id="7-2、拉取代码"><a href="#7-2、拉取代码" class="headerlink" title="7.2、拉取代码"></a>7.2、拉取代码</h2><p>到gitee或者github上粘贴代码地址： <strong><a href="https://gitee.com/\" target="_blank" rel="noopener">https://gitee.com/\</a></strong>*<em>*</em>*<em>*</em>*<strong>*.git</strong></p>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy550f6bb2-c441-4ff8-b1b1-de3f35fd3e30.png" class>
+<img src="/Git/kuangstudy550f6bb2-c441-4ff8-b1b1-de3f35fd3e30.png" class>
 <p>选取过后下一步下一步即可打开新窗口</p>
-<h2 id="7-3、添加代码"><a href="#7-3、添加代码" class="headerlink" title="7.3、添加代码"></a>7.3、添加代码</h2><img src="/Mr-lee-MQ.hithub.io/Git/kuangstudyb26f8364-16e6-442f-94c1-5f460bb4cf61.png" class>
+<h2 id="7-3、添加代码"><a href="#7-3、添加代码" class="headerlink" title="7.3、添加代码"></a>7.3、添加代码</h2><img src="/Git/kuangstudyb26f8364-16e6-442f-94c1-5f460bb4cf61.png" class>
 
-<h2 id="7-4、提交代码"><a href="#7-4、提交代码" class="headerlink" title="7.4、提交代码"></a>7.4、提交代码</h2><img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy110cb0a4-a882-4689-9596-8bc28f230cec.png" class>
+<h2 id="7-4、提交代码"><a href="#7-4、提交代码" class="headerlink" title="7.4、提交代码"></a>7.4、提交代码</h2><img src="/Git/kuangstudy110cb0a4-a882-4689-9596-8bc28f230cec.png" class>
 
 <h2 id="7-5、提交代码"><a href="#7-5、提交代码" class="headerlink" title="7.5、提交代码"></a>7.5、提交代码</h2><p><strong>提交代码到gitee上</strong></p>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy4b47f6a9-f4b8-4d4f-ad19-7b8441d7007d.png" class>
+<img src="/Git/kuangstudy4b47f6a9-f4b8-4d4f-ad19-7b8441d7007d.png" class>
 
-<h2 id="7-6、更新代码"><a href="#7-6、更新代码" class="headerlink" title="7.6、更新代码"></a>7.6、更新代码</h2><img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy79d86712-a1c4-4e53-bd44-3ea6d427a50e.png" class>
+<h2 id="7-6、更新代码"><a href="#7-6、更新代码" class="headerlink" title="7.6、更新代码"></a>7.6、更新代码</h2><img src="/Git/kuangstudy79d86712-a1c4-4e53-bd44-3ea6d427a50e.png" class>
 
 <h2 id="7-7、查提交历史"><a href="#7-7、查提交历史" class="headerlink" title="7.7、查提交历史"></a>7.7、查提交历史</h2><p>查看我们代码提交的历史，方便我们查看谁把分支里面的代码搞乱</p>
-<h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步:"></a>第一步:</h3><img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy4e4f5357-e886-4980-8645-d0c55a7b5df5.png" class>
+<h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步:"></a>第一步:</h3><img src="/Git/kuangstudy4e4f5357-e886-4980-8645-d0c55a7b5df5.png" class>
 
-<h3 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h3><img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy372e9ae5-606c-49c6-9262-eb7f20f52e3c.png" class>
+<h3 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h3><img src="/Git/kuangstudy372e9ae5-606c-49c6-9262-eb7f20f52e3c.png" class>
 
-<h2 id="7-8、创建分支"><a href="#7-8、创建分支" class="headerlink" title="7.8、创建分支"></a>7.8、创建分支</h2><h3 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h3><img src="/Mr-lee-MQ.hithub.io/Git/kuangstudyd17e0dc6-fe38-430d-ab0d-01341a5f690f.png" class>
+<h2 id="7-8、创建分支"><a href="#7-8、创建分支" class="headerlink" title="7.8、创建分支"></a>7.8、创建分支</h2><h3 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h3><img src="/Git/kuangstudyd17e0dc6-fe38-430d-ab0d-01341a5f690f.png" class>
 
 <h3 id="第二步：-1"><a href="#第二步：-1" class="headerlink" title="第二步："></a>第二步：</h3><p><strong>输入自己要创建的分支名字</strong></p>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy2e95f889-9d2e-4feb-b79a-65e3f6b93c70.png" class>
+<img src="/Git/kuangstudy2e95f889-9d2e-4feb-b79a-65e3f6b93c70.png" class>
 
 <h3 id="第三步："><a href="#第三步：" class="headerlink" title="第三步："></a>第三步：</h3><p><strong>提交代码即可</strong></p>
-<h2 id="7-9、合并分支代码"><a href="#7-9、合并分支代码" class="headerlink" title="7.9、合并分支代码"></a>7.9、合并分支代码</h2><h3 id="第一步：-1"><a href="#第一步：-1" class="headerlink" title="第一步："></a>第一步：</h3><img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy370882d7-0572-4556-964c-db01285074ba.png" class>
+<h2 id="7-9、合并分支代码"><a href="#7-9、合并分支代码" class="headerlink" title="7.9、合并分支代码"></a>7.9、合并分支代码</h2><h3 id="第一步：-1"><a href="#第一步：-1" class="headerlink" title="第一步："></a>第一步：</h3><img src="/Git/kuangstudy370882d7-0572-4556-964c-db01285074ba.png" class>
 
 <h3 id="第二步：-2"><a href="#第二步：-2" class="headerlink" title="第二步："></a>第二步：</h3><p>选择要合并的分支</p>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudy0ce5621b-a8f5-4473-bfcd-2ff1d28c29f5.png" class>
+<img src="/Git/kuangstudy0ce5621b-a8f5-4473-bfcd-2ff1d28c29f5.png" class>
 
 <h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步:"></a>第三步:</h3><p><strong>如果出现冲突的话</strong>我们需要自己来解决，也可以选择idea的一键解决冲突</p>
-<img src="/Mr-lee-MQ.hithub.io/Git/kuangstudyab303307-6bfb-492f-a011-4dbddc3d95e5.png" class>
+<img src="/Git/kuangstudyab303307-6bfb-492f-a011-4dbddc3d95e5.png" class>
 
 <h3 id="第三步：-1"><a href="#第三步：-1" class="headerlink" title="第三步："></a>第三步：</h3><p><strong>提交代码</strong></p>
 <h2 id="idea安装Git"><a href="#idea安装Git" class="headerlink" title="idea安装Git"></a>idea安装Git</h2><ul>
@@ -929,26 +929,26 @@ cat id_rsa<span class="token punctuation">.</span>pub    #或者 vim id_rsa<span
 </li>
 <li><p>运行测试：win+r,cmd  打开控制台，输入git指令，看到下图即表示安装成功</p>
 </li>
-<li><img src="/Mr-lee-MQ.hithub.io/Git/5793.png" class>
+<li><img src="/Git/5793.png" class>
 
 </li>
 </ul>
 <h2 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h2><ul>
 <li><p>菜单-&gt;settings-&gt;Version Control-&gt;Git-&gt;Path to Git executable: 设置为<a href="https://how2j.cn/k/idea/idea-git-install/1359.html" target="_blank" rel="noopener">安装git</a>中所安装的git.exe</p>
 </li>
-<li><img src="/Mr-lee-MQ.hithub.io/Git/5794.png" class>
+<li><img src="/Git/5794.png" class>
 </li>
 <li><p>接下来为github设置账号密码：<br>菜单-&gt;settings-&gt;Version Control-&gt;GitHub-&gt;Create API Token</p>
 </li>
-<li><img src="/Mr-lee-MQ.hithub.io/Git/5795.png" class>
+<li><img src="/Git/5795.png" class>
 
 </li>
 </ul>
 <h2 id="idea-pull项目"><a href="#idea-pull项目" class="headerlink" title="idea pull项目"></a>idea pull项目</h2><ul>
 <li>checkout：菜单-&gt;VCS-&gt;Chekout from Version Control-&gt;GitHub</li>
-<li><img src="/Mr-lee-MQ.hithub.io/Git/5797.png" class></li>
+<li><img src="/Git/5797.png" class></li>
 <li>输入项目参数：Git Repositor URL:<a href="https://github.com/how2j/higit.git" target="_blank" rel="noopener">https://github.com/how2j/higit.git</a><br>Parent Directory: e:\project<br>Directory Name: higit<br>然后点击 Clone</li>
-<li><img src="/Mr-lee-MQ.hithub.io/Git/5798.png" class>
+<li><img src="/Git/5798.png" class>
 
 
 

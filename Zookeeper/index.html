@@ -496,7 +496,7 @@
 <li>zk实现分布式锁  redis分布式 </li>
 </ul>
 <h3 id="1-1、Zookeeper的工作机制"><a href="#1-1、Zookeeper的工作机制" class="headerlink" title="1.1、Zookeeper的工作机制"></a>1.1、Zookeeper的工作机制</h3><p>​    Zookeeper从设计模式角度来理解：是一个基于观察者模式设计的分布式服务管理框架，他<strong>负责存储和管理大家都关心的数据，然后接受观察者的注册</strong>，一旦这些数据的状态发生变化，Zookeeper就会<strong>负责通知已经在Zookeeper上注册的那些观察者</strong>作出相应的反应。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Zookeeper/image-20210624115700645.png" alt="image-20210624115700645"></p>
+<p><img src="/Zookeeper/image-20210624115700645.png" alt="image-20210624115700645"></p>
 <h3 id="1-2、Zookeeper特点"><a href="#1-2、Zookeeper特点" class="headerlink" title="1.2、Zookeeper特点"></a>1.2、Zookeeper特点</h3><ol>
 <li>Zookeeper：一个领导者（Leader），多个跟随者（Follower）组成的集群。</li>
 <li>集群中只要有半数以上的节点存活，Zookeeper集群就可以正常服务。</li>
@@ -506,7 +506,7 @@
 <li>实时性：在一定时间范围内，Client能读取到最新数据。</li>
 </ol>
 <h3 id="1-3、内存数据模型"><a href="#1-3、内存数据模型" class="headerlink" title="1.3、内存数据模型"></a>1.3、内存数据模型</h3><p>ZooKeeper数据模型的结构与Unix文件系统很相似，整体上可以看做一棵树，每个节点称作为一个ZNode。每个ZNode<strong>默认能够存储1MB</strong>的数据，每个ZNode通过其路径唯一标识。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Zookeeper/image-20210624165136271.png" alt="image-20210624165136271"></p>
+<p><img src="/Zookeeper/image-20210624165136271.png" alt="image-20210624165136271"></p>
 <ul>
 <li>每个子目录如/node1都被称作为一个znode(节点)。这个znode是被他所在的路径唯一标识。</li>
 <li>znode可以有子节点目录，并且每个znode可以存储数据。</li>
@@ -528,27 +528,27 @@ java -version  <span class="token comment" spellcheck="true">#查看Java版本</
 <ul>
 <li>使用xftp将文件上传到Linux中。</li>
 </ul>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Zookeeper/image-20210625151810916.png" alt="image-20210625151810916"></p>
+<p><img src="/Zookeeper/image-20210625151810916.png" alt="image-20210625151810916"></p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># IP地址  ifconfig命令获取</span></code></pre>
 <ul>
 <li>解压缩Zookeeper</li>
 </ul>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># tar -zxvf 文件名 </span></code></pre>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Zookeeper/image-20210625152411881.png" alt="image-20210625152411881"></p>
+<p><img src="/Zookeeper/image-20210625152411881.png" alt="image-20210625152411881"></p>
 <h3 id="3-2、配置Zookeeper"><a href="#3-2、配置Zookeeper" class="headerlink" title="3.2、配置Zookeeper"></a>3.2、配置Zookeeper</h3><p>进入conf文件夹下。</p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Zookeeper/image-20210625152654560.png" alt="image-20210625152654560"></p>
+<p><img src="/Zookeeper/image-20210625152654560.png" alt="image-20210625152654560"></p>
 <p>默认配置为zoo.cfg 。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#改名</span>
 <span class="token function">mv</span> zoo_sample.cfg zoo.cfg</code></pre>
 <ul>
 <li>创建数据存储目录</li>
 </ul>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Zookeeper/image-20210625154040884.png" alt="image-20210625154040884"></p>
-<h3 id="3-3、开启Zookeeper"><a href="#3-3、开启Zookeeper" class="headerlink" title="3.3、开启Zookeeper"></a>3.3、开启Zookeeper</h3><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Zookeeper/image-20210625154116557.png" alt="image-20210625154116557"></p>
+<p><img src="/Zookeeper/image-20210625154040884.png" alt="image-20210625154040884"></p>
+<h3 id="3-3、开启Zookeeper"><a href="#3-3、开启Zookeeper" class="headerlink" title="3.3、开启Zookeeper"></a>3.3、开启Zookeeper</h3><p><img src="/Zookeeper/image-20210625154116557.png" alt="image-20210625154116557"></p>
 <h3 id="3-4、使用Docker安装Zookeeper"><a href="#3-4、使用Docker安装Zookeeper" class="headerlink" title="3.4、使用Docker安装Zookeeper"></a>3.4、使用Docker安装Zookeeper</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># docker pull zookeeper 下载Zookeeper，默认为最新版本</span>
 <span class="token comment" spellcheck="true"># docker run -d --name zookeeper --p 2181:2181  -d zookeeper #启动容器并添加映射</span>
 <span class="token comment" spellcheck="true"># docker ps 查看容器是否启动</span></code></pre>
-<h3 id="3-5、配置文件"><a href="#3-5、配置文件" class="headerlink" title="3.5、配置文件"></a>3.5、配置文件</h3><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Zookeeper/image-20210625155600564.png" alt="image-20210625155600564"></p>
+<h3 id="3-5、配置文件"><a href="#3-5、配置文件" class="headerlink" title="3.5、配置文件"></a>3.5、配置文件</h3><p><img src="/Zookeeper/image-20210625155600564.png" alt="image-20210625155600564"></p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 配置文件详解</span>
 tickTime <span class="token operator">=</span>2000     <span class="token comment" spellcheck="true">#表示集群节点之间的心跳时间 2000毫秒 2秒</span>
 initLimit <span class="token operator">=</span>10      <span class="token comment" spellcheck="true">#初始化集群时集群节点同步超时时间10*2(10个心跳) 20秒</span>
@@ -567,7 +567,7 @@ get path                        <span class="token comment" spellcheck="true">#�
 delete path                     <span class="token comment" spellcheck="true">#删除节点(不可删除含有子节点的节点)</span>
 rmr path                        <span class="token comment" spellcheck="true">#递归删除(删除该节点下的所有节点)</span></code></pre>
 <p><strong>创建节点</strong></p>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Zookeeper/image-20210625165409206.png" alt="image-20210625165409206"></p>
+<p><img src="/Zookeeper/image-20210625165409206.png" alt="image-20210625165409206"></p>
 <h2 id="5、节点监听机制（Watch机制）"><a href="#5、节点监听机制（Watch机制）" class="headerlink" title="5、节点监听机制（Watch机制）"></a>5、节点监听机制（Watch机制）</h2><p>客户端可以监听znode节点的变化。znode节点节点的变化触发相应的事件，然后清除对该节点的监测。当监测一个znode节点时候，Zookeeper会发送通知给监测节点。一个Watch事件是一个一次性的监听器，当被设置了Watch的数据和目录发生了改变的时候，则服务器将这个改变发送给设置了Watch的客户端一边通知他们。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ls path true    监听节点目录的变化</span>
 <span class="token comment" spellcheck="true"># get path true   监听节点数据的变化</span></code></pre>
@@ -698,7 +698,7 @@ rmr path                        <span class="token comment" spellcheck="true">#�
 <li>单节点的并发访问的压力问题</li>
 <li>单节点故障问题（硬件老化，自然灾害）</li>
 </ul>
-<h3 id="7-2、集群架构"><a href="#7-2、集群架构" class="headerlink" title="7.2、集群架构"></a>7.2、集群架构</h3><p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Zookeeper/image-20210625193832421.png" alt="image-20210625193832421"></p>
+<h3 id="7-2、集群架构"><a href="#7-2、集群架构" class="headerlink" title="7.2、集群架构"></a>7.2、集群架构</h3><p><img src="/Zookeeper/image-20210625193832421.png" alt="image-20210625193832421"></p>
 <h3 id="7-3、集群搭建"><a href="#7-3、集群搭建" class="headerlink" title="7.3、集群搭建"></a>7.3、集群搭建</h3><p><strong>至少三台</strong></p>
 <ul>
 <li>创建Data目录</li>
@@ -717,7 +717,7 @@ rmr path                        <span class="token comment" spellcheck="true">#�
 <ul>
 <li>在conf目录下创建三个zk配置文件，分别为zoo1.cfg,zoo2.cfg,zoo3.cfg</li>
 </ul>
-<p><img src="/Mr-lee-MQ.hithub.io/Mr-lee-MQ.github.io/Zookeeper/image-20210625210152842.png" alt="image-20210625210152842"></p>
+<p><img src="/Zookeeper/image-20210625210152842.png" alt="image-20210625210152842"></p>
 <ul>
 <li>启动zookeeper</li>
 </ul>

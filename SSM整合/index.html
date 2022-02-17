@@ -504,9 +504,9 @@
 <p>面向切面编程，是面向对象开发的一种补充，它允许开发人员在不改变原来模型的基础上动态的修改模型以满足新的需求，如：动态的增加日志、安全或异常处理等。AOP使业务逻辑各部分间的耦合度降低，提高程序可重用性，提高开发效率。</p>
 <p><strong>Mybatis：</strong></p>
 <p>​    mybatis是对jdbc的封装，它让数据库底层操作变的透明。mybatis的操作都是围绕一个sqlSessionFactory实例展开的。mybatis通过配置文件关联到各实体类的Mapper文件，Mapper文件中配置了每个类对数据库所需进行的sql语句映射。在每次与数据库交互时，通过sqlSessionFactory拿到一个sqlSession，再执行sql命令。</p>
-<img src="/Mr-lee-MQ.hithub.io/SSM%E6%95%B4%E5%90%88/20151118190949363" class>
+<img src="/SSM%E6%95%B4%E5%90%88/20151118190949363" class>
 
-<img src="/Mr-lee-MQ.hithub.io/SSM%E6%95%B4%E5%90%88/image-20210305100446842.png" class>
+<img src="/SSM%E6%95%B4%E5%90%88/image-20210305100446842.png" class>
 
 <p><strong>持久层：DAO层（mapper）</strong><br>    DAO层：DAO层主要是做数据持久层的工作，负责与数据库进行联络的一些任务都封装在此，DAO层的设计首先是设计DAO的接口，然后在Spring的配置文件中定义此接口的实现类，然后就可在模块中调用此接口来进行数据业务的处理，而不用关心此接口的具体实现类是哪个类，显得结构非常清晰，DAO层的数据源配置，以及有关数据库连接的参数都在Spring的配置文件中进行配置。<br><strong>业务层：Service层</strong><br>    Service层：Service层主要负责业务模块的逻辑应用设计。首先设计接口，再设计其实现的类接着再在Spring的配置文件中配置其实现的关联。这样我们就可以在应用中调用Service接口来进行业务处理。Service层的业务实现，具体要调用到已定义的DAO层的接口，封装Service层的业务逻辑有利于通用的业务逻辑的独立性和重复利用性，程序显得非常简洁。<br><strong>表现层：Controller层（Handler层）</strong><br>    Controller层:Controller层负责具体的业务模块流程的控制，在此层里面要调用Service层的接口来控制业务流程，控制的配置也同样是在Spring的配置文件里面进行，针对具体的业务流程，会有不同的控制器，我们具体的设计过程中可以将流程进行抽象归纳，设计出可以重复利用的子单元流程模块，这样不仅使程序结构变得清晰，也大大减少了代码量。<br><strong>View层</strong><br>    View层 此层与控制层结合比较紧密，需要二者结合起来协同工发。View层主要负责前台jsp页面的表示.各层联系DAO层，Service层这两个层次都可以单独开发，互相的耦合度很低，完全可以独立进行，这样的一种模式在开发大项目的过程中尤其有优势，Controller，View层因为耦合度比较高，因而要结合在一起开发，但是也可以看作一个整体独立于前两个层进行开发。这样，在层与层之前我们只需要知道接口的定义，调用接口即可完成所需要的逻辑单元应用，一切显得非常清晰简单。</p>
 <p><strong>Service逻辑层设计</strong></p>
