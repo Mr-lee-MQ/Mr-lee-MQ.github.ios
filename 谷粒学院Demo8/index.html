@@ -466,7 +466,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-20
+                    2022-02-15
                 </div>
                 
 
@@ -897,7 +897,185 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<h3 id="3、图表显示数据"><a href="#3、图表显示数据" class="headerlink" title="3、图表显示数据"></a>3、图表显示数据</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+     *
+     * @author liminqiang
+     * @date 2022/2/14 21:42
+     * @param type
+     * @param bengin
+     * @param end
+     * @return R
+     * 图表显示，两部分数据。日期数量均为Json数组。
+     */</span>
 
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/showData/{type}/{bengin}/{end}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> R <span class="token function">showData</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span> String type<span class="token punctuation">,</span><span class="token annotation punctuation">@PathVariable</span> String bengin<span class="token punctuation">,</span>
+                      <span class="token annotation punctuation">@PathVariable</span> String end<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">></span> map <span class="token operator">=</span> staService<span class="token punctuation">.</span><span class="token function">getShowData</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span>bengin<span class="token punctuation">,</span>end<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> R<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">data</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//图表显示，两部分数据。日期数量均为Json数组。</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> <span class="token function">getShowData</span><span class="token punctuation">(</span>String type<span class="token punctuation">,</span> String begin<span class="token punctuation">,</span> String end<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment" spellcheck="true">//根据条件查询数据</span>
+        QueryWrapper<span class="token operator">&lt;</span>StatisticsDaily<span class="token operator">></span> wrapper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">QueryWrapper</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        wrapper<span class="token punctuation">.</span><span class="token function">between</span><span class="token punctuation">(</span><span class="token string">"date_calculated"</span><span class="token punctuation">,</span>begin<span class="token punctuation">,</span>end<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        wrapper<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">"date_calculated"</span><span class="token punctuation">,</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        List<span class="token operator">&lt;</span>StatisticsDaily<span class="token operator">></span> staList <span class="token operator">=</span> baseMapper<span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span>wrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//创建两个List，用于封装日期和数量</span>
+        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> date_calculatedList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator">&lt;</span>Integer<span class="token operator">></span> numDateList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//遍历所有数据的List，进行封装</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> staList<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            StatisticsDaily daily <span class="token operator">=</span> staList<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//封装日期</span>
+            date_calculatedList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>daily<span class="token punctuation">.</span><span class="token function">getDateCalculated</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//封装数量</span>
+            <span class="token keyword">switch</span> <span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">case</span> <span class="token string">"register_num"</span><span class="token operator">:</span>
+                    numDateList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>daily<span class="token punctuation">.</span><span class="token function">getLoginNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token string">"login_num"</span><span class="token operator">:</span>
+                    numDateList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>daily<span class="token punctuation">.</span><span class="token function">getLoginNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token string">"video_view_num"</span><span class="token operator">:</span>
+                    numDateList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>daily<span class="token punctuation">.</span><span class="token function">getVideoViewNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token string">"course_num"</span><span class="token operator">:</span>
+                    numDateList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>daily<span class="token punctuation">.</span><span class="token function">getCourseNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">default</span><span class="token operator">:</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"date_calculatedList"</span><span class="token punctuation">,</span>date_calculatedList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"numDateList"</span><span class="token punctuation">,</span>numDateList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token keyword">return</span> map<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p><strong>前端</strong></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//获取统计数据</span>
+  <span class="token function">getDataSta</span><span class="token punctuation">(</span>searchObj<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          url<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`/staservice/sta/showData/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>searchObj<span class="token punctuation">.</span>type<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>searchObj<span class="token punctuation">.</span>begin<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>searchObj<span class="token punctuation">.</span>end<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span>
+          method<span class="token punctuation">:</span> <span class="token string">'get'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+<span class="token operator">&lt;</span>template<span class="token operator">></span>
+<span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"app-container"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>表单<span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>el<span class="token operator">-</span>form <span class="token punctuation">:</span>inline<span class="token operator">=</span><span class="token string">"true"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"demo-form-inline"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item<span class="token operator">></span>
+    <span class="token operator">&lt;</span>el<span class="token operator">-</span>select v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"searchObj.type"</span> clearable placeholder<span class="token operator">=</span><span class="token string">"请选择"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>el<span class="token operator">-</span>option label<span class="token operator">=</span><span class="token string">"学员登录数统计"</span> value<span class="token operator">=</span><span class="token string">"login_num"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>el<span class="token operator">-</span>option label<span class="token operator">=</span><span class="token string">"学员注册数统计"</span> value<span class="token operator">=</span><span class="token string">"register_num"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>el<span class="token operator">-</span>option label<span class="token operator">=</span><span class="token string">"课程播放数统计"</span> value<span class="token operator">=</span><span class="token string">"video_view_num"</span><span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>el<span class="token operator">-</span>option label<span class="token operator">=</span><span class="token string">"每日课程数统计"</span> value<span class="token operator">=</span><span class="token string">"course_num"</span><span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>select<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item<span class="token operator">></span>
+    <span class="token operator">&lt;</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item<span class="token operator">></span>
+    <span class="token operator">&lt;</span>el<span class="token operator">-</span>date<span class="token operator">-</span>picker
+        v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"searchObj.begin"</span>
+        type<span class="token operator">=</span><span class="token string">"date"</span>
+        placeholder<span class="token operator">=</span><span class="token string">"选择开始日期"</span>
+        value<span class="token operator">-</span>format<span class="token operator">=</span><span class="token string">"yyyy-MM-dd"</span> <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item<span class="token operator">></span>
+    <span class="token operator">&lt;</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item<span class="token operator">></span>
+    <span class="token operator">&lt;</span>el<span class="token operator">-</span>date<span class="token operator">-</span>picker
+        v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"searchObj.end"</span>
+        type<span class="token operator">=</span><span class="token string">"date"</span>
+        placeholder<span class="token operator">=</span><span class="token string">"选择截止日期"</span>
+        value<span class="token operator">-</span>format<span class="token operator">=</span><span class="token string">"yyyy-MM-dd"</span> <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item<span class="token operator">></span>
+    <span class="token operator">&lt;</span>el<span class="token operator">-</span>button
+    <span class="token punctuation">:</span>disabled<span class="token operator">=</span><span class="token string">"btnDisabled"</span>
+    type<span class="token operator">=</span><span class="token string">"primary"</span>
+    icon<span class="token operator">=</span><span class="token string">"el-icon-search"</span>
+    @click<span class="token operator">=</span><span class="token string">"showChart()"</span><span class="token operator">></span>查询<span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>button<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>form<span class="token operator">></span>
+<span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"chart-container"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"chart"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"chart"</span> style<span class="token operator">=</span><span class="token string">"height:500px;width:100%"</span> <span class="token operator">/</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">import</span> echarts <span class="token keyword">from</span> <span class="token string">'echarts'</span>
+<span class="token keyword">import</span> staApi <span class="token keyword">from</span> <span class="token string">'@/api/sta'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      searchObj<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        begin<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        end<span class="token punctuation">:</span> <span class="token string">''</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      btnDisabled<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      chart<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+      title<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+      xData<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      yData<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">showChart</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+      staApi<span class="token punctuation">.</span><span class="token function">getDataSta</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>searchObj<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>xData <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>date_calculatedList
+
+        <span class="token keyword">this</span><span class="token punctuation">.</span>yData <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">.</span>numDateList
+
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setChart</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token comment" spellcheck="true">// this.initChartData()</span>
+
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">// // 准备图表数据</span>
+    <span class="token comment" spellcheck="true">// initChartData() {</span>
+
+    <span class="token comment" spellcheck="true">// },</span>
+    <span class="token comment" spellcheck="true">// 设置图标参数</span>
+    <span class="token function">setChart</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// 基于准备好的dom，初始化echarts实例</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>chart <span class="token operator">=</span> echarts<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'chart'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token comment" spellcheck="true">// console.log(this.chart)</span>
+      <span class="token comment" spellcheck="true">// 指定图表的配置项和数据</span>
+      <span class="token keyword">var</span> option <span class="token operator">=</span> <span class="token punctuation">{</span>
+        title<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          text<span class="token punctuation">:</span> <span class="token string">'统计数据'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        tooltip<span class="token punctuation">:</span><span class="token punctuation">{</span>
+          trigger<span class="token punctuation">:</span><span class="token string">'axis'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">// x轴是类目轴（离散数据）,必须通过data设置类目数据</span>
+        xAxis<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          type<span class="token punctuation">:</span> <span class="token string">'category'</span><span class="token punctuation">,</span>
+          data<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>xData
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">// y轴是数据轴（连续数据）</span>
+        yAxis<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          type<span class="token punctuation">:</span> <span class="token string">'value'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">// 系列列表。每个系列通过 type 决定自己的图表类型</span>
+        series<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+          <span class="token comment" spellcheck="true">// 系列中的数据内容数组</span>
+          data<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>yData<span class="token punctuation">,</span>
+          <span class="token comment" spellcheck="true">// 折线图</span>
+          type<span class="token punctuation">:</span> <span class="token string">'line'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>chart<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span>option<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<h2 id="2、canal数据同步工具"><a href="#2、canal数据同步工具" class="headerlink" title="2、canal数据同步工具"></a>2、canal数据同步工具</h2>
                 
             </div>
             <hr/>
