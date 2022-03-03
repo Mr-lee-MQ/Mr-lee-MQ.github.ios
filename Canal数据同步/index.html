@@ -466,7 +466,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-02-26
+                    2022-03-01
                 </div>
                 
 
@@ -490,7 +490,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Canal数据同步"><a href="#Canal数据同步" class="headerlink" title="Canal数据同步"></a>Canal数据同步</h1><h2 id="1、主要场景"><a href="#1、主要场景" class="headerlink" title="1、主要场景"></a>1、主要场景</h2><p>​        在前面的统计分析功能中，我们采取了服务调用获取统计数据，这样耦合度高，效率相对较低，目前我采取另一种实现方式，通过实时同步数据库表的方式实现，例如我们要统计每天注册与登录人数，我们只需把会员表同步到统计库中，实现本地统计就可以了，这样效率更高，耦合度更低，Canal就是一个很好的数据库同步工具。canal是阿里巴巴旗下的一款开源项目，纯Java开发。基于数据库增量日志解析，提供增量数据订阅&amp;消费，目前主要支持了MySQL。</p>
+                <h1 id="Canal数据同步"><a href="#Canal数据同步" class="headerlink" title="Canal数据同步"></a>Canal数据同步<a id="more"></a></h1><h2 id="1、主要场景"><a href="#1、主要场景" class="headerlink" title="1、主要场景"></a>1、主要场景</h2><p>​        在前面的统计分析功能中，我们采取了服务调用获取统计数据，这样耦合度高，效率相对较低，目前我采取另一种实现方式，通过实时同步数据库表的方式实现，例如我们要统计每天注册与登录人数，我们只需把会员表同步到统计库中，实现本地统计就可以了，这样效率更高，耦合度更低，Canal就是一个很好的数据库同步工具。canal是阿里巴巴旗下的一款开源项目，纯Java开发。基于数据库增量日志解析，提供增量数据订阅&amp;消费，目前主要支持了MySQL。</p>
 <h2 id="2、环境搭建"><a href="#2、环境搭建" class="headerlink" title="2、环境搭建"></a>2、环境搭建</h2><p>canal的原理是基于mysql binlog技术，所以这里一定需要<strong>开启mysql的binlog</strong>写入功能</p>
 <p><strong>开启mysql服务：</strong> service mysql start  （或者 systemctl start mysqld.service）</p>
 <ol>
@@ -942,18 +942,17 @@ mysql 数据解析关注的表，Perl正则表达式.
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/Canal%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5/">
+                <a href="/TypeScript/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Canal数据同步">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="TypeScript">
                         
-                        <span class="card-title">Canal数据同步</span>
+                        <span class="card-title">TypeScript</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -963,27 +962,26 @@ mysql 数据解析关注的表，Perl正则表达式.
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-26
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-28
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">工具</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">前端基础</span>
                     </a>
                     
                 </div>
