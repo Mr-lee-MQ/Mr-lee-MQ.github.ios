@@ -633,6 +633,140 @@
 
 <span class="token punctuation">}</span>
 </code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//String</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> set key value #设置 key<span class="token operator">-</span>value 类型的值
+OK
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> get key # 根据 key 获得对应的 value
+<span class="token string">"value"</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> exists key  # 判断某个 key 是否存在
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> strlen key # 返回 key 所储存的字符串值的长度。
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">5</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> del key # 删除某个 key 对应的值
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> get <span class="token function">key</span>
+<span class="token punctuation">(</span>nil<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">//批量设置</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> mset key1 value1 key2 value2 # 批量设置 key<span class="token operator">-</span>value 类型的值
+OK
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> mget key1 key2 # 批量获取多个 key 对应的 value
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"value1"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"value2"</span>
+    <span class="token comment" spellcheck="true">//计数器</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> set number <span class="token number">1</span>
+OK
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> incr number # 将 key 中储存的数字值增一
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> get number
+<span class="token string">"2"</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> decr number # 将 key 中储存的数字值减一
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> get number
+<span class="token string">"1"</span>
+    <span class="token comment" spellcheck="true">//过期</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> expire key  <span class="token number">60</span> # 数据在 60s 后过期
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> setex key <span class="token number">60</span> value # 数据在 60s 后过期 <span class="token punctuation">(</span>setex<span class="token operator">:</span><span class="token punctuation">[</span>set<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token punctuation">[</span>ex<span class="token punctuation">]</span>pire<span class="token punctuation">)</span>
+OK
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> ttl key # 查看数据还有多久过期
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">56</span>  </code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//List</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> rpush myList value1 # 向 list 的头部（右边）添加元素
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> rpush myList value2 value3 # 向list的头部（最右边）添加多个元素
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">3</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> lpop myList # 将 list的尾部<span class="token punctuation">(</span>最左边<span class="token punctuation">)</span>元素取出
+<span class="token string">"value1"</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> lrange myList <span class="token number">0</span> <span class="token number">1</span> # 查看对应下标的list列表， <span class="token number">0</span> 为 start<span class="token punctuation">,</span><span class="token number">1</span>为 end
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"value2"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"value3"</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> lrange myList <span class="token number">0</span> <span class="token operator">-</span><span class="token number">1</span> # 查看列表中的所有元素，<span class="token operator">-</span><span class="token number">1</span>表示倒数第一
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"value2"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"value3"</span>
+    <span class="token comment" spellcheck="true">//实现栈</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> rpush myList2 value1 value2 <span class="token function">value3</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">3</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> rpop myList2 # 将 list的头部<span class="token punctuation">(</span>最右边<span class="token punctuation">)</span>元素取出
+<span class="token string">"value3"</span>
+    <span class="token comment" spellcheck="true">//查看列表元素，通过下标</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> rpush myList value1 value2 <span class="token function">value3</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">3</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> lrange myList <span class="token number">0</span> <span class="token number">1</span> # 查看对应下标的list列表， <span class="token number">0</span> 为 start<span class="token punctuation">,</span><span class="token number">1</span>为 end
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"value1"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"value2"</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> lrange myList <span class="token number">0</span> <span class="token operator">-</span><span class="token number">1</span> # 查看列表中的所有元素，<span class="token operator">-</span><span class="token number">1</span>表示倒数第一
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"value1"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"value2"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"value3"</span>
+    <span class="token comment" spellcheck="true">//查看列表长度</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> llen <span class="token function">myList</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">3</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//Hash</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> hmset userInfoKey name <span class="token string">"guide"</span> description <span class="token string">"dev"</span> age <span class="token string">"24"</span>
+OK
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> hexists userInfoKey name # 查看 key 对应的 value中指定的字段是否存在。
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> hget userInfoKey name # 获取存储在哈希表中指定字段的值。
+<span class="token string">"guide"</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> hget userInfoKey age
+<span class="token string">"24"</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> hgetall userInfoKey # 获取在哈希表中指定 key 的所有字段和值
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"name"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"guide"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"description"</span>
+<span class="token number">4</span><span class="token punctuation">)</span> <span class="token string">"dev"</span>
+<span class="token number">5</span><span class="token punctuation">)</span> <span class="token string">"age"</span>
+<span class="token number">6</span><span class="token punctuation">)</span> <span class="token string">"24"</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> hkeys userInfoKey # 获取 key 列表
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"name"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"description"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"age"</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> hvals userInfoKey # 获取 value 列表
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"guide"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"dev"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"24"</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> hset userInfoKey name <span class="token string">"GuideGeGe"</span> # 修改某个字段对应的值
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> hget userInfoKey name
+<span class="token string">"GuideGeGe"</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//set</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> sadd mySet value1 value2 # 添加元素进去
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> sadd mySet value1 # 不允许有重复元素
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">0</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> smembers mySet # 查看 set 中所有的元素
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"value1"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"value2"</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> scard mySet # 查看 set 的长度
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> sismember mySet value1 # 检查某个元素是否存在set 中，只能接收单个元素
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> sadd mySet2 value2 <span class="token function">value3</span>
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> sinterstore mySet3 mySet mySet2 # 获取 mySet 和 mySet2 的交集并存放在 mySet3 中
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> smembers mySet3
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"value2"</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//sortedSet</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> zadd myZset <span class="token number">3.0</span> value1 # 添加元素到 sorted set 中 <span class="token number">3.0</span> 为权重
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">1</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> zadd myZset <span class="token number">2.0</span> value2 <span class="token number">1.0</span> value3 # 一次添加多个元素
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">2</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> zcard myZset # 查看 sorted set 中的元素数量
+<span class="token punctuation">(</span>integer<span class="token punctuation">)</span> <span class="token number">3</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> zscore myZset value1 # 查看某个 value 的权重
+<span class="token string">"3"</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> zrange  myZset <span class="token number">0</span> <span class="token operator">-</span><span class="token number">1</span> # 顺序输出某个范围区间的元素，<span class="token number">0</span> <span class="token operator">-</span><span class="token number">1</span> 表示输出所有元素
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"value3"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"value2"</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">"value1"</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> zrange  myZset <span class="token number">0</span> <span class="token number">1</span> # 顺序输出某个范围区间的元素，<span class="token number">0</span> 为 start  <span class="token number">1</span> 为 stop
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"value3"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"value2"</span>
+<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">6379</span><span class="token operator">></span> zrevrange  myZset <span class="token number">0</span> <span class="token number">1</span> # 逆序输出某个范围区间的元素，<span class="token number">0</span> 为 start  <span class="token number">1</span> 为 stop
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">"value1"</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">"value2"</span>
+</code></pre>
 <h3 id="1-4、案例：模拟验证码发送"><a href="#1-4、案例：模拟验证码发送" class="headerlink" title="1.4、案例：模拟验证码发送"></a>1.4、案例：模拟验证码发送</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*
 1.输入手机号，点击发送后随机生成6位数字码，2分钟有效
 2.输入验证码，点击验证，返回成功或失败
@@ -838,30 +972,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/Redis%E5%AE%9E%E6%88%98/">
+                <a href="/Docker/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Redis实战">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Docker">
                         
-                        <span class="card-title">Redis实战</span>
+                        <span class="card-title">Docker</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Redis实战
+                            
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-03
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -874,12 +1007,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/%E5%90%8E%E7%AB%AF%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">后端工具</span>
                     </a>
                     
                 </div>
@@ -893,31 +1025,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/TypeScript/">
+                <a href="/Canal%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="TypeScript">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Canal数据同步">
                         
-                        <span class="card-title">TypeScript</span>
+                        <span class="card-title">Canal数据同步</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Canal数据同步
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
                                 </a>
                             
                             
@@ -927,8 +1059,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">前端基础</span>
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
                     </a>
                     
                 </div>
