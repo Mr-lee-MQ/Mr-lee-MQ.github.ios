@@ -466,7 +466,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-02-27
+                    2022-03-05
                 </div>
                 
 
@@ -1312,6 +1312,152 @@ spring:
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fastjson<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="3、配置依赖"><a href="#3、配置依赖" class="headerlink" title="3、配置依赖"></a>3、配置依赖</h3><pre class=" language-properties"><code class="language-properties"><span class="token comment" spellcheck="true"># 服务端口</span>
+<span class="token attr-name">server.port</span><span class="token punctuation">=</span><span class="token attr-value">8009</span>
+<span class="token comment" spellcheck="true"># 服务名</span>
+<span class="token attr-name">spring.application.name</span><span class="token punctuation">=</span><span class="token attr-value">service-acl</span>
+<span class="token comment" spellcheck="true"># mysql数据库连接</span>
+<span class="token attr-name">spring.datasource.driver-class-name</span><span class="token punctuation">=</span><span class="token attr-value">com.mysql.cj.jdbc.Driver</span>
+<span class="token attr-name">spring.datasource.url</span><span class="token punctuation">=</span><span class="token attr-value">jdbc:mysql://localhost:3306/guli?serverTimezone=GMT%2B8</span>
+<span class="token attr-name">spring.datasource.username</span><span class="token punctuation">=</span><span class="token attr-value">root</span>
+<span class="token attr-name">spring.datasource.password</span><span class="token punctuation">=</span><span class="token attr-value">root</span>
+<span class="token comment" spellcheck="true">#返回json的全局时间格式</span>
+<span class="token attr-name">spring.jackson.date-format</span><span class="token punctuation">=</span><span class="token attr-value">yyyy-MM-dd HH:mm:ss</span>
+<span class="token attr-name">spring.jackson.time-zone</span><span class="token punctuation">=</span><span class="token attr-value">GMT+8</span>
+<span class="token attr-name">spring.redis.host</span><span class="token punctuation">=</span><span class="token attr-value">192.168.44.132</span>
+<span class="token attr-name">spring.redis.port</span><span class="token punctuation">=</span><span class="token attr-value">6379</span>
+<span class="token attr-name">spring.redis.database</span><span class="token punctuation">=</span> <span class="token attr-value">0</span>
+<span class="token attr-name">spring.redis.timeout</span><span class="token punctuation">=</span><span class="token attr-value">1800000</span>
+<span class="token attr-name">spring.redis.lettuce.pool.max-active</span><span class="token punctuation">=</span><span class="token attr-value">20</span>
+<span class="token attr-name">spring.redis.lettuce.pool.max-wait</span><span class="token punctuation">=</span><span class="token attr-value">-1</span>
+<span class="token comment" spellcheck="true">#最大阻塞等待时间(负数表示没限制)</span>
+<span class="token attr-name">spring.redis.lettuce.pool.max-idle</span><span class="token punctuation">=</span><span class="token attr-value">5</span>
+<span class="token attr-name">spring.redis.lettuce.pool.min-idle</span><span class="token punctuation">=</span><span class="token attr-value">0</span>
+<span class="token comment" spellcheck="true">#最小空闲</span>
+<span class="token comment" spellcheck="true">#配置mapper xml文件的路径</span>
+<span class="token attr-name">mybatis-plus.mapper-locations</span><span class="token punctuation">=</span><span class="token attr-value">classpath:com/atguigu/aclservice/mapper/xml/*.xml</span>
+<span class="token comment" spellcheck="true">#指定注册中心地址</span>
+<span class="token attr-name">eureka.client.service-url.defaultZone</span><span class="token punctuation">=</span><span class="token attr-value">http://127.0.0.1:8761/eureka/</span>
+<span class="token comment" spellcheck="true">#eureka服务器上获取的是服务器的ip地址，否则是主机名</span>
+<span class="token attr-name">eureka.instance.prefer-ip-address</span><span class="token punctuation">=</span><span class="token attr-value">true</span>
+<span class="token comment" spellcheck="true">#mybatis日志</span>
+<span class="token attr-name">mybatis-plus.configuration.log-impl</span><span class="token punctuation">=</span><span class="token attr-value">org.apache.ibatis.logging.stdout.StdOutImpl</span></code></pre>
+<h3 id="4、逻辑代码"><a href="#4、逻辑代码" class="headerlink" title="4、逻辑代码"></a>4、逻辑代码</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/admin/acl/permission"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@CrossOrigin</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PermissionController</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> PermissionService permissionService<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//获取全部菜单</span>
+    <span class="token annotation punctuation">@GetMapping</span>
+    <span class="token keyword">public</span> R <span class="token function">indexAllPermission</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        List<span class="token operator">&lt;</span>Permission<span class="token operator">></span> list <span class="token operator">=</span>  permissionService<span class="token punctuation">.</span><span class="token function">queryAllMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> R<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">data</span><span class="token punctuation">(</span><span class="token string">"children"</span><span class="token punctuation">,</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//获取全部菜单</span>
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> List<span class="token operator">&lt;</span>Permission<span class="token operator">></span> <span class="token function">queryAllMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    QueryWrapper<span class="token operator">&lt;</span>Permission<span class="token operator">></span> wrapper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">QueryWrapper</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    wrapper<span class="token punctuation">.</span><span class="token function">orderByDesc</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    List<span class="token operator">&lt;</span>Permission<span class="token operator">></span> permissionList <span class="token operator">=</span> baseMapper<span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span>wrapper<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    List<span class="token operator">&lt;</span>Permission<span class="token operator">></span> result <span class="token operator">=</span> <span class="token function">bulid</span><span class="token punctuation">(</span>permissionList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//根据菜单构建数据</span>
+<span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>aclservice<span class="token punctuation">.</span>helper<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>aclservice<span class="token punctuation">.</span>entity<span class="token punctuation">.</span>Permission<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ArrayList<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/**
+ * &lt;p>
+ * 根据权限数据构建菜单数据
+ * &lt;/p>
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PermissionHelper</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * 使用递归方法建菜单
+     * @param treeNodes
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> List<span class="token operator">&lt;</span>Permission<span class="token operator">></span> <span class="token function">bulid</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>Permission<span class="token operator">></span> treeNodes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        List<span class="token operator">&lt;</span>Permission<span class="token operator">></span> trees <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Permission treeNode <span class="token operator">:</span> treeNodes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>treeNode<span class="token punctuation">.</span><span class="token function">getPid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                treeNode<span class="token punctuation">.</span><span class="token function">setLevel</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                trees<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">findChildren</span><span class="token punctuation">(</span>treeNode<span class="token punctuation">,</span>treeNodes<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> trees<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">/**
+     * 递归查找子节点
+     * @param treeNodes
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Permission <span class="token function">findChildren</span><span class="token punctuation">(</span>Permission treeNode<span class="token punctuation">,</span>List<span class="token operator">&lt;</span>Permission<span class="token operator">></span> treeNodes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        treeNode<span class="token punctuation">.</span><span class="token function">setChildren</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>Permission<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Permission it <span class="token operator">:</span> treeNodes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>treeNode<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">getPid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">int</span> level <span class="token operator">=</span> treeNode<span class="token punctuation">.</span><span class="token function">getLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                it<span class="token punctuation">.</span><span class="token function">setLevel</span><span class="token punctuation">(</span>level<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>treeNode<span class="token punctuation">.</span><span class="token function">getChildren</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    treeNode<span class="token punctuation">.</span><span class="token function">setChildren</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                treeNode<span class="token punctuation">.</span><span class="token function">getChildren</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">findChildren</span><span class="token punctuation">(</span>it<span class="token punctuation">,</span>treeNodes<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> treeNode<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//递归删除菜单</span>
+<span class="token annotation punctuation">@ApiOperation</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"递归删除菜单"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@DeleteMapping</span><span class="token punctuation">(</span><span class="token string">"remove/{id}"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> R <span class="token function">remove</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span> String id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    permissionService<span class="token punctuation">.</span><span class="token function">removeChildById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> R<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//递归删除菜单</span>
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">removeChildById</span><span class="token punctuation">(</span>String id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    List<span class="token operator">&lt;</span>String<span class="token operator">></span> idList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">selectChildListById</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> idList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//把根据节点id放到list中</span>
+    idList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    baseMapper<span class="token punctuation">.</span><span class="token function">deleteBatchIds</span><span class="token punctuation">(</span>idList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">/**
+     *  递归获取子节点
+     * @param id
+     * @param idList
+     */</span>
+<span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">selectChildListById</span><span class="token punctuation">(</span>String id<span class="token punctuation">,</span> List<span class="token operator">&lt;</span>String<span class="token operator">></span> idList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    List<span class="token operator">&lt;</span>Permission<span class="token operator">></span> childList <span class="token operator">=</span> baseMapper<span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">QueryWrapper</span><span class="token operator">&lt;</span>Permission<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">eq</span><span class="token punctuation">(</span><span class="token string">"pid"</span><span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    childList<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>item <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        idList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">selectChildListById</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> idList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="5、给角色分配权限"><a href="#5、给角色分配权限" class="headerlink" title="5、给角色分配权限"></a>5、给角色分配权限</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@ApiOperation</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"给角色分配权限"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/doAssign"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> R <span class="token function">doAssign</span><span class="token punctuation">(</span>String roleId<span class="token punctuation">,</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> permissionId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    permissionService<span class="token punctuation">.</span><span class="token function">saveRolePermissionRealtionShip</span><span class="token punctuation">(</span>roleId<span class="token punctuation">,</span>permissionId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> R<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//给角色分配权限</span>
+<span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">saveRolePermissionRealtionShip</span><span class="token punctuation">(</span>String roleId<span class="token punctuation">,</span> String<span class="token punctuation">[</span><span class="token punctuation">]</span> permissionIds<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    rolePermissionService<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">QueryWrapper</span><span class="token operator">&lt;</span>RolePermission<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">eq</span><span class="token punctuation">(</span><span class="token string">"role_id"</span><span class="token punctuation">,</span> roleId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    List<span class="token operator">&lt;</span>RolePermission<span class="token operator">></span> rolePermissionList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>String permissionId <span class="token operator">:</span> permissionIds<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>StringUtils<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span>permissionId<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        RolePermission rolePermission <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RolePermission</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        rolePermission<span class="token punctuation">.</span><span class="token function">setRoleId</span><span class="token punctuation">(</span>roleId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        rolePermission<span class="token punctuation">.</span><span class="token function">setPermissionId</span><span class="token punctuation">(</span>permissionId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        rolePermissionList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>rolePermission<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    rolePermissionService<span class="token punctuation">.</span><span class="token function">saveBatch</span><span class="token punctuation">(</span>rolePermissionList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 
                 
             </div>
